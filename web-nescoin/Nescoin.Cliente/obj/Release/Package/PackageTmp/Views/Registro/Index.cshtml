@@ -1,0 +1,225 @@
+﻿@model Nescoin.Conexion.Models.Cascada
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<!--<!DOCTYPE html>-->
+<!--<html>-->
+<head>
+    <!--<meta charset="utf-8">-->
+    <!--<title>Registro de Usuarios </title>-->
+    <link rel="stylesheet" href="~/Content/Registro.css">
+    <script type="text/javascript">
+
+        
+
+        var check = function () {
+            if (document.getElementById('password_1').value ==
+                document.getElementById('password_2').value) {
+                document.getElementById('message').style.color = 'green';
+                document.getElementById('message').innerHTML = 'Coinciden las contraseñas';
+            } else {
+                document.getElementById('message').style.color = 'red';
+                document.getElementById('message').innerHTML = 'NO Coinciden las contraseñas';
+            }
+        }
+
+        
+        function Validar() {
+            var password = document.getElementById("password_1").value;
+            var confirmPassword = document.getElementById("password_2").value;
+            var pais = document.getElementById("id_pais").value;
+            var ciudad = document.getElementById("id_ciudad").value;
+            var comuna = document.getElementById("id_comuna").value;
+                       
+            if (password != confirmPassword)
+            {
+                alert("LAS CONTRASEÑAS NO COINCIDEN");
+                return false;
+            }
+            if (pais == "")
+            {
+                alert("DEBE SELECCIONAR PAIS");
+                return false;
+            }
+            if (ciudad == "") {
+                alert("DEBE SELECCIONAR CIUDAD");
+                return false;
+            }
+            if (comuna == "") {
+                alert("DEBE SELECCIONAR COMUNA");
+                return false;
+            }
+            
+
+
+
+            return true;
+        }
+
+
+
+
+
+
+    </script>
+
+</head>
+<!--<body>-->
+<!-- aquí la página que efectua el registro -->
+<form action="/Registro/RegistraUsuario" method="post" style="border:1px solid #ccc">
+    <div class="container">
+        <h1>Formulario Registro Usuario</h1>
+        <p>Por favor complete este formulario para crear su cuenta de usuario.</p>
+        <h3 class="text-success">@ViewBag.mensaje</h3>
+        <hr>
+        <label for="correo"><b>Correo</b></label>
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingrese correo" name="email" required autocomplete="off">
+        <hr>
+
+        <hr>
+        <label for="telefono"><b>Teléfono</b></label>
+        <input type="number" class="form-control" aria-describedby="emailHelp" placeholder="Ingrese telefono" name="telefono" required autocomplete="off">
+        <hr>
+
+        <label for="categoria"><b>Categoria Servicio</b></label>
+        <div class="form-group">
+            <select class="form-control" id="combo_profesion" name="id_profesion">
+                @foreach (Nescoin.Conexion.Models.Tbl_Profesion pro in ViewBag.ListaProfesion)
+                {
+                    <option value="@pro.id_profesion">@pro.descripcion</option>
+                }
+            </select>
+
+        </div>
+
+        <hr>
+        <label for="nombre"><b>Nombre</b></label>
+        <input type="text" placeholder="Ingrese Nombre Usuario" name="nombre" required autocomplete="off">
+        <hr>
+        <hr>
+        <label for="apellido"><b>Apellido</b></label>
+        <input type="text" placeholder="Ingrese Apellido" name="apellido" required autocomplete="off">
+        <hr>
+        <hr>
+        <label for="direccion"><b>Dirección</b></label>
+        <input type="text" placeholder="Ingrese Dirección" name="direccion" required autocomplete="off">
+        <hr>
+        <hr>
+        <label for="direccion"><b>Describa su actividad</b></label>
+        <input type="text" placeholder="Ingrese descripcion de su actividad" name="actividad" required autocomplete="off">
+        <hr>
+        <hr>
+
+        <label for="pais"><b>Pais</b></label>
+        <div class="form-group">
+            @if (ViewBag.ListaPaises != null)
+            {
+                @Html.DropDownListFor(m => m.id_pais, ViewBag.ListaPaises as SelectList, "SELECCIONE PAIS", new { @class = "form-control" })
+            }
+        </div>
+
+        <hr>
+        <hr>
+        <label for="ciudad"><b>Ciudad</b></label>
+        <div class="form-group">
+            @Html.DropDownListFor(m => m.id_ciudad, new SelectList(""), "SELECCIONE CIUDAD", new { @class = "form-control" })
+        </div>
+
+        <hr>
+        <hr>
+        <label for="comuna"><b>Comuna</b></label>
+        <div class="form-group">
+            @Html.DropDownListFor(m => m.id_comuna, new SelectList(""), "SELECCIONE COMUNA", new { @class = "form-control" })
+        </div>
+
+
+        <hr>
+        <label for="psw"><b>Clave</b></label>
+        <input type="password" placeholder="Ingrese Clave" name="password_1" id="password_1" required onkeyup='check();' autocomplete="off">
+        <hr>
+        <label for="psw-repeat"><b>Repita Clave</b></label>
+        <input type="password" placeholder="Repita Clave" name="password_2" id="password_2" required onkeyup='check();' autocomplete="off">
+        <span id='message'></span>
+        <hr>
+        <hr>
+        <label for="categoria"><b>Tipo de cuenta</b></label>
+        <div class="form-group">
+            <select class="form-control" id="combo_tipo_Cuenta" name="id_tipo_cuenta">
+                @foreach (Nescoin.Conexion.Models.Tbl_Tipo_Cuenta pro in ViewBag.ListaTipoCuentas)
+                {
+                    <option value="@pro.id_tipo_cuenta">@pro.descripcion</option>
+                }
+            </select>
+
+        </div>
+
+
+
+        <!--
+    <p>Para crear una cuenta aceptas nuestros<a href="#" style="color:dodgerblue">Terminos & Privacidad</a>.</p>
+    -->
+        <div class="clearfix">
+            <button type="submit" class="signupbtn btn-agregar" onclick="return Validar()">Registra Usuario</button>
+        </div>
+
+        <div>
+            <br />
+
+
+        </div>
+    </div>
+</form>
+
+<footer></footer>
+
+<script src="~/Scripts/jquery-3.5.1.min.js"></script>
+
+
+<script>
+    $(document).ready(function () {
+
+        //Codigo para pais***************************************************
+        $("#id_pais").change(function () {
+            var idPais = $(this).val();
+            debugger
+            //alert('codigo pais:' + idPais);
+            $.ajax({
+                type: "post",
+                url: "/Registro/ObtieneListaCiudad?id_pais=" + idPais,
+                contentType: "html",
+                success: function (response) {
+                    debugger
+                    $("#id_ciudad").empty();
+                    $("#id_ciudad").append(response);
+                }
+            })
+        })
+
+        //Ajax para comuna******************************************
+        $("#id_ciudad").change(function () {
+            var idCiudad = $(this).val();
+            debugger
+            $.ajax({
+                type: "post",
+                url: "/Registro/ObtieneListaComuna?id_ciudad=" + idCiudad,
+                contentType: "html",
+                success: function (response) {
+                    debugger
+                    $("#id_comuna").empty();
+                    $("#id_comuna").append(response);
+                }
+            })
+        })
+
+
+    }
+    )
+
+</script>
+
+
+
+<!--</body>-->
+<!--</html>-->

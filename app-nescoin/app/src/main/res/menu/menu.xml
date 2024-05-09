@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+<!--    <item
+        android:id="@+id/opcion1"
+        android:title="Lista de Contactos"/>-->
+    <item
+        android:id="@+id/opcion2"
+        android:icon="@drawable/contact_add"
+        android:title="Agregar Nuevo Contacto"
+        app:showAsAction="always"/>
+    <item
+        android:id="@+id/opcion3"
+        android:title="Mis Publicaciones"/>
+    <item
+        android:id="@+id/opcion4"
+        android:title="Log Out"/>
+</menu>

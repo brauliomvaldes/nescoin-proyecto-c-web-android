@@ -1,0 +1,12 @@
+﻿@model Nescoin.Conexion.Models.Tbl_Ciudad
+
+<option value="">--Selecciona ciudad--</option>
+
+@if (ViewBag.ListaCiudades != null)
+{
+    foreach (var item in ViewBag.ListaCiudades)
+    {
+        <option value="@item.Value">@item.Text</option>
+    }
+}
+

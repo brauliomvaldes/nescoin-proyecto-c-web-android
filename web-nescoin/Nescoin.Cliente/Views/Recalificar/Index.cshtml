@@ -1,0 +1,38 @@
+﻿@model List<Nescoin.Conexion.Models.Vi_Trae_Vitrina>
+
+@foreach (var pro in Model)
+{
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">RE-CALIFICAR AL CONTACTO</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="/Recalificar/RecalificarContacto" method="post">
+                    <div class="form-group">
+                        <label class="col-form-label">Contacto: @pro.nombre @pro.apellido </label>
+                        <input type="text" value=@pro.id_usuario  hidden="hidden" name="frm14_id_usuario" />
+
+                    </div>
+                    <div class="form-group">
+                        <label class="col-form-label">Seleccione calificación:</label>
+                        <select class="form-control" name="frm14_califica">
+                            <option value="5">★★★★★</option>
+                            <option value="4">★★★★</option>
+                            <option value="3">★★★</option>
+                            <option value="2">★★</option>
+                            <option value="1">★</option>
+                        </select>
+                    </div>
+                    <div class="modal-footer">
+                        <input type="submit" class="btn btn-agregar text-center" value="Calificar">
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+}

@@ -1,0 +1,65 @@
+﻿@model Nescoin.Conexion.Models.Vi_Trae_contactos_de_usuario
+
+<!--**********************************************************************************-->
+<!--Buscar contacto*******************************************************************-->
+<div class="col-4  col-sm-3 font-italic bor">
+
+        <input id="buscarTexto" class="d-inline-block form-control-sm ml-1 mr-2 w-75" type="text" placeholder="Buscar Contacto" aria-label="Buscar"><i class="fas fa-search" aria-hidden="true"></i>
+ 
+</div>
+
+<script>
+    $(document).ready(function () {
+        $("#buscarTexto").keyup(function () {
+            var searchtext = $(this).val();
+            console.log(searchtext);
+            $.ajax({
+                type: "Post",
+                url: "/ListaContacto/Search?buscarTexto=" + searchtext,
+                contentType: "html",
+                success: function (response) {
+                    $("#listaContactos").html(response);
+                }
+            })
+        })
+    })
+</script>
+
+<!--*****************************************************************************-->
+<!--Inicio Lista de Contactos***************************************************************************************-->
+<form action="DetalleContacto" id="formulario">
+    <div id="listaContactos" class="col-md-2 col-lg-3  mt-2 e d-inline-block float-left tab-pan  list-contact">
+
+        @foreach (var pro in ViewBag.ListaContactoAll)
+        {
+            <!--Inicio Tarjeta de contacto-->
+            <div class="card m-1 p-2" id="search-results" name="id_usuario">
+                <!--Inicio Puntuación Contacto-->
+                <div class="card-header">
+                    @for (var i = 1; i <= pro.promedio_calificacion; i++)
+                    {
+                        <i class="text-warning fa fa-star float-right"></i>
+                    }
+                </div>
+                <input type="text" value=@pro.id_usuario hidden="hidden" name="id_usuario" />
+                <!--Fin Puntuación Contacto-->
+                <!--Inicio Datos del Contacto-->
+                <a href="/Home/DetalleContacto/?id_usuario=@pro.id_usuario">
+                    <div class="card-body">
+                        <div class="img-user-list-contact float-left d-inline-block">
+                            <img src="~/assets/img/@pro.foto" class="rounded-circle img-thumbnail">
+                        </div>
+                        <div class="col-8 col-sm-8 col-lg-8 mt-2 d-inline-block">
+                            <h5>@pro.nombre  @pro.apellido</h5>
+                            <h6>@pro.Profesion </h6>
+                            <h6 class="d-inline-block">Telefono: @pro.numero_telefono </h6>
+                        </div>
+                    </div>
+                </a>
+                <!--Fin Datos del Contacto-->
+            </div>
+            <!--Fin Tarjeta de contacto-->
+        }
+    </div>
+</form>
+<!--Fin Lista de Contactos********************************************************************************************************-->

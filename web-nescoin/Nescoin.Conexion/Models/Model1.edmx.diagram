@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="aeb890ca460046d589265d347bdad6da" Name="Diagram1" ZoomLevel="100">
+        <EntityTypeShape EntityType="BD_NESCOINModel.Tbl_Calificacion" Width="1.5" PointX="11.75" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_NESCOINModel.Tbl_Ciudad" Width="1.5" PointX="3" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_NESCOINModel.Tbl_Comuna" Width="1.5" PointX="5.25" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_NESCOINModel.Tbl_Contacto" Width="1.5" PointX="12" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_NESCOINModel.Tbl_Correo" Width="1.5" PointX="5" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_NESCOINModel.Tbl_Direccion" Width="1.5" PointX="7.5" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_NESCOINModel.Tbl_Forma_Pago" Width="1.75" PointX="8.5" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_NESCOINModel.Tbl_Log" Width="1.5" PointX="12.625" PointY="10.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_NESCOINModel.Tbl_movimiento" Width="1.875" PointX="9.125" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_NESCOINModel.Tbl_Pais" Width="1.5" PointX="0.75" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_NESCOINModel.Tbl_Profesion" Width="1.5" PointX="17" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_NESCOINModel.Tbl_Telefono" Width="1.5" PointX="13" PointY="14.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_NESCOINModel.Tbl_Tipo_Cuenta" Width="1.75" PointX="4.875" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_NESCOINModel.Tbl_tipo_log" Width="1.5" PointX="15.5" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_NESCOINModel.Tbl_Tipo_usuario" Width="1.5" PointX="14.875" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_NESCOINModel.Tbl_Usuario" Width="1.5" PointX="9.75" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_NESCOINModel.Tbl_Usuario_Correo" Width="1.5" PointX="8" PointY="14" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_NESCOINModel.Tbl_Usuario_Profesion" Width="1.5" PointX="15" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_NESCOINModel.Tbl_Usuario_Telefono" Width="1.5" PointX="10.625" PointY="14.25" IsExpanded="true" />
+        <AssociationConnector Association="BD_NESCOINModel.FK_Tbl_Contacto_Tbl_Calificacion" ManuallyRouted="false" />
+        <AssociationConnector Association="BD_NESCOINModel.FK_Tbl_movimiento_Tbl_Calificacion" ManuallyRouted="false" />
+        <AssociationConnector Association="BD_NESCOINModel.FK_Tbl_Ciudad_Pais" ManuallyRouted="false" />
+        <AssociationConnector Association="BD_NESCOINModel.FK_Tbl_Comuna_Tbl_Ciudad" ManuallyRouted="false" />
+        <AssociationConnector Association="BD_NESCOINModel.FK_Tbl_Direccion_Tbl_Comuna" ManuallyRouted="false" />
+        <AssociationConnector Association="BD_NESCOINModel.FK_Tbl_Contacto_Tbl_Tipo_usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="BD_NESCOINModel.FK_Tbl_Usuario_Correo_Tbl_Correo" ManuallyRouted="false" />
+        <AssociationConnector Association="BD_NESCOINModel.FK_Tbl_Usuario_Tbl_Direccion" ManuallyRouted="false" />
+        <AssociationConnector Association="BD_NESCOINModel.FK_Tbl_movimiento_Tbl_Forma_Pago" ManuallyRouted="false" />
+        <AssociationConnector Association="BD_NESCOINModel.FK_Tbl_Log_Tbl_tipo_log" ManuallyRouted="false" />
+        <AssociationConnector Association="BD_NESCOINModel.FK_Tbl_Log_Tbl_Usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="BD_NESCOINModel.FK_Tbl_movimiento_Tbl_Usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="BD_NESCOINModel.FK_Tbl_Usuario_Profesion_Tbl_Profesion" ManuallyRouted="false" />
+        <AssociationConnector Association="BD_NESCOINModel.FK_Tbl_Usuario_Telefono_Tbl_Telefono" ManuallyRouted="false" />
+        <AssociationConnector Association="BD_NESCOINModel.FK_Tbl_Usuario_Tbl_Tipo_Cuenta" ManuallyRouted="false" />
+        <AssociationConnector Association="BD_NESCOINModel.FK_Tbl_Usuario_Correo_Tbl_Usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="BD_NESCOINModel.FK_Tbl_Usuario_Profesion_Tbl_Usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="BD_NESCOINModel.FK_Tbl_Usuario_Telefono_Tbl_Usuario" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="BD_NESCOINModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="BD_NESCOINModel.Tbl_tipo_movimiento" Width="1.75" PointX="5.375" PointY="1.375" />
+        <AssociationConnector Association="BD_NESCOINModel.FK_Tbl_movimiento_Tbl_tipo_movimiento" />
+        <EntityTypeShape EntityType="BD_NESCOINModel.Vi_Trae_Vitrina" Width="1.5" PointX="2" PointY="3.5" />
+        <EntityTypeShape EntityType="BD_NESCOINModel.Vi_Trae_contactos_de_usuario" Width="2.625" PointX="0.75" PointY="12.75" />
+        <EntityTypeShape EntityType="BD_NESCOINModel.Vi_Trae_Oferta_Trabajo" Width="2.125" PointX="14.25" PointY="0.625" />
+        <EntityTypeShape EntityType="BD_NESCOINModel.Vi_Trae_Presupuesto" Width="2.125" PointX="15.375" PointY="14.75" />
+        <EntityTypeShape EntityType="BD_NESCOINModel.Vi_Trae_Historial" Width="2" PointX="1.625" PointY="16.25" />
+        <EntityTypeShape EntityType="BD_NESCOINModel.Vi_Verifica_Presupuesto" Width="1.5" PointX="4.375" PointY="16.75" />
+        <EntityTypeShape EntityType="BD_NESCOINModel.Vi_Verifica_Solicitud_Presupuesto" Width="1.5" PointX="17.375" PointY="0.75" />
+        <AssociationConnector Association="BD_NESCOINModel.FK_Tbl_Contacto_Tbl_Usuario" />
+        <EntityTypeShape EntityType="BD_NESCOINModel.Vi_Tbl_Echo_Prof_Comuna" Width="1.5" PointX="17.375" PointY="4.75" />
+        <EntityTypeShape EntityType="BD_NESCOINModel.Tbl_IndicadoresBS" Width="1.5" PointX="6.375" PointY="17.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

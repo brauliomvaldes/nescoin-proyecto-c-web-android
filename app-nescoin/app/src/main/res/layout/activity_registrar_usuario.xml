@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RegistrarUsuario">
+
+    <ImageView
+        android:id="@+id/img_logo"
+        android:layout_marginLeft="140dp"
+        android:scaleX="2.5"
+        android:scaleY="2.5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/ic_logo_nescoin_foreground" />
+    <EditText
+        android:id="@+id/edt_registro_nombre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="nombre Usuario"
+        android:textColorHint="@color/colorGrey"
+        android:textColor="@color/colorGrey"
+        android:textSize="20dp"
+        android:inputType="textEmailAddress"
+        android:layout_below="@+id/img_logo"
+        android:layout_margin="10dp"
+        android:background="@drawable/edittext_input_redondo"
+        android:padding="10dp"/>
+    <EditText
+        android:id="@+id/edt_registro_apellido"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="apellido Usuario"
+        android:textColorHint="@color/colorGrey"
+        android:textColor="@color/colorGrey"
+        android:textSize="20dp"
+        android:inputType="text"
+        android:layout_below="@+id/edt_registro_nombre"
+        android:layout_margin="10dp"
+        android:background="@drawable/edittext_input_redondo"
+        android:padding="10dp"/>
+    <EditText
+        android:id="@+id/edt_registro_descripcion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="descripcion Usuario"
+        android:textColorHint="@color/colorGrey"
+        android:textColor="@color/colorGrey"
+        android:textSize="20dp"
+        android:inputType="textEmailAddress"
+        android:layout_below="@+id/edt_registro_apellido"
+        android:layout_margin="10dp"
+        android:background="@drawable/edittext_input_redondo"
+        android:padding="10dp"/>
+    <EditText
+        android:id="@+id/edt_registro_telefono"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="telefono Usuario"
+        android:textColorHint="@color/colorGrey"
+        android:textColor="@color/colorGrey"
+        android:textSize="20dp"
+        android:inputType="text|phone"
+        android:layout_below="@+id/edt_registro_descripcion"
+        android:layout_margin="10dp"
+        android:background="@drawable/edittext_input_redondo"
+        android:padding="10dp"/>
+    <EditText
+        android:id="@+id/edt_registro_correo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="correo Usuario"
+        android:textColorHint="@color/colorGrey"
+        android:textColor="@color/colorGrey"
+        android:textSize="20dp"
+        android:inputType="textEmailAddress"
+        android:layout_below="@+id/edt_registro_telefono"
+        android:layout_margin="10dp"
+        android:background="@drawable/edittext_input_redondo"
+        android:padding="10dp"/>
+
+    <EditText
+        android:id="@+id/edt_registro_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/edt_registro_correo"
+        android:layout_margin="10dp"
+        android:hint="Contraseña Usuario"
+        android:textColorHint="@color/colorGrey"
+        android:textColor="@color/colorGrey"
+        android:inputType="textPassword"
+        android:padding="5dp"
+        android:background="@drawable/edittext_input_redondo"
+        android:textSize="20dp" />
+
+    <Button
+        android:id="@+id/btn_registrarusuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/edt_registro_password"
+        android:layout_marginLeft="130dp"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/boton_redondo"
+        android:layout_centerHorizontal="true"
+        android:onClick="registrausuario"
+        android:padding="10dp"
+        android:text=" Registrar "
+        android:textColor="#fff"
+        android:textSize="20dp" />
+
+</RelativeLayout>

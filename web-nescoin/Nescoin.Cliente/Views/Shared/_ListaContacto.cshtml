@@ -1,0 +1,124 @@
+﻿
+<!--**********************************************************************************-->
+<!--Buscar contacto**************************************************************-->
+<div class="col-4  col-sm-3 font-italic bor">
+    <form class="form-inline d-flex  md-form form-sm mt-0">
+        <input class="form-control form-control-sm ml-1 mr-3 w-75" type="text" placeholder="Buscar Contacto"
+               aria-label="Buscar"><i class="fas fa-search" aria-hidden="true"></i>
+    </form>
+</div>
+<!--*****************************************************************************-->
+<!--Inicio Lista de Contactos***************************************************************************************-->
+<div class="col-md-2 col-lg-3  mt-2 e d-inline-block float-left tab-pan  list-contact">
+
+    <!--Inicio Tarjeta de contacto-->
+    <div class="card m-1 p-2">
+        <!--Inicio Puntuación Contacto-->
+        <div class="card-header">
+            <i class="text-warning fa fa-star float-right"></i>
+            <i class="text-warning fa fa-star float-right"></i>
+            <i class="text-warning fa fa-star float-right"></i>
+        </div>
+        <!--Fin Puntuación Contacto-->
+        <!--Inicio Datos del Contacto-->
+        <a href="~/Home/DetalleContacto">
+            <div class="card-body">
+                <div class="img-user-list-contact float-left d-inline-block">
+                    <img src="~/assets/img/user-1.png" class="rounded-circle img-thumbnail">
+                </div>
+                <div class="col-8 col-sm-8 col-lg-8 mt-2 d-inline-block">
+                    <h5>Boby Wick</h5>
+                    <h6>Estudiante</h6>
+                </div>
+            </div>
+        </a>
+
+        <!--Fin Datos del Contacto-->
+        <!--Inicio Acciones para el Contacto-->
+        <div class="card-footer">
+            <div class="float-right">
+
+                <a href="#" class="btn btn-sm btn-compartir" data-target="#comparteContacto" data-toggle="modal">Compartir</a>
+            </div>
+        </div>
+
+        <div class="modal fade" id="comparteContacto" tabindex="-1">
+            @Html.Partial("~/View/Compartir/Index.cshtml")
+        </div>
+
+        <!--pop up lista de contacto-->
+        <div class="modal fade" id="registrarContacto" tabindex="-1">
+            @Html.Partial("~/Views/Contactos/RegistroContacto.cshtml")
+        </div>
+
+
+        <!--Fin Acciones para el Contacto-->
+    </div>
+    <!--Fin Tarjeta de contacto-->
+    <!--Inicio Tarjeta de contacto-->
+    <div class="card m-1 p-2">
+        <!--Inicio Puntuación Contacto-->
+        <div class="card-header">
+            <i class="text-warning fa fa-star float-right"></i>
+            <i class="text-warning fa fa-star float-right"></i>
+            <i class="text-warning fa fa-star float-right"></i>
+        </div>
+        <!--Fin Puntuación Contacto-->
+        <!--Inicio Datos del Contacto-->
+        <a href="~/Home/DetalleContacto">
+            <div class="card-body">
+                <div class="img-user-list-contact float-left d-inline-block">
+                    <img src="~/assets/img/user-3.png" class="rounded-circle img-thumbnail">
+                </div>
+                <div class="col-8 mt-2 d-inline-block">
+                    <h5>Boby Wick</h5>
+                    <h6>Estudiante</h6>
+                </div>
+            </div>
+        </a>
+
+        <!--Fin Datos del Contacto-->
+        <!--Inicio Acciones para el Contacto-->
+        <div class="card-footer">
+            <div class="float-right">
+                <a href="#" class="btn btn-sm btn-compartir">Compartir</a>
+            </div>
+        </div>
+        <!--Fin Acciones para el Contacto-->
+    </div>
+    <!--Fin Tarjeta de contacto-->
+    <!--Inicio Tarjeta de contacto-->
+    <div class="card m-1 p-2">
+        <!--Inicio Puntuación Contacto-->
+        <div class="card-header">
+            <i class="text-warning fa fa-star float-right"></i>
+            <i class="text-warning fa fa-star float-right"></i>
+            <i class="text-warning fa fa-star float-right"></i>
+        </div>
+        <!--Fin Puntuación Contacto-->
+        <!--Inicio Datos del Contacto-->
+        <a href="~/Home/DetalleContacto">
+            <div class="card-body">
+                <div class="img-user-list-contact float-left d-inline-block">
+                    <img src="~/assets/img/user-2.png" class="rounded-circle img-thumbnail">
+                </div>
+                <div class="col-8 mt-2 d-inline-block">
+                    <h5>Boby Wick</h5>
+                    <h6>Estudiante</h6>
+                </div>
+            </div>
+        </a>
+        
+        <!--Fin Datos del Contacto-->
+        <!--Inicio Acciones para el Contacto-->
+        <div class="card-footer">
+            <div class="float-right">
+                <a href="#" class="btn btn-sm btn-compartir">Compartir</a>
+            </div>
+        </div>
+        <!--Fin Acciones para el Contacto-->
+    </div>
+    <!--Fin Tarjeta de contacto-->
+
+</div>
+<!--Fin Lista de Contactos********************************************************************************************************-->

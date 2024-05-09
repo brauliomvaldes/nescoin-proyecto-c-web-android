@@ -1,0 +1,74 @@
+﻿@model List<Nescoin.Conexion.Models.Vi_Verifica_Solicitud_Presupuesto>
+@{
+    ViewBag.Title = "Presupuestos";
+}
+<script src="~/Scripts/jquery-3.5.1.min.js"></script>
+
+@foreach (var pro in Model)
+{
+    <form Action=@ViewBag.rutaFormulario method="post">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Responder solicitud de presupuesto</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <input type="text" name="frm8_id_movimiento" hidden="hidden" value=@pro.id_movimiento />
+                    <div class="form-group">
+                        <label for="titulo-presupuesto" class="col-form-label">Titulo Presupuesto:</label>
+                        <label>@pro.Titulo</label>
+                    </div>
+                    <div class="form-group">
+                        <label for="descripcion" class="col-form-label">Descripción:</label>
+                        <textarea class="form-control" name="frm8_descripcion">@pro.descripcion </textarea>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-agregar" name="frm8_btnAcepta">Aceptar</button>
+                    <button type="submit" class="btn btn-agregar" name="frm8_btnRechaza">Rechaza</button>
+                    <a class="btn btn-secondary" data-dismiss="modal">Cerrar</a>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <!--<button onclick="prueba()">PRUEBA</button>-->
+}
+
+<!--Para preguntarle al profesor porque no funciona-->
+<script>
+
+    function llamaControladorFrm8(id) {
+
+        //var div = document.getElementById("editar");
+        var xhr = new XMLHttpRequest();
+        var boton = document.getElementById(id).textContent;
+        var _idMovimiento = document.getElementById("frm8_id_movimiento").value;
+        var _descripcion = document.getElementById("frm8_descripcion").value;
+        var parametros = 'id_movimiento=' + _idMovimiento + '&estadoBoton=' + boton + '&descripcion=' + _descripcion;
+
+        alert(parametros);
+
+        //xhr.onreadystatechange = function () {
+        //    if (xhr.status == 200 && xhr.readyState == 4) {
+        //        div.innerHTML = xhr.responseText;
+        //        //$('#editar').modal("show");
+        //    }
+        //}
+
+        //xhr.open("POST", "/Presupuesto/ResponderSolicitudPresupuesto", true);
+        //xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+        //xhr.send(parametros);
+    }
+
+
+
+    function prueba() {
+        alert('hola');
+    }
+
+</script>

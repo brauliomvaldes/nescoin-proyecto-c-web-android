@@ -1,0 +1,53 @@
+﻿@model IEnumerable<Nescoin.Conexion.Models.Tbl_Contacto>
+
+@{
+    ViewBag.Title = "Correos";
+}
+
+<h2>Contactos</h2>
+
+<p>
+    @Html.ActionLink("Crear Nuevo", "Create")
+    <br />
+    <a href="/Home/Index" >Volver a administración</a>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.estado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tbl_Calificacion.nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tbl_Tipo_usuario.descripcion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tbl_Usuario.nick)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.estado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tbl_Calificacion.nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tbl_Tipo_usuario.descripcion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tbl_Usuario.nick)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Detalle", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Eliminar", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AgregarNuevoContacto">
+
+    <ImageView
+        android:id="@+id/img_logo"
+        android:layout_marginLeft="140dp"
+        android:scaleX="2.5"
+        android:scaleY="2.5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/ic_logo_nescoin_foreground" />
+    <TextView
+        android:id="@+id/edt_registro_titulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/img_logo"
+        android:padding="10dp"
+        android:text="DATOS DEL NUEVO CONTACTO"
+        android:textAlignment="center"
+        android:textSize="25dp"
+        android:textColor="@color/colorWhite"
+        android:background="@color/colorPrimary_1"
+        />
+    <EditText
+        android:id="@+id/edt_registro_nombre_contacto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="nombre Contacto"
+        android:textColorHint="@color/colorGrey"
+        android:textColor="@color/colorBlack"
+        android:textSize="20dp"
+        android:inputType="textEmailAddress"
+        android:layout_below="@+id/edt_registro_titulo"
+        android:layout_margin="10dp"
+        android:padding="10dp"
+        android:background="@drawable/edittext_input_redondo"/>
+    <EditText
+        android:id="@+id/edt_registro_apellido_contacto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="apellido Contacto"
+        android:textColorHint="@color/colorGrey"
+        android:textColor="@color/colorBlack"
+        android:textSize="20dp"
+        android:inputType="text"
+        android:layout_below="@+id/edt_registro_nombre_contacto"
+        android:layout_margin="10dp"
+        android:padding="10dp"
+        android:background="@drawable/edittext_input_redondo"/>
+    <EditText
+        android:id="@+id/edt_registro_descripcion_contacto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="descripcion servicio Contacto"
+        android:textColorHint="@color/colorGrey"
+        android:textColor="@color/colorBlack"
+        android:textSize="20dp"
+        android:inputType="textEmailAddress"
+        android:layout_below="@+id/edt_registro_apellido_contacto"
+        android:layout_margin="10dp"
+        android:padding="10dp"
+        android:background="@drawable/edittext_input_redondo"/>
+    <EditText
+        android:id="@+id/edt_registro_telefono_contacto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="telefono Contacto"
+        android:textColorHint="@color/colorGrey"
+        android:textColor="@color/colorBlack"
+        android:textSize="20dp"
+        android:inputType="text|phone"
+        android:layout_below="@+id/edt_registro_descripcion_contacto"
+        android:layout_margin="10dp"
+        android:padding="10dp"
+        android:background="@drawable/edittext_input_redondo"/>
+    <EditText
+        android:id="@+id/edt_registro_correo_contacto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="correo Contacto"
+        android:textColorHint="@color/colorGrey"
+        android:textColor="@color/colorBlack"
+        android:textSize="20dp"
+        android:inputType="textEmailAddress"
+        android:layout_below="@+id/edt_registro_telefono_contacto"
+        android:layout_margin="10dp"
+        android:padding="10dp"
+        android:background="@drawable/edittext_input_redondo"/>
+
+    <Button
+        android:id="@+id/btn_registrarcontacto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/edt_registro_correo_contacto"
+        android:layout_marginLeft="130dp"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/boton_redondo"
+        android:layout_centerHorizontal="true"
+        android:onClick="registracontacto"
+        android:padding="10dp"
+        android:text=" Agregar Contacto "
+        android:textColor="#fff"
+        android:textSize="20dp" />
+
+</RelativeLayout>

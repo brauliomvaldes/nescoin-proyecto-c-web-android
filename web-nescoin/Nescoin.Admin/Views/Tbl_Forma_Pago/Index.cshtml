@@ -1,0 +1,41 @@
+﻿@model IEnumerable<Nescoin.Conexion.Models.Tbl_Forma_Pago>
+
+@{
+    ViewBag.Title = "Formas de Pago";
+}
+
+<h2>Formas de Pago</h2>
+
+<p>
+    @Html.ActionLink("Crear nuevo", "Create")
+    <br />
+    <a href="/Home/Index">Volver a administración</a>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.descripcion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.estado)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.descripcion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.estado)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.id_forma_pago }) |
+            @Html.ActionLink("Detalle", "Details", new { id=item.id_forma_pago }) |
+            @Html.ActionLink("Eliminar", "Delete", new { id=item.id_forma_pago })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,45 @@
+﻿<!--Ventana editar o solicitar proyecto-->
+@model List<Nescoin.Conexion.Models.Vi_Trae_Oferta_Trabajo>
+
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+@foreach (var pro in Model)
+{
+    <!--<form action="~/Oferta/EditarProyecto" method="post">-->
+    <form action=@ViewBag.rutaFormulario method="post">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">@ViewBag.Titulo</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                    <input type="text" name="frm5_id_movimiento" hidden="hidden" value=@pro.id_movimiento />
+                    <input type="text" name="frm5_titulo" hidden="hidden" value="@pro.Titulo" />
+                    <div class="form-group">
+                        <label for="titulo-proyecto" class="col-form-label">Titulo: </label>
+                        <label>@pro.Titulo</label>
+                    </div>
+                    <div class="form-group">
+                        <label for="descripcion" class="col-form-label">Descripción:</label>
+                        <textarea class="form-control" id="descripcion" pattern="[a-z][A-Z][0-9]​​​​" name="frm5_descripcion">@pro.descripcion </textarea>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-agregar">@ViewBag.btnEstado</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                </div>
+
+            </div>
+        </div>
+    </form>
+}
+
+
+
+
+
+

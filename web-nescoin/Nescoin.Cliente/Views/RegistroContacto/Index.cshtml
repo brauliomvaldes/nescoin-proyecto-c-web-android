@@ -1,0 +1,95 @@
+﻿@{
+    ViewBag.Title = "RegistroContacto";
+    ViewBag.ListaProfesion = Session["Profesiones"];
+    ViewBag.flagNuevoContacto = Session["flagNuevoContacto"];
+}
+<script src="~/Scripts/sweetalert.min.js"></script>
+
+<script type="text/javascript">
+
+    function carga() {
+
+        var variable = '@ViewBag.flagNuevoContacto';
+
+                if (variable != '')
+                {
+                    if (variable == '1')
+                    {
+                        swal("NUEVO CONTACTO", "Contacto agregado exitosamente!", "success");
+                    }
+                    if (variable == '2')
+                    {
+                        swal("NUEVO CONTACTO", "No se puede agregar por que ya existe!", "error");
+                    }
+        }
+
+        @{
+            Session["flagNuevoContacto"] = "0";
+        }
+    }
+
+</script>
+
+<body onload="carga()">
+    <form action="/RegistroContacto/guardaDatos" method="post">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">REGISTRAR NUEVO CONTACTO</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                    <div class="form-group">
+                        <label for="nombre" class="col-form-label">Nombre Contacto:</label>
+                        <input type="text" class="form-control" name="nombre" required autocomplete="off">
+                    </div>
+                    <div class="form-group">
+                        <label for="nombre" class="col-form-label">Apellido Contacto:</label>
+                        <input type="text" class="form-control" name="apellido" required autocomplete="off">
+                    </div>
+                    <div class="form-group">
+                        <label for="correo" class="col-form-label">Correo:</label>
+                        <input type="email" class="form-control" name="correo" required autocomplete="off">
+                    </div>
+                    <div class="form-group">
+                        <label class="col-form-label"> Teléfono:</label>
+                        <input type="number" class="form-control" maxlength="9" oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" name="campotel" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="categoria" class="col-form-label">Categoria:</label>
+
+                        <select class="form-control" name="id_profesion">
+                            @foreach (Nescoin.Conexion.Models.Tbl_Profesion pro in ViewBag.ListaProfesion)
+                            {
+                                <option value="@pro.id_profesion">@pro.descripcion</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-form-label">Su Actividad:</label>
+                        <input type="text" class="form-control" name="actividad" required autocomplete="off">
+                    </div>
+                    <div class="form-group">
+                        <label class="col-form-label">Seleccione calificación:</label>
+                        <select class="form-control" name="califica_frm11">
+                            <option value="5">★★★★★</option>
+                            <option value="4">★★★★</option>
+                            <option value="3">★★★</option>
+                            <option value="2">★★</option>
+                            <option value="1">★</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-agregar">Guardar</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                </div>
+
+            </div>
+
+        </div>
+    </form>
+</body>

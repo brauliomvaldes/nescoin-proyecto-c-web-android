@@ -1,0 +1,50 @@
+﻿@model Nescoin.Conexion.Models.Tbl_Contacto
+
+@{
+    ViewBag.Title = "Detalle";
+}
+
+<h2>Detalle</h2>
+
+<div>
+    <h4>Contacto</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.estado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.estado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tbl_Calificacion.nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tbl_Calificacion.nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tbl_Tipo_usuario.descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tbl_Tipo_usuario.descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tbl_Usuario.nick)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tbl_Usuario.nick)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Volver a la lista", "Index")
+</p>

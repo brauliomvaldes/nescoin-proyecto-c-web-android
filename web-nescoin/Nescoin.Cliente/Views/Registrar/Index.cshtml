@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewBag.Title = "Registrar";
+}
+
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+
+<form action="~/Registrar/RegistarNuevoProyecto" method="post">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Publicar Proyecto</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+                <div class="form-group">
+                    <label for="titulo-proyecto" class="col-form-label">Titulo Proyecto:</label>
+                    <input type="text" class="form-control" id="titulo-proyecto" name="frm1_titulo_proyecto" required autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label for="descripcion" class="col-form-label">Descripción:</label>
+                    <textarea class="form-control" id="descripcion" name="frm1_descripcion" required autocomplete="off"></textarea>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-agregar">Guardar</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,54 @@
+﻿
+@{
+    ViewBag.Title = "Recuperar contraseña acceso a NESCOIN";
+}
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="~/Content/stylelogin.css" />
+<!------ Include the above in your HEAD tag ---------->
+
+
+<form class="form-signin justify-content-xl-center" action="/Recupera/Recuperaclave" method="post">
+        <div class="simple-login-container">
+            <h2>Recuperar Contraseña</h2>
+            <div class="row">
+                <div class="col-md-12 form-group">
+                    <input type="text" placeholder="Nombre Usuario" class="form-control" name="usuario" required>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-md-12 form-group">
+                    <input type="email" placeholder="Ingrese correo principal registrado" class="form-control" name="correo" required>
+                </div>
+            </div>
+            <br>
+            Indicar correo registrado en su cuenta
+            de usuario registrado.
+            Se le enviará nueva contraseña.
+            <br>
+            <br />
+            <div class="row">
+                <div class="col-md-12 form-group">
+                    <input type="submit" class="btn btn-block btn-agregar">
+                </div>
+            </div>
+            <div class="alert alert-light" role="alert">
+                @if (ViewBag.ErrorRecupera != null)
+                {
+                    if (ViewBag.ErrorRecupera == "true")
+                    {
+                        <h2 class="alert-danger">@ViewBag.mensaje</h2>
+                    }
+                    else
+                    {
+                        <h2 class="alert-success">@ViewBag.mensaje</h2>
+                    }
+                }
+            </div>
+
+        </div>
+</form>
+

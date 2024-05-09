@@ -1,0 +1,41 @@
+﻿@model List<Nescoin.Conexion.Models.Vi_Trae_Historial>
+
+@foreach (var pro in Model)
+{
+   
+<div class="card m-2 p-1">
+    <div class="card-header">
+        <div class="card-title d-inline-block">
+            <h4><b>@pro.Tipo_Desc:</b> @pro.Titulo</h4>
+        </div>
+    </div>
+    <div class="card-body">
+        <div class="card-text">
+            @pro.descripcion
+        </div>
+    </div>
+
+    <div class="card-footer mt-1">
+        @if (pro.Tipo_Desc == "Proyecto")
+        {
+            <div class="col-5 d-inline-block"> Fecha Creación: @pro.fecha_movimiento</div>
+        }
+        else if (pro.Tipo_Desc == "Presupuesto")
+        {
+            <div class="col-5 d-inline-block"> Fecha Respuesta: @pro.fecha_movimiento</div>
+        }
+        else
+        {
+            <div class="col-5 d-inline-block"> Fecha Rechazo: @pro.fecha_movimiento</div>
+        }
+
+
+    </div>
+ </div>
+    }
+
+
+
+
+
+

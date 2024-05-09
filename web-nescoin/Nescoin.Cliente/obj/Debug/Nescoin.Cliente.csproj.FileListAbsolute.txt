@@ -1,0 +1,280 @@
+C:\Users\barri\source\repos\Nescoin\Nescoin.Cliente\bin\Nescoin.Cliente.dll.config
+C:\Users\barri\source\repos\Nescoin\Nescoin.Cliente\bin\Nescoin.Cliente.dll
+C:\Users\barri\source\repos\Nescoin\Nescoin.Cliente\bin\Nescoin.Cliente.pdb
+C:\Users\barri\source\repos\Nescoin\Nescoin.Cliente\bin\roslyn\csc.exe
+C:\Users\barri\source\repos\Nescoin\Nescoin.Cliente\bin\roslyn\csc.exe.config
+C:\Users\barri\source\repos\Nescoin\Nescoin.Cliente\bin\roslyn\csc.rsp
+C:\Users\barri\source\repos\Nescoin\Nescoin.Cliente\bin\roslyn\csi.exe
+C:\Users\barri\source\repos\Nescoin\Nescoin.Cliente\bin\roslyn\csi.rsp
+C:\Users\barri\source\repos\Nescoin\Nescoin.Cliente\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\barri\source\repos\Nescoin\Nescoin.Cliente\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\barri\source\repos\Nescoin\Nescoin.Cliente\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\barri\source\repos\Nescoin\Nescoin.Cliente\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\barri\source\repos\Nescoin\Nescoin.Cliente\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\barri\source\repos\Nescoin\Nescoin.Cliente\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\barri\source\repos\Nescoin\Nescoin.Cliente\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\barri\source\repos\Nescoin\Nescoin.Cliente\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\barri\source\repos\Nescoin\Nescoin.Cliente\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\barri\source\repos\Nescoin\Nescoin.Cliente\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\barri\source\repos\Nescoin\Nescoin.Cliente\bin\roslyn\System.AppContext.dll
+C:\Users\barri\source\repos\Nescoin\Nescoin.Cliente\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\barri\source\repos\Nescoin\Nescoin.Cliente\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\barri\source\repos\Nescoin\Nescoin.Cliente\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\barri\source\repos\Nescoin\Nescoin.Cliente\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\barri\source\repos\Nescoin\Nescoin.Cliente\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\barri\source\repos\Nescoin\Nescoin.Cliente\bin\roslyn\vbc.exe
+C:\Users\barri\source\repos\Nescoin\Nescoin.Cliente\bin\roslyn\vbc.exe.config
+C:\Users\barri\source\repos\Nescoin\Nescoin.Cliente\bin\roslyn\vbc.rsp
+C:\Users\barri\source\repos\Nescoin\Nescoin.Cliente\bin\roslyn\VBCSCompiler.exe
+C:\Users\barri\source\repos\Nescoin\Nescoin.Cliente\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\barri\source\repos\Nescoin\Nescoin.Cliente\bin\Antlr3.Runtime.dll
+C:\Users\barri\source\repos\Nescoin\Nescoin.Cliente\bin\EntityFramework.dll
+C:\Users\barri\source\repos\Nescoin\Nescoin.Cliente\bin\EntityFramework.SqlServer.dll
+C:\Users\barri\source\repos\Nescoin\Nescoin.Cliente\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\barri\source\repos\Nescoin\Nescoin.Cliente\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\barri\source\repos\Nescoin\Nescoin.Cliente\bin\Newtonsoft.Json.dll
+C:\Users\barri\source\repos\Nescoin\Nescoin.Cliente\bin\System.Web.Helpers.dll
+C:\Users\barri\source\repos\Nescoin\Nescoin.Cliente\bin\System.Web.Mvc.dll
+C:\Users\barri\source\repos\Nescoin\Nescoin.Cliente\bin\System.Web.Optimization.dll
+C:\Users\barri\source\repos\Nescoin\Nescoin.Cliente\bin\System.Web.Razor.dll
+C:\Users\barri\source\repos\Nescoin\Nescoin.Cliente\bin\System.Web.WebPages.Deployment.dll
+C:\Users\barri\source\repos\Nescoin\Nescoin.Cliente\bin\System.Web.WebPages.dll
+C:\Users\barri\source\repos\Nescoin\Nescoin.Cliente\bin\System.Web.WebPages.Razor.dll
+C:\Users\barri\source\repos\Nescoin\Nescoin.Cliente\bin\WebGrease.dll
+C:\Users\barri\source\repos\Nescoin\Nescoin.Cliente\bin\EntityFramework.xml
+C:\Users\barri\source\repos\Nescoin\Nescoin.Cliente\bin\EntityFramework.SqlServer.xml
+C:\Users\barri\source\repos\Nescoin\Nescoin.Cliente\bin\System.Web.Helpers.xml
+C:\Users\barri\source\repos\Nescoin\Nescoin.Cliente\bin\System.Web.Mvc.xml
+C:\Users\barri\source\repos\Nescoin\Nescoin.Cliente\bin\System.Web.Optimization.xml
+C:\Users\barri\source\repos\Nescoin\Nescoin.Cliente\bin\System.Web.Razor.xml
+C:\Users\barri\source\repos\Nescoin\Nescoin.Cliente\bin\System.Web.WebPages.xml
+C:\Users\barri\source\repos\Nescoin\Nescoin.Cliente\bin\System.Web.WebPages.Deployment.xml
+C:\Users\barri\source\repos\Nescoin\Nescoin.Cliente\bin\System.Web.WebPages.Razor.xml
+C:\Users\barri\source\repos\Nescoin\Nescoin.Cliente\bin\Newtonsoft.Json.xml
+C:\Users\barri\source\repos\Nescoin\Nescoin.Cliente\bin\Antlr3.Runtime.pdb
+C:\Users\barri\source\repos\Nescoin\Nescoin.Cliente\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\barri\source\repos\Nescoin\Nescoin.Cliente\bin\es\System.Web.Helpers.resources.dll
+C:\Users\barri\source\repos\Nescoin\Nescoin.Cliente\bin\es\System.Web.Mvc.resources.dll
+C:\Users\barri\source\repos\Nescoin\Nescoin.Cliente\bin\es\System.Web.Optimization.resources.dll
+C:\Users\barri\source\repos\Nescoin\Nescoin.Cliente\bin\es\System.Web.Razor.resources.dll
+C:\Users\barri\source\repos\Nescoin\Nescoin.Cliente\bin\es\System.Web.WebPages.resources.dll
+C:\Users\barri\source\repos\Nescoin\Nescoin.Cliente\bin\es\System.Web.WebPages.Deployment.resources.dll
+C:\Users\barri\source\repos\Nescoin\Nescoin.Cliente\bin\es\System.Web.WebPages.Razor.resources.dll
+C:\Users\barri\source\repos\Nescoin\Nescoin.Cliente\obj\Debug\Nescoin.Cliente.csprojAssemblyReference.cache
+C:\Users\barri\source\repos\Nescoin\Nescoin.Cliente\obj\Debug\Nescoin.Cliente.csproj.CoreCompileInputs.cache
+C:\Users\barri\source\repos\Nescoin\Nescoin.Cliente\obj\Debug\Nescoin.Cliente.csproj.CopyComplete
+C:\Users\barri\source\repos\Nescoin\Nescoin.Cliente\obj\Debug\Nescoin.Cliente.dll
+C:\Users\barri\source\repos\Nescoin\Nescoin.Cliente\obj\Debug\Nescoin.Cliente.pdb
+C:\Users\barri\source\repos\Nescoin\Nescoin.Cliente\bin\Nescoin.Conexion.dll
+C:\Users\barri\source\repos\Nescoin\Nescoin.Cliente\bin\Nescoin.Conexion.pdb
+C:\Users\barri\source\repos\Nescoin\Nescoin.Cliente\bin\Nescoin.Conexion.dll.config
+D:\INACAP\octavo semestre\Seminario de Grado\nescoin\web-nescoin\Nescoin.Cliente\bin\Nescoin.Cliente.dll.config
+D:\INACAP\octavo semestre\Seminario de Grado\nescoin\web-nescoin\Nescoin.Cliente\bin\Nescoin.Cliente.dll
+D:\INACAP\octavo semestre\Seminario de Grado\nescoin\web-nescoin\Nescoin.Cliente\bin\Nescoin.Cliente.pdb
+D:\INACAP\octavo semestre\Seminario de Grado\nescoin\web-nescoin\Nescoin.Cliente\bin\roslyn\csc.exe
+D:\INACAP\octavo semestre\Seminario de Grado\nescoin\web-nescoin\Nescoin.Cliente\bin\roslyn\csc.exe.config
+D:\INACAP\octavo semestre\Seminario de Grado\nescoin\web-nescoin\Nescoin.Cliente\bin\roslyn\csc.rsp
+D:\INACAP\octavo semestre\Seminario de Grado\nescoin\web-nescoin\Nescoin.Cliente\bin\roslyn\csi.exe
+D:\INACAP\octavo semestre\Seminario de Grado\nescoin\web-nescoin\Nescoin.Cliente\bin\roslyn\csi.rsp
+D:\INACAP\octavo semestre\Seminario de Grado\nescoin\web-nescoin\Nescoin.Cliente\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\INACAP\octavo semestre\Seminario de Grado\nescoin\web-nescoin\Nescoin.Cliente\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\INACAP\octavo semestre\Seminario de Grado\nescoin\web-nescoin\Nescoin.Cliente\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\INACAP\octavo semestre\Seminario de Grado\nescoin\web-nescoin\Nescoin.Cliente\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\INACAP\octavo semestre\Seminario de Grado\nescoin\web-nescoin\Nescoin.Cliente\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\INACAP\octavo semestre\Seminario de Grado\nescoin\web-nescoin\Nescoin.Cliente\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\INACAP\octavo semestre\Seminario de Grado\nescoin\web-nescoin\Nescoin.Cliente\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\INACAP\octavo semestre\Seminario de Grado\nescoin\web-nescoin\Nescoin.Cliente\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\INACAP\octavo semestre\Seminario de Grado\nescoin\web-nescoin\Nescoin.Cliente\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\INACAP\octavo semestre\Seminario de Grado\nescoin\web-nescoin\Nescoin.Cliente\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\INACAP\octavo semestre\Seminario de Grado\nescoin\web-nescoin\Nescoin.Cliente\bin\roslyn\System.AppContext.dll
+D:\INACAP\octavo semestre\Seminario de Grado\nescoin\web-nescoin\Nescoin.Cliente\bin\roslyn\System.Collections.Immutable.dll
+D:\INACAP\octavo semestre\Seminario de Grado\nescoin\web-nescoin\Nescoin.Cliente\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\INACAP\octavo semestre\Seminario de Grado\nescoin\web-nescoin\Nescoin.Cliente\bin\roslyn\System.IO.FileSystem.dll
+D:\INACAP\octavo semestre\Seminario de Grado\nescoin\web-nescoin\Nescoin.Cliente\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\INACAP\octavo semestre\Seminario de Grado\nescoin\web-nescoin\Nescoin.Cliente\bin\roslyn\System.Reflection.Metadata.dll
+D:\INACAP\octavo semestre\Seminario de Grado\nescoin\web-nescoin\Nescoin.Cliente\bin\roslyn\vbc.exe
+D:\INACAP\octavo semestre\Seminario de Grado\nescoin\web-nescoin\Nescoin.Cliente\bin\roslyn\vbc.exe.config
+D:\INACAP\octavo semestre\Seminario de Grado\nescoin\web-nescoin\Nescoin.Cliente\bin\roslyn\vbc.rsp
+D:\INACAP\octavo semestre\Seminario de Grado\nescoin\web-nescoin\Nescoin.Cliente\bin\roslyn\VBCSCompiler.exe
+D:\INACAP\octavo semestre\Seminario de Grado\nescoin\web-nescoin\Nescoin.Cliente\bin\roslyn\VBCSCompiler.exe.config
+D:\INACAP\octavo semestre\Seminario de Grado\nescoin\web-nescoin\Nescoin.Cliente\bin\Antlr3.Runtime.dll
+D:\INACAP\octavo semestre\Seminario de Grado\nescoin\web-nescoin\Nescoin.Cliente\bin\EntityFramework.dll
+D:\INACAP\octavo semestre\Seminario de Grado\nescoin\web-nescoin\Nescoin.Cliente\bin\EntityFramework.SqlServer.dll
+D:\INACAP\octavo semestre\Seminario de Grado\nescoin\web-nescoin\Nescoin.Cliente\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\INACAP\octavo semestre\Seminario de Grado\nescoin\web-nescoin\Nescoin.Cliente\bin\Microsoft.Web.Infrastructure.dll
+D:\INACAP\octavo semestre\Seminario de Grado\nescoin\web-nescoin\Nescoin.Cliente\bin\Nescoin.Conexion.dll
+D:\INACAP\octavo semestre\Seminario de Grado\nescoin\web-nescoin\Nescoin.Cliente\bin\Newtonsoft.Json.dll
+D:\INACAP\octavo semestre\Seminario de Grado\nescoin\web-nescoin\Nescoin.Cliente\bin\System.Web.Helpers.dll
+D:\INACAP\octavo semestre\Seminario de Grado\nescoin\web-nescoin\Nescoin.Cliente\bin\System.Web.Mvc.dll
+D:\INACAP\octavo semestre\Seminario de Grado\nescoin\web-nescoin\Nescoin.Cliente\bin\System.Web.Optimization.dll
+D:\INACAP\octavo semestre\Seminario de Grado\nescoin\web-nescoin\Nescoin.Cliente\bin\System.Web.Razor.dll
+D:\INACAP\octavo semestre\Seminario de Grado\nescoin\web-nescoin\Nescoin.Cliente\bin\System.Web.WebPages.Deployment.dll
+D:\INACAP\octavo semestre\Seminario de Grado\nescoin\web-nescoin\Nescoin.Cliente\bin\System.Web.WebPages.dll
+D:\INACAP\octavo semestre\Seminario de Grado\nescoin\web-nescoin\Nescoin.Cliente\bin\System.Web.WebPages.Razor.dll
+D:\INACAP\octavo semestre\Seminario de Grado\nescoin\web-nescoin\Nescoin.Cliente\bin\WebGrease.dll
+D:\INACAP\octavo semestre\Seminario de Grado\nescoin\web-nescoin\Nescoin.Cliente\bin\Nescoin.Conexion.pdb
+D:\INACAP\octavo semestre\Seminario de Grado\nescoin\web-nescoin\Nescoin.Cliente\bin\Nescoin.Conexion.dll.config
+D:\INACAP\octavo semestre\Seminario de Grado\nescoin\web-nescoin\Nescoin.Cliente\bin\EntityFramework.xml
+D:\INACAP\octavo semestre\Seminario de Grado\nescoin\web-nescoin\Nescoin.Cliente\bin\EntityFramework.SqlServer.xml
+D:\INACAP\octavo semestre\Seminario de Grado\nescoin\web-nescoin\Nescoin.Cliente\bin\System.Web.Helpers.xml
+D:\INACAP\octavo semestre\Seminario de Grado\nescoin\web-nescoin\Nescoin.Cliente\bin\System.Web.Mvc.xml
+D:\INACAP\octavo semestre\Seminario de Grado\nescoin\web-nescoin\Nescoin.Cliente\bin\System.Web.Optimization.xml
+D:\INACAP\octavo semestre\Seminario de Grado\nescoin\web-nescoin\Nescoin.Cliente\bin\System.Web.Razor.xml
+D:\INACAP\octavo semestre\Seminario de Grado\nescoin\web-nescoin\Nescoin.Cliente\bin\System.Web.WebPages.xml
+D:\INACAP\octavo semestre\Seminario de Grado\nescoin\web-nescoin\Nescoin.Cliente\bin\System.Web.WebPages.Deployment.xml
+D:\INACAP\octavo semestre\Seminario de Grado\nescoin\web-nescoin\Nescoin.Cliente\bin\System.Web.WebPages.Razor.xml
+D:\INACAP\octavo semestre\Seminario de Grado\nescoin\web-nescoin\Nescoin.Cliente\bin\Newtonsoft.Json.xml
+D:\INACAP\octavo semestre\Seminario de Grado\nescoin\web-nescoin\Nescoin.Cliente\bin\Antlr3.Runtime.pdb
+D:\INACAP\octavo semestre\Seminario de Grado\nescoin\web-nescoin\Nescoin.Cliente\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\INACAP\octavo semestre\Seminario de Grado\nescoin\web-nescoin\Nescoin.Cliente\bin\es\System.Web.Helpers.resources.dll
+D:\INACAP\octavo semestre\Seminario de Grado\nescoin\web-nescoin\Nescoin.Cliente\bin\es\System.Web.Mvc.resources.dll
+D:\INACAP\octavo semestre\Seminario de Grado\nescoin\web-nescoin\Nescoin.Cliente\bin\es\System.Web.Optimization.resources.dll
+D:\INACAP\octavo semestre\Seminario de Grado\nescoin\web-nescoin\Nescoin.Cliente\bin\es\System.Web.Razor.resources.dll
+D:\INACAP\octavo semestre\Seminario de Grado\nescoin\web-nescoin\Nescoin.Cliente\bin\es\System.Web.WebPages.resources.dll
+D:\INACAP\octavo semestre\Seminario de Grado\nescoin\web-nescoin\Nescoin.Cliente\bin\es\System.Web.WebPages.Deployment.resources.dll
+D:\INACAP\octavo semestre\Seminario de Grado\nescoin\web-nescoin\Nescoin.Cliente\bin\es\System.Web.WebPages.Razor.resources.dll
+D:\INACAP\octavo semestre\Seminario de Grado\nescoin\web-nescoin\Nescoin.Cliente\obj\Debug\Nescoin.Cliente.csproj.CoreCompileInputs.cache
+D:\INACAP\octavo semestre\Seminario de Grado\nescoin\web-nescoin\Nescoin.Cliente\obj\Debug\Nescoin.Cliente.csproj.CopyComplete
+D:\INACAP\octavo semestre\Seminario de Grado\nescoin\web-nescoin\Nescoin.Cliente\obj\Debug\Nescoin.Cliente.dll
+D:\INACAP\octavo semestre\Seminario de Grado\nescoin\web-nescoin\Nescoin.Cliente\obj\Debug\Nescoin.Cliente.pdb
+D:\INACAP\octavo semestre\Seminario de Grado\nescoin\web-nescoin\Nescoin.Cliente\obj\Debug\Nescoin.Cliente.csprojAssemblyReference.cache
+C:\Otros\INACAP\OCTAVO SEMESTRE\Seminario de grado\Proyecto_Nescoin\Versiones_APP\web-nescoin\Nescoin.Cliente\bin\Nescoin.Cliente.dll.config
+C:\Otros\INACAP\OCTAVO SEMESTRE\Seminario de grado\Proyecto_Nescoin\Versiones_APP\web-nescoin\Nescoin.Cliente\bin\Nescoin.Cliente.dll
+C:\Otros\INACAP\OCTAVO SEMESTRE\Seminario de grado\Proyecto_Nescoin\Versiones_APP\web-nescoin\Nescoin.Cliente\bin\Nescoin.Cliente.pdb
+C:\Otros\INACAP\OCTAVO SEMESTRE\Seminario de grado\Proyecto_Nescoin\Versiones_APP\web-nescoin\Nescoin.Cliente\bin\roslyn\csc.exe
+C:\Otros\INACAP\OCTAVO SEMESTRE\Seminario de grado\Proyecto_Nescoin\Versiones_APP\web-nescoin\Nescoin.Cliente\bin\roslyn\csc.exe.config
+C:\Otros\INACAP\OCTAVO SEMESTRE\Seminario de grado\Proyecto_Nescoin\Versiones_APP\web-nescoin\Nescoin.Cliente\bin\roslyn\csc.rsp
+C:\Otros\INACAP\OCTAVO SEMESTRE\Seminario de grado\Proyecto_Nescoin\Versiones_APP\web-nescoin\Nescoin.Cliente\bin\roslyn\csi.exe
+C:\Otros\INACAP\OCTAVO SEMESTRE\Seminario de grado\Proyecto_Nescoin\Versiones_APP\web-nescoin\Nescoin.Cliente\bin\roslyn\csi.rsp
+C:\Otros\INACAP\OCTAVO SEMESTRE\Seminario de grado\Proyecto_Nescoin\Versiones_APP\web-nescoin\Nescoin.Cliente\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Otros\INACAP\OCTAVO SEMESTRE\Seminario de grado\Proyecto_Nescoin\Versiones_APP\web-nescoin\Nescoin.Cliente\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Otros\INACAP\OCTAVO SEMESTRE\Seminario de grado\Proyecto_Nescoin\Versiones_APP\web-nescoin\Nescoin.Cliente\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Otros\INACAP\OCTAVO SEMESTRE\Seminario de grado\Proyecto_Nescoin\Versiones_APP\web-nescoin\Nescoin.Cliente\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Otros\INACAP\OCTAVO SEMESTRE\Seminario de grado\Proyecto_Nescoin\Versiones_APP\web-nescoin\Nescoin.Cliente\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Otros\INACAP\OCTAVO SEMESTRE\Seminario de grado\Proyecto_Nescoin\Versiones_APP\web-nescoin\Nescoin.Cliente\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Otros\INACAP\OCTAVO SEMESTRE\Seminario de grado\Proyecto_Nescoin\Versiones_APP\web-nescoin\Nescoin.Cliente\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Otros\INACAP\OCTAVO SEMESTRE\Seminario de grado\Proyecto_Nescoin\Versiones_APP\web-nescoin\Nescoin.Cliente\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Otros\INACAP\OCTAVO SEMESTRE\Seminario de grado\Proyecto_Nescoin\Versiones_APP\web-nescoin\Nescoin.Cliente\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Otros\INACAP\OCTAVO SEMESTRE\Seminario de grado\Proyecto_Nescoin\Versiones_APP\web-nescoin\Nescoin.Cliente\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Otros\INACAP\OCTAVO SEMESTRE\Seminario de grado\Proyecto_Nescoin\Versiones_APP\web-nescoin\Nescoin.Cliente\bin\roslyn\System.AppContext.dll
+C:\Otros\INACAP\OCTAVO SEMESTRE\Seminario de grado\Proyecto_Nescoin\Versiones_APP\web-nescoin\Nescoin.Cliente\bin\roslyn\System.Collections.Immutable.dll
+C:\Otros\INACAP\OCTAVO SEMESTRE\Seminario de grado\Proyecto_Nescoin\Versiones_APP\web-nescoin\Nescoin.Cliente\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Otros\INACAP\OCTAVO SEMESTRE\Seminario de grado\Proyecto_Nescoin\Versiones_APP\web-nescoin\Nescoin.Cliente\bin\roslyn\System.IO.FileSystem.dll
+C:\Otros\INACAP\OCTAVO SEMESTRE\Seminario de grado\Proyecto_Nescoin\Versiones_APP\web-nescoin\Nescoin.Cliente\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Otros\INACAP\OCTAVO SEMESTRE\Seminario de grado\Proyecto_Nescoin\Versiones_APP\web-nescoin\Nescoin.Cliente\bin\roslyn\System.Reflection.Metadata.dll
+C:\Otros\INACAP\OCTAVO SEMESTRE\Seminario de grado\Proyecto_Nescoin\Versiones_APP\web-nescoin\Nescoin.Cliente\bin\roslyn\vbc.exe
+C:\Otros\INACAP\OCTAVO SEMESTRE\Seminario de grado\Proyecto_Nescoin\Versiones_APP\web-nescoin\Nescoin.Cliente\bin\roslyn\vbc.exe.config
+C:\Otros\INACAP\OCTAVO SEMESTRE\Seminario de grado\Proyecto_Nescoin\Versiones_APP\web-nescoin\Nescoin.Cliente\bin\roslyn\vbc.rsp
+C:\Otros\INACAP\OCTAVO SEMESTRE\Seminario de grado\Proyecto_Nescoin\Versiones_APP\web-nescoin\Nescoin.Cliente\bin\roslyn\VBCSCompiler.exe
+C:\Otros\INACAP\OCTAVO SEMESTRE\Seminario de grado\Proyecto_Nescoin\Versiones_APP\web-nescoin\Nescoin.Cliente\bin\roslyn\VBCSCompiler.exe.config
+C:\Otros\INACAP\OCTAVO SEMESTRE\Seminario de grado\Proyecto_Nescoin\Versiones_APP\web-nescoin\Nescoin.Cliente\bin\Antlr3.Runtime.dll
+C:\Otros\INACAP\OCTAVO SEMESTRE\Seminario de grado\Proyecto_Nescoin\Versiones_APP\web-nescoin\Nescoin.Cliente\bin\EntityFramework.dll
+C:\Otros\INACAP\OCTAVO SEMESTRE\Seminario de grado\Proyecto_Nescoin\Versiones_APP\web-nescoin\Nescoin.Cliente\bin\EntityFramework.SqlServer.dll
+C:\Otros\INACAP\OCTAVO SEMESTRE\Seminario de grado\Proyecto_Nescoin\Versiones_APP\web-nescoin\Nescoin.Cliente\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Otros\INACAP\OCTAVO SEMESTRE\Seminario de grado\Proyecto_Nescoin\Versiones_APP\web-nescoin\Nescoin.Cliente\bin\Microsoft.Web.Infrastructure.dll
+C:\Otros\INACAP\OCTAVO SEMESTRE\Seminario de grado\Proyecto_Nescoin\Versiones_APP\web-nescoin\Nescoin.Cliente\bin\Nescoin.Conexion.dll
+C:\Otros\INACAP\OCTAVO SEMESTRE\Seminario de grado\Proyecto_Nescoin\Versiones_APP\web-nescoin\Nescoin.Cliente\bin\Newtonsoft.Json.dll
+C:\Otros\INACAP\OCTAVO SEMESTRE\Seminario de grado\Proyecto_Nescoin\Versiones_APP\web-nescoin\Nescoin.Cliente\bin\System.Web.Helpers.dll
+C:\Otros\INACAP\OCTAVO SEMESTRE\Seminario de grado\Proyecto_Nescoin\Versiones_APP\web-nescoin\Nescoin.Cliente\bin\System.Web.Mvc.dll
+C:\Otros\INACAP\OCTAVO SEMESTRE\Seminario de grado\Proyecto_Nescoin\Versiones_APP\web-nescoin\Nescoin.Cliente\bin\System.Web.Optimization.dll
+C:\Otros\INACAP\OCTAVO SEMESTRE\Seminario de grado\Proyecto_Nescoin\Versiones_APP\web-nescoin\Nescoin.Cliente\bin\System.Web.Razor.dll
+C:\Otros\INACAP\OCTAVO SEMESTRE\Seminario de grado\Proyecto_Nescoin\Versiones_APP\web-nescoin\Nescoin.Cliente\bin\System.Web.WebPages.Deployment.dll
+C:\Otros\INACAP\OCTAVO SEMESTRE\Seminario de grado\Proyecto_Nescoin\Versiones_APP\web-nescoin\Nescoin.Cliente\bin\System.Web.WebPages.dll
+C:\Otros\INACAP\OCTAVO SEMESTRE\Seminario de grado\Proyecto_Nescoin\Versiones_APP\web-nescoin\Nescoin.Cliente\bin\System.Web.WebPages.Razor.dll
+C:\Otros\INACAP\OCTAVO SEMESTRE\Seminario de grado\Proyecto_Nescoin\Versiones_APP\web-nescoin\Nescoin.Cliente\bin\WebGrease.dll
+C:\Otros\INACAP\OCTAVO SEMESTRE\Seminario de grado\Proyecto_Nescoin\Versiones_APP\web-nescoin\Nescoin.Cliente\bin\Nescoin.Conexion.pdb
+C:\Otros\INACAP\OCTAVO SEMESTRE\Seminario de grado\Proyecto_Nescoin\Versiones_APP\web-nescoin\Nescoin.Cliente\bin\Nescoin.Conexion.dll.config
+C:\Otros\INACAP\OCTAVO SEMESTRE\Seminario de grado\Proyecto_Nescoin\Versiones_APP\web-nescoin\Nescoin.Cliente\bin\EntityFramework.xml
+C:\Otros\INACAP\OCTAVO SEMESTRE\Seminario de grado\Proyecto_Nescoin\Versiones_APP\web-nescoin\Nescoin.Cliente\bin\EntityFramework.SqlServer.xml
+C:\Otros\INACAP\OCTAVO SEMESTRE\Seminario de grado\Proyecto_Nescoin\Versiones_APP\web-nescoin\Nescoin.Cliente\bin\System.Web.Helpers.xml
+C:\Otros\INACAP\OCTAVO SEMESTRE\Seminario de grado\Proyecto_Nescoin\Versiones_APP\web-nescoin\Nescoin.Cliente\bin\System.Web.Mvc.xml
+C:\Otros\INACAP\OCTAVO SEMESTRE\Seminario de grado\Proyecto_Nescoin\Versiones_APP\web-nescoin\Nescoin.Cliente\bin\System.Web.Optimization.xml
+C:\Otros\INACAP\OCTAVO SEMESTRE\Seminario de grado\Proyecto_Nescoin\Versiones_APP\web-nescoin\Nescoin.Cliente\bin\System.Web.Razor.xml
+C:\Otros\INACAP\OCTAVO SEMESTRE\Seminario de grado\Proyecto_Nescoin\Versiones_APP\web-nescoin\Nescoin.Cliente\bin\System.Web.WebPages.xml
+C:\Otros\INACAP\OCTAVO SEMESTRE\Seminario de grado\Proyecto_Nescoin\Versiones_APP\web-nescoin\Nescoin.Cliente\bin\System.Web.WebPages.Deployment.xml
+C:\Otros\INACAP\OCTAVO SEMESTRE\Seminario de grado\Proyecto_Nescoin\Versiones_APP\web-nescoin\Nescoin.Cliente\bin\System.Web.WebPages.Razor.xml
+C:\Otros\INACAP\OCTAVO SEMESTRE\Seminario de grado\Proyecto_Nescoin\Versiones_APP\web-nescoin\Nescoin.Cliente\bin\Newtonsoft.Json.xml
+C:\Otros\INACAP\OCTAVO SEMESTRE\Seminario de grado\Proyecto_Nescoin\Versiones_APP\web-nescoin\Nescoin.Cliente\bin\Antlr3.Runtime.pdb
+C:\Otros\INACAP\OCTAVO SEMESTRE\Seminario de grado\Proyecto_Nescoin\Versiones_APP\web-nescoin\Nescoin.Cliente\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Otros\INACAP\OCTAVO SEMESTRE\Seminario de grado\Proyecto_Nescoin\Versiones_APP\web-nescoin\Nescoin.Cliente\bin\es\System.Web.Helpers.resources.dll
+C:\Otros\INACAP\OCTAVO SEMESTRE\Seminario de grado\Proyecto_Nescoin\Versiones_APP\web-nescoin\Nescoin.Cliente\bin\es\System.Web.Mvc.resources.dll
+C:\Otros\INACAP\OCTAVO SEMESTRE\Seminario de grado\Proyecto_Nescoin\Versiones_APP\web-nescoin\Nescoin.Cliente\bin\es\System.Web.Optimization.resources.dll
+C:\Otros\INACAP\OCTAVO SEMESTRE\Seminario de grado\Proyecto_Nescoin\Versiones_APP\web-nescoin\Nescoin.Cliente\bin\es\System.Web.Razor.resources.dll
+C:\Otros\INACAP\OCTAVO SEMESTRE\Seminario de grado\Proyecto_Nescoin\Versiones_APP\web-nescoin\Nescoin.Cliente\bin\es\System.Web.WebPages.resources.dll
+C:\Otros\INACAP\OCTAVO SEMESTRE\Seminario de grado\Proyecto_Nescoin\Versiones_APP\web-nescoin\Nescoin.Cliente\bin\es\System.Web.WebPages.Deployment.resources.dll
+C:\Otros\INACAP\OCTAVO SEMESTRE\Seminario de grado\Proyecto_Nescoin\Versiones_APP\web-nescoin\Nescoin.Cliente\bin\es\System.Web.WebPages.Razor.resources.dll
+C:\Otros\INACAP\OCTAVO SEMESTRE\Seminario de grado\Proyecto_Nescoin\Versiones_APP\web-nescoin\Nescoin.Cliente\obj\Debug\Nescoin.Cliente.csprojAssemblyReference.cache
+C:\Otros\INACAP\OCTAVO SEMESTRE\Seminario de grado\Proyecto_Nescoin\Versiones_APP\web-nescoin\Nescoin.Cliente\obj\Debug\Nescoin.Cliente.csproj.CoreCompileInputs.cache
+C:\Otros\INACAP\OCTAVO SEMESTRE\Seminario de grado\Proyecto_Nescoin\Versiones_APP\web-nescoin\Nescoin.Cliente\obj\Debug\Nescoin.Cliente.csproj.CopyComplete
+C:\Otros\INACAP\OCTAVO SEMESTRE\Seminario de grado\Proyecto_Nescoin\Versiones_APP\web-nescoin\Nescoin.Cliente\obj\Debug\Nescoin.Cliente.dll
+C:\Otros\INACAP\OCTAVO SEMESTRE\Seminario de grado\Proyecto_Nescoin\Versiones_APP\web-nescoin\Nescoin.Cliente\obj\Debug\Nescoin.Cliente.pdb
+C:\NESCOIN\VERSION_OFICIAL\web-nescoin\Nescoin.Cliente\bin\Nescoin.Cliente.dll.config
+C:\NESCOIN\VERSION_OFICIAL\web-nescoin\Nescoin.Cliente\bin\Nescoin.Cliente.dll
+C:\NESCOIN\VERSION_OFICIAL\web-nescoin\Nescoin.Cliente\bin\Nescoin.Cliente.pdb
+C:\NESCOIN\VERSION_OFICIAL\web-nescoin\Nescoin.Cliente\bin\roslyn\csc.exe
+C:\NESCOIN\VERSION_OFICIAL\web-nescoin\Nescoin.Cliente\bin\roslyn\csc.exe.config
+C:\NESCOIN\VERSION_OFICIAL\web-nescoin\Nescoin.Cliente\bin\roslyn\csc.rsp
+C:\NESCOIN\VERSION_OFICIAL\web-nescoin\Nescoin.Cliente\bin\roslyn\csi.exe
+C:\NESCOIN\VERSION_OFICIAL\web-nescoin\Nescoin.Cliente\bin\roslyn\csi.rsp
+C:\NESCOIN\VERSION_OFICIAL\web-nescoin\Nescoin.Cliente\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\NESCOIN\VERSION_OFICIAL\web-nescoin\Nescoin.Cliente\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\NESCOIN\VERSION_OFICIAL\web-nescoin\Nescoin.Cliente\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\NESCOIN\VERSION_OFICIAL\web-nescoin\Nescoin.Cliente\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\NESCOIN\VERSION_OFICIAL\web-nescoin\Nescoin.Cliente\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\NESCOIN\VERSION_OFICIAL\web-nescoin\Nescoin.Cliente\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\NESCOIN\VERSION_OFICIAL\web-nescoin\Nescoin.Cliente\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\NESCOIN\VERSION_OFICIAL\web-nescoin\Nescoin.Cliente\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\NESCOIN\VERSION_OFICIAL\web-nescoin\Nescoin.Cliente\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\NESCOIN\VERSION_OFICIAL\web-nescoin\Nescoin.Cliente\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\NESCOIN\VERSION_OFICIAL\web-nescoin\Nescoin.Cliente\bin\roslyn\System.AppContext.dll
+C:\NESCOIN\VERSION_OFICIAL\web-nescoin\Nescoin.Cliente\bin\roslyn\System.Collections.Immutable.dll
+C:\NESCOIN\VERSION_OFICIAL\web-nescoin\Nescoin.Cliente\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\NESCOIN\VERSION_OFICIAL\web-nescoin\Nescoin.Cliente\bin\roslyn\System.IO.FileSystem.dll
+C:\NESCOIN\VERSION_OFICIAL\web-nescoin\Nescoin.Cliente\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\NESCOIN\VERSION_OFICIAL\web-nescoin\Nescoin.Cliente\bin\roslyn\System.Reflection.Metadata.dll
+C:\NESCOIN\VERSION_OFICIAL\web-nescoin\Nescoin.Cliente\bin\roslyn\vbc.exe
+C:\NESCOIN\VERSION_OFICIAL\web-nescoin\Nescoin.Cliente\bin\roslyn\vbc.exe.config
+C:\NESCOIN\VERSION_OFICIAL\web-nescoin\Nescoin.Cliente\bin\roslyn\vbc.rsp
+C:\NESCOIN\VERSION_OFICIAL\web-nescoin\Nescoin.Cliente\bin\roslyn\VBCSCompiler.exe
+C:\NESCOIN\VERSION_OFICIAL\web-nescoin\Nescoin.Cliente\bin\roslyn\VBCSCompiler.exe.config
+C:\NESCOIN\VERSION_OFICIAL\web-nescoin\Nescoin.Cliente\bin\Antlr3.Runtime.dll
+C:\NESCOIN\VERSION_OFICIAL\web-nescoin\Nescoin.Cliente\bin\EntityFramework.dll
+C:\NESCOIN\VERSION_OFICIAL\web-nescoin\Nescoin.Cliente\bin\EntityFramework.SqlServer.dll
+C:\NESCOIN\VERSION_OFICIAL\web-nescoin\Nescoin.Cliente\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\NESCOIN\VERSION_OFICIAL\web-nescoin\Nescoin.Cliente\bin\Microsoft.Web.Infrastructure.dll
+C:\NESCOIN\VERSION_OFICIAL\web-nescoin\Nescoin.Cliente\bin\Nescoin.Conexion.dll
+C:\NESCOIN\VERSION_OFICIAL\web-nescoin\Nescoin.Cliente\bin\Newtonsoft.Json.dll
+C:\NESCOIN\VERSION_OFICIAL\web-nescoin\Nescoin.Cliente\bin\System.Web.Helpers.dll
+C:\NESCOIN\VERSION_OFICIAL\web-nescoin\Nescoin.Cliente\bin\System.Web.Mvc.dll
+C:\NESCOIN\VERSION_OFICIAL\web-nescoin\Nescoin.Cliente\bin\System.Web.Optimization.dll
+C:\NESCOIN\VERSION_OFICIAL\web-nescoin\Nescoin.Cliente\bin\System.Web.Razor.dll
+C:\NESCOIN\VERSION_OFICIAL\web-nescoin\Nescoin.Cliente\bin\System.Web.WebPages.Deployment.dll
+C:\NESCOIN\VERSION_OFICIAL\web-nescoin\Nescoin.Cliente\bin\System.Web.WebPages.dll
+C:\NESCOIN\VERSION_OFICIAL\web-nescoin\Nescoin.Cliente\bin\System.Web.WebPages.Razor.dll
+C:\NESCOIN\VERSION_OFICIAL\web-nescoin\Nescoin.Cliente\bin\WebGrease.dll
+C:\NESCOIN\VERSION_OFICIAL\web-nescoin\Nescoin.Cliente\bin\Nescoin.Conexion.pdb
+C:\NESCOIN\VERSION_OFICIAL\web-nescoin\Nescoin.Cliente\bin\Nescoin.Conexion.dll.config
+C:\NESCOIN\VERSION_OFICIAL\web-nescoin\Nescoin.Cliente\bin\EntityFramework.xml
+C:\NESCOIN\VERSION_OFICIAL\web-nescoin\Nescoin.Cliente\bin\EntityFramework.SqlServer.xml
+C:\NESCOIN\VERSION_OFICIAL\web-nescoin\Nescoin.Cliente\bin\System.Web.Helpers.xml
+C:\NESCOIN\VERSION_OFICIAL\web-nescoin\Nescoin.Cliente\bin\System.Web.Mvc.xml
+C:\NESCOIN\VERSION_OFICIAL\web-nescoin\Nescoin.Cliente\bin\System.Web.Optimization.xml
+C:\NESCOIN\VERSION_OFICIAL\web-nescoin\Nescoin.Cliente\bin\System.Web.Razor.xml
+C:\NESCOIN\VERSION_OFICIAL\web-nescoin\Nescoin.Cliente\bin\System.Web.WebPages.xml
+C:\NESCOIN\VERSION_OFICIAL\web-nescoin\Nescoin.Cliente\bin\System.Web.WebPages.Deployment.xml
+C:\NESCOIN\VERSION_OFICIAL\web-nescoin\Nescoin.Cliente\bin\System.Web.WebPages.Razor.xml
+C:\NESCOIN\VERSION_OFICIAL\web-nescoin\Nescoin.Cliente\bin\Newtonsoft.Json.xml
+C:\NESCOIN\VERSION_OFICIAL\web-nescoin\Nescoin.Cliente\bin\Antlr3.Runtime.pdb
+C:\NESCOIN\VERSION_OFICIAL\web-nescoin\Nescoin.Cliente\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\NESCOIN\VERSION_OFICIAL\web-nescoin\Nescoin.Cliente\bin\es\System.Web.Helpers.resources.dll
+C:\NESCOIN\VERSION_OFICIAL\web-nescoin\Nescoin.Cliente\bin\es\System.Web.Mvc.resources.dll
+C:\NESCOIN\VERSION_OFICIAL\web-nescoin\Nescoin.Cliente\bin\es\System.Web.Optimization.resources.dll
+C:\NESCOIN\VERSION_OFICIAL\web-nescoin\Nescoin.Cliente\bin\es\System.Web.Razor.resources.dll
+C:\NESCOIN\VERSION_OFICIAL\web-nescoin\Nescoin.Cliente\bin\es\System.Web.WebPages.resources.dll
+C:\NESCOIN\VERSION_OFICIAL\web-nescoin\Nescoin.Cliente\bin\es\System.Web.WebPages.Deployment.resources.dll
+C:\NESCOIN\VERSION_OFICIAL\web-nescoin\Nescoin.Cliente\bin\es\System.Web.WebPages.Razor.resources.dll
+C:\NESCOIN\VERSION_OFICIAL\web-nescoin\Nescoin.Cliente\obj\Debug\Nescoin.Cliente.csprojAssemblyReference.cache
+C:\NESCOIN\VERSION_OFICIAL\web-nescoin\Nescoin.Cliente\obj\Debug\Nescoin.Cliente.csproj.CoreCompileInputs.cache
+C:\NESCOIN\VERSION_OFICIAL\web-nescoin\Nescoin.Cliente\obj\Debug\Nescoin.Cliente.csproj.CopyComplete
+C:\NESCOIN\VERSION_OFICIAL\web-nescoin\Nescoin.Cliente\obj\Debug\Nescoin.Cliente.dll
+C:\NESCOIN\VERSION_OFICIAL\web-nescoin\Nescoin.Cliente\obj\Debug\Nescoin.Cliente.pdb

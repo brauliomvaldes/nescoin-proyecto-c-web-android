@@ -1,0 +1,95 @@
+﻿@model List<Nescoin.Conexion.Models.Vi_Trae_Oferta_Trabajo>
+@{
+    ViewBag.Title = "PublicarProyecto";
+}
+<script src="~/Scripts/jquery-3.5.1.min.js"></script>
+
+@foreach (var pro in Model)
+{
+    <div class="card m-2 p-2">
+
+        <div class="card-header">
+            <div class="card-title d-inline-block">
+                <h4>@pro.Titulo </h4>
+            </div>
+            @*<div class="d-inline-block float-right">
+                @for (var i = 1; i <= pro.id_calificacion; i++)
+                {
+                    <i class="text-warning fa fa-star float-right"></i>
+                }
+            </div>*@
+        </div>
+        <div class="card-body">
+            <div class="card-text">
+                @pro.descripcion
+            </div>
+        </div>
+        @{
+            ViewBag.EstadoOcultaBoton = "true";
+        }
+        <!-- -->
+        <!--Verifica si el proyecto ya fue solicitado-->
+
+        @if (ViewBag.VerificaPresupuesto != null)
+        {
+            foreach (Nescoin.Conexion.Models.Vi_Verifica_Presupuesto pro1 in ViewBag.VerificaPresupuesto)
+            {
+                if (@pro1.id_movimiento == @pro.id_movimiento)
+                {
+                    ViewBag.EstadoOcultaBoton = "false";
+                }
+            }
+        }
+
+        <input type="text" id="frm6_idUsuario" value=@pro.id_usuario hidden="hidden" />
+        <div class="card-footer mt-1">
+            <div class="col-5 d-inline-block"> Fecha Creación: @pro.fecha_movimiento</div>
+
+            <div class="col-2 d-inline-block float-right">
+                @if (ViewBag.EstadoOcultaBoton == "true")
+                {
+
+                    <button class="btn btn-sm btn-compartir" data-target="#editar" id=@pro.id_movimiento onClick="llamaControlador(this.id)">@ViewBag.BotonSolicitar</button>
+                }
+                else
+                {
+                    <h5><b>Solicitado</b></h5>
+                }
+
+            </div>
+
+
+            <!--Div de la ventana modal-->
+            <div class="modal fade" id="editar" tabindex="-1">
+            </div>
+
+        </div>
+    </div>
+}
+
+<script>
+
+    function llamaControlador(id) {
+
+        var div = document.getElementById("editar");
+        var xhr = new XMLHttpRequest();
+        var boton = document.getElementById(id).textContent;
+        var idusuario = document.getElementById("frm6_idUsuario").value;
+        var parametros = 'id_movimiento=' + id + '&estadoBoton=' + boton + '&idUsuario=' + idusuario;
+
+        xhr.onreadystatechange = function () {
+            if (xhr.status == 200 && xhr.readyState == 4) {
+                div.innerHTML = xhr.responseText;
+                $('#editar').modal("show");
+            }
+        }
+
+        xhr.open("POST", "/Oferta/Index", true);
+        xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+        xhr.send(parametros);
+    }
+
+</script>
+
+
+

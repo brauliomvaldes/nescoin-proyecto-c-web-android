@@ -1,0 +1,152 @@
+﻿@model List<Nescoin.Conexion.Models.Vi_Trae_Vitrina>
+
+@{
+    ViewBag.Title = "Pagina Contacto";
+}
+
+<div>
+    <div class="font-italic text-center">
+        <font class="saludo-usuario">Bienvenido: @ViewBag.nombreUsuario</font>
+    </div>
+</div>
+
+<!--INICIO contenedor principal-->
+<div class="card m-1 p-2">
+    <!--Saludo bienvenido*****************************************************************-->
+    <div class="container-fluid">
+
+        <!--DIBUJA LA LISTA DE CONTACTOS DEL USUARIO LOGEADO (LA DEL LAZO IZQUIERDO)-->
+        @Html.Action("retornaListaContacto", "ListaContacto")
+
+        <div class="container-fluid">
+            @if (Model.Count == 0)
+            {
+                <h1>No Existe Usuario</h1>
+            }
+            @foreach (var pro in Model)
+            {
+                <div class="col-md-10 col-lg-9  m-auto tab-pane d-inline-block detalle-contacto">
+                    <!--Inicio Puntuación Contacto-->
+                    <div class="card-header">
+                        <div class="d-inline-block">
+                            <h6>Detalle del contacto</h6>
+                        </div>
+                        <!--Pinta las estrellitas del usuario seleccionado-->
+                        <div class="d-inline-block float-right">
+                            @for (var i = 1; i <= pro.promedio_calificacion; i++)
+                            {
+                                <i class="text-warning fa fa-star float-right"></i>
+                            }
+                            <div class="float-right">@pro.promedio_calificacion &nbsp;</div>
+                        </div>
+                    </div>
+                    <!--Fin puntuación contacto-->
+                    <!--Inicio Datos del Contacto-->
+                    <div class="card-body">
+                        <div class="img-user float-left d-inline-block">
+                            <img src="~/assets/img/@pro.foto" class="rounded-circle img-thumbnail">
+                        </div>
+                        <div class="col-8 mt-2 d-inline-block">
+                            <h5>@pro.nombre  @pro.apellido</h5>
+                            <h6>@pro.Profesion</h6>
+                            <h6>@pro.descripcion</h6>
+                        </div>
+                    </div>
+                    <!--Fin Datos del Contacto-->
+                    <!--Inicio Acciones para el Contacto-->
+                    <div>
+                        <div class="float-right">
+                            <a class="btn btn-sm btn-agregar" data-target="#recalificar" data-toggle="modal">Re-Calificar</a>
+                            <button style="font-style:inherit; font-size:12px" type="button" class="btn btn-compartir" data-target="#CompartirContacto" data-toggle="modal"> Compartir <i class='fas fa-plus-circle'></i></button>
+                        </div>
+
+                        <div class="modal fade" id="CompartirContacto" tabindex="-1">
+                            @Html.Action("Index", "Compartir")
+                        </div>
+                        <!--PopUp Reclificar-->
+                        <div class="modal fade" id="recalificar" tabindex="-1">
+                            @Html.Action("Index", "Recalificar", new { id_usuario = pro.id_usuario })
+                        </div>
+                    </div>
+
+                    <!--Fin Acciones para el Contacto-->
+                    <!--Inicio contanedor TAB (Proyectos, Presupuesto-->
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="proyectos" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Proyectos que ofrece</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Presupuestos que me ha enviado</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#historial" role="tab" aria-controls="profile" aria-selected="false">Su Historial</a>
+                        </li>
+                    </ul>
+
+                    <!--***************************************************************************************************************************************************************-->
+                    <div class="col-12 tab-content border myTabContent " id="myTabContent">
+                        <!--Inicio contenedor proyectos-->
+                        <div class="tab-pane fade show active p-2" id="home" role="tabpanel" aria-labelledby="proyectos">
+                            <!--Boton Pop up Registro Proyectos-->
+                            @if (ViewBag.Session != null)
+                            {
+                                <div class="ml-2 float-right">
+                                    <button type="button" class="btn btn-agregar" data-target="#registrarProyecto" data-toggle="modal"><i class="fas fa-plus"></i></button>
+                                </div>
+                            }
+                            <!--------------------------------------------->
+                            <!--Vista de los proyectos con scrollbar-->
+                            <div class="list-tab">
+                                <section>
+                                    @Html.Action("retornaListaOfertaTrabajo", "Oferta", new { flag = "2" })
+                                </section>
+                            </div>
+                            <!--------------------------------------------->
+                            <!--Vista del pop up de registro proyectos-->
+                            @*<div class="modal fade" id="registrarProyecto" tabindex="-1">
+                            @Html.Partial("~/Views/Oferta/Registrar.cshtml")
+                        </div>*@
+                        </div>
+                        <!--------------------------------------------->
+                        <!--Fin contenedor proyectos-->
+                        <!--************************************************************************************************************************************************************-->
+                        <!--Inicio contenedor presupuesto-->
+                        <div class="tab-pane fade p-2" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+
+                            <!--Vista de los presupuestos con scrollbar-->
+                            <div class="list-tab">
+                                <section>
+                                    @Html.Action("retornaListaPresupuesto", "Presupuesto", new { flag = "2" })
+                                </section>
+                            </div>
+                            <!--------------------------------------------->
+                            <!--Vista del pop up de registro presupuestos-->
+                            <div class="modal fade" id="registrarPresupuesto" tabindex="-1">
+                                <!--Html.Partial("~/Views/Presupuesto/Registrar.cshtml")-->
+                            </div>
+
+                        </div>
+                        <!--Inicio contenedor presupuesto-->
+                        <!--***********************************************************************************************************************************************************-->
+                        <div class="tab-pane fade p-2" id="historial" role="tabpanel" aria-labelledby="profile-tab">
+                            <!--------------------------------------------->
+                            <!--Vista de los presupuestos con scrollbar-->
+                            <div class="list-tab">
+                                <section>
+                                    @Html.Action("retornaHistorialContacto", "HistorialContacto", new { flag = "2" })
+                                </section>
+                            </div>
+                        </div>
+                        <!--fin contenedor historial-->
+                        <!--*************************************************************************************************************************************************************-->
+
+                    </div>
+                    <!--Inicio contenedor historial-->
+                    <!--Fin contanedor TAB (Proyectos, Presupuesto-->
+
+                </div>
+            }
+        </div>
+
+    </div>
+</div>

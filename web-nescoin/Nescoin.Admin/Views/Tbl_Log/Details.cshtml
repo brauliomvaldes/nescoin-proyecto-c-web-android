@@ -1,0 +1,58 @@
+﻿@model Nescoin.Conexion.Models.Tbl_Log
+
+@{
+    ViewBag.Title = "Detalle";
+}
+
+<h2>Detalle</h2>
+
+<div>
+    <h4>Log</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.fecha)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fecha)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.hora)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.hora)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.estado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.estado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tbl_tipo_log.descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tbl_tipo_log.descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tbl_Usuario.nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tbl_Usuario.nombre)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id_log }) |
+    @Html.ActionLink("Volver a la lista", "Index")
+</p>

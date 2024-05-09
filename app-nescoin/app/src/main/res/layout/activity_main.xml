@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/img_logo"
+        android:layout_marginLeft="140dp"
+        android:scaleX="2.5"
+        android:scaleY="2.5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/ic_logo_nescoin_foreground" />
+
+    <EditText
+        android:id="@+id/edt_login_nick"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:hint="Correo del Usuario"
+        android:textColorHint="@color/colorGrey"
+        android:textColor="@color/colorGrey"
+        android:textSize="25dp"
+        android:inputType="textEmailAddress"
+        android:layout_below="@+id/img_logo"
+        android:layout_margin="20dp"
+        android:padding="10dp"
+        android:background="@drawable/edittext_redondo"/>
+
+    <EditText
+        android:id="@+id/edt_login_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/edt_login_nick"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:hint="Contraseña"
+        android:textColorHint="@color/colorGrey"
+        android:textColor="@color/colorGrey"
+        android:inputType="textPassword"
+        android:padding="10dp"
+        android:textSize="25dp"
+        android:background="@drawable/edittext_redondo"/>
+
+    <Button
+        android:id="@+id/btn_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/edt_login_password"
+        android:layout_marginLeft="130dp"
+        android:layout_marginTop="25dp"
+        android:onClick="chequealogin"
+        android:padding="10dp"
+        android:text=" Ingresar "
+        android:textColor="#fff"
+        android:textSize="25dp"
+        android:background="@drawable/boton_redondo"/>
+
+    <TextView
+        android:id="@+id/txtDontCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btn_login"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="42dp"
+        android:text="No tienes Cuenta?"
+        android:textSize="18dp" />
+
+    <TextView
+        android:id="@+id/txtRegistrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btn_login"
+        android:layout_alignRight="@id/txtDontCount"
+        android:layout_marginTop="35dp"
+        android:layout_marginRight="-146dp"
+        android:text="Registrate"
+        android:textColor="#da6d28"
+        android:textSize="25dp" />
+
+    <TextView
+        android:id="@+id/txtRecuperaClave"
+        android:layout_width="290dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtRegistrar"
+        android:layout_alignEnd="@id/txtRegistrar"
+        android:text="Recupera Contraseña"
+        android:textColor="#293DAA"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/textview_clave"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:gravity="center_horizontal"
+        android:textSize="30sp" />
+    <TextView
+        android:id="@+id/textview_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textview_clave"
+        android:layout_alignParentStart="true"
+        android:gravity="center_horizontal"
+        android:textSize="30sp" />
+
+</RelativeLayout>

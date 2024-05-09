@@ -1,0 +1,265 @@
+﻿@model List<Nescoin.Conexion.Models.Vi_Tbl_Echo_Prof_Comuna>
+
+@{
+
+    ViewBag.Title = "Home Page";
+}
+
+<head>
+    <meta charset="utf-8">
+    <link href="~/assets/css/style.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.12.4.min.js"></script>
+    <script src="~/Scripts/FileSaver.min.js"></script>
+    <script src="~/Scripts/Blob.min.js"></script>
+    <script src="~/Scripts/xls.core.min.js"></script>
+    <script src="~/Scripts/tableexport.js"></script>
+    <script src="~/Scripts/excellentexport.js"></script>
+       
+    <script>
+        function newApi(format) {
+            return ExcellentExport.convert({
+                anchor: 'anchorNewApi-' + format,
+                filename: 'data_123.' + format,
+                format: format
+            }, [{
+                name: 'Sheet Name Here 1',
+                from: {
+                    table: 'datatable'
+                }
+            }]);
+        }
+
+        function newApiArray(format) {
+            return ExcellentExport.convert({
+                anchor: 'anchorNewApi-' + format + '-array',
+                filename: 'data_123.array',
+                format: format
+            }, [{
+                name: 'Sheet Name Here 1',
+                from: {
+                    array: [['line 1', 1234, 'CN 你好'],
+                    ['line 2', 1234.56, 'JP こんにちは']
+                    ]
+                }
+            }]);
+        }
+
+        function exportSome() {
+            return ExcellentExport.convert({
+                anchor: "anchorNewApi-xlsx-some",
+                filename: "somedata",
+                format: "xlsx"
+            }, [{
+                name: 'Sheet number 1',
+                from: {
+                    table: 'datatable'
+                },
+                filterRowFn: function (row) {
+                    if (row[1] == 200) {
+                        return false;
+                    }
+                    return true;
+                },
+                removeColumns: [1],
+
+            }])
+        }
+    </script>
+</head>
+
+@if (Session["Usuario"] != null)
+{
+    <h5 style="text-align:center" class="text-capitalize"> Bienvenido: @Session["NombreUsuario"] </h5>
+    <div class="container container-fluid">
+
+        <br />
+        <a class="btn btn-sm btn-agregar float-right" href="/Registro/Index">Agregar cuentas</a>
+        <ul class="nav nav-tabs" id="pills-tab" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" id="Tablas" data-toggle="pill" href="#tbls" role="tab" aria-controls="pills-home" aria-selected="true">Mantención tablas</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="Informes" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Informes</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="Extra" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Inteligencia de negocios</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="Extra" data-toggle="pill" href="#baseContactos" role="tab" aria-controls="pills-contact" aria-selected="false">Base de contactos</a>
+            </li>
+        </ul>
+
+        <div class="tab-content" id="pills-tabContent">
+            <div class="tab-pane fade show active" id="tbls" role="tabpanel" aria-labelledby="pills-home-tab">
+                <table class="table table-bordered">
+                    <tr></tr>
+                    <tr>
+                        <td class="btn btn-secondary col-3">
+                            <a class="btn btn-secondary" href="~/Tbl_Usuario">Usuarios</a>
+                        </td>
+                        <td class="btn btn-secondary col-3">
+                            <a class="btn btn-secondary" href="~/Tbl_Profesion">Profesion</a>
+                        </td>
+                        <td class="btn btn-secondary col-3">
+                            <a class="btn btn-secondary" href="~/Tbl_Calificacion">Calificación</a>
+                        </td>
+                        <td class="btn btn-secondary col-3">
+                            <a class="btn btn-secondary" href="~/Tbl_Tipo_Usuario">Tipo de Usuario</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="btn btn-secondary col-3">
+                            <a class="btn btn-secondary" href="~/Tbl_Telefono">Telefono</a>
+                        </td>
+                        <td class="btn btn-secondary col-3">
+                            <a class="btn btn-secondary" href="~/Tbl_Contacto">Contactos</a>
+                        </td>
+                        <td class="btn btn-secondary col-3">
+                            <a class="btn btn-secondary" href="~/Tbl_Pais">Pais</a>
+                        </td>
+                        <td class="btn btn-secondary col-3">
+                            <a class="btn btn-secondary" href="~/Tbl_Tipo_Movimiento">Tipo de Movimiento</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="btn btn-secondary col-3">
+                            <a class="btn btn-secondary" href="~/Tbl_Ciudad">Ciudad</a>
+                        </td>
+                        <td class="btn btn-secondary col-3">
+                            <a class="btn btn-secondary" href="~/Tbl_Comuna">Comuna</a>
+                        </td>
+                        <td class="btn btn-secondary col-3">
+                            <a class="btn btn-secondary" href="~/Tbl_Correo">Correo</a>
+                        </td>
+                        <td class="btn btn-secondary col-3">
+                            <a class="btn btn-secondary" href="~/Tbl_Tipo_Cuenta">Tipo de Cuenta</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="btn btn-secondary col-3">
+                            <a class="btn btn-secondary" href="~/Tbl_Direccion">Direccion</a>
+                        </td>
+                        <td class="btn btn-secondary col-3">
+                            <a class="btn btn-secondary" href="~/Tbl_Usuario_Correo">Correos del Usuario</a>
+                        </td>
+                        <td class="btn btn-secondary col-3">
+                            <a class="btn btn-secondary" href="~/Tbl_Usuario_Profesion">Profesiones del Usuario</a>
+                        </td>
+                        <td class="btn btn-secondary col-3">
+                            <a class="btn btn-secondary" href="~/Tbl_Log">Log</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="btn btn-secondary col-3">
+                            <a class="btn btn-secondary" href="~/Tbl_Usuario_Telefono">Telefonos del Usuario</a>
+                        </td>
+                        <td class="btn btn-secondary col-3">
+                            <a class="btn btn-secondary" href="~/Tbl_Forma_Pago">Forma de Pago</a>
+                        </td>
+                        <td class="btn btn-secondary col-3">
+                            <a class="btn btn-secondary" href="~/Tbl_movimiento">Movimiento</a>
+                        </td>
+                        <td class="btn btn-secondary col-3">
+                            <a class="btn btn-secondary" href="~/Tbl_Tipo_Log">Tipo de Log</a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                <br />
+                <h6>INFORME N°1: Gestión de profesionales por comuna</h6>
+                <a download=" Gestión de profesionales por comuna.csv" href="#" class="btn btn-outline-primary float-lg-right" onclick="return ExcellentExport.csv(this, 'tablaInforme', ';');">Descargar a Excel</a>
+                @*<button class="btn btn-outline-primary float-lg-right" onclick="exportTableToExcel('tablaInforme', 'InformeGestionNescoin')">Descargar excel</button>**@
+                @*<button id="button-a">Create Excel</button>*@
+                <table class="table table-bordered" id="tablaInforme">
+                    <tr class="table-active ">
+                        <td>Comuna</td>
+                        <td>Informática</td>
+                        <td>Profesores</td>
+                        <td>Mecánica</td>
+                        <td>Total</td>
+                    </tr>
+                    @foreach (var pro in Model)
+                    {
+                        <tr>
+                            <td> @pro.comuna</td>
+                            <td> @pro.informatica</td>
+                            <td> @pro.Profesores</td>
+                            <td> @pro.Mecanica</td>
+                            <td> @pro.Total</td>
+                        </tr>
+                    }
+
+                </table>
+            </div>
+            <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+                <br />
+                <h6 class="text-center">CUADRO DE MANDO - BALANCE SCORECARD</h6>
+                Actualizado al: @DateTime.Now.Day/@DateTime.Now.Month/@DateTime.Now.Year
+
+                <table class="table table-bordered" id="tablaBI">
+                    <tr class="table-active btn-info text-center">
+                        <td>N°</td>
+                        <td>Objetivo</td>
+                        <td>Meta</td>
+                        <td>Indicador</td>
+                        <td>Iniciativa</td>
+                    </tr>
+                    @foreach (Nescoin.Conexion.Models.Tbl_IndicadoresBS pro1 in ViewBag.tblIndicador)
+                    {
+                        <tr>
+                            <td> <a class="btn btn-sm btn-agregar" data-target="#DetKpi" data-toggle="modal"> @pro1.id</a></td>
+                            <td> @pro1.Objetivos</td>
+                            <td> @pro1.Metas</td>
+                            <td> @pro1.Indicador</td>
+                            <td> @pro1.Iniciativas</td>
+                        </tr>
+                    }
+
+                </table>
+                <br />
+                Se han registrado 2 indicadores KPI
+            </div>
+
+            <div class="tab-pane fade" id="baseContactos" role="tabpanel" aria-labelledby="pills-contact-tab">
+                <br />
+                <h6>Base de datos de los usuarios en NESCOIN</h6>
+                <a download=" Gestión de profesionales por comuna.csv" href="#" class="btn btn-outline-primary float-lg-right" onclick="return ExcellentExport.csv(this, 'tablaCont', ';');">Descargar a Excel</a>
+                <table class="table table-bordered" id="tablaCont">
+                    <tr class="table-active btn-info text-center">
+                        <td>ID</td>
+                        <td>Correo</td>
+                        <td>Nombre</td>
+                        <td>Apellido</td>
+                        <td>Profesión</td>
+                        <td>Descripción</td>
+                        <td>Calificación</td>
+                    </tr>
+                    @foreach (Nescoin.Conexion.Models.Vi_Trae_Vitrina pro2 in ViewBag.tbl_Vitrina)
+                    {
+                        <tr>
+                            <td> @pro2.id_usuario</td>
+                            <td> @pro2.nick</td>
+                            <td> @pro2.nombre  </td>
+                            <td> @pro2.apellido </td>
+                            <td> @pro2.Profesion</td>
+                            <td> @pro2.descripcion</td>
+                            <td> @pro2.promedio_calificacion</td>
+                        </tr>
+                    }
+
+                </table>
+            </div>
+
+
+        </div>
+
+    </div>
+
+    <div class="modal fade" id="DetKpi" tabindex="-1">
+        @Html.Action("Index", "DetKpi")
+    </div>
+
+
+}
+

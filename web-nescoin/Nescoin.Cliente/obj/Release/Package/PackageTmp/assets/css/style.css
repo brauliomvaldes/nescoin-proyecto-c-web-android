@@ -1,0 +1,101 @@
+﻿body {
+    padding: 0px;
+    margin: 0px;
+}
+/**MENU */
+.dropdown-menu1{
+    margin-right:120px !important;
+}
+/*Input busqueda*/
+/*Inicio Estilos de la Lista de contacto*/
+.list-contact {
+    height: 72vh;
+    overflow-y: scroll;
+    scrollbar-width: thin;
+    scrollbar-color: #da6d28 #dfdfdf;
+}
+
+.list-contact::-webkit-scrollbar {
+    width: 7px;
+    
+}
+
+.list-contact::-webkit-scrollbar-track {
+    background:  #dfdfdf;
+}
+
+.list-contact::-webkit-scrollbar-thumb {
+    background:#da6d28;
+    border-radius: 10px;
+}
+
+/*Imagen de la lista de contacto*/
+.img-user {
+    width: 85px;
+}
+.img-user-list-contact {
+    width: 55px;
+}
+
+.img-logo-principal {
+    width: 205px;
+}
+
+.tarjeta-contacto {
+    width: 400px;
+    height: 220px;
+    font-size: 12px;
+}
+.tarjeta-contacto h5{
+    font-size:12px;
+}
+
+/***VITRINA*/
+.img-user-list-contact-vitrina {
+    width: 60px;
+}
+
+.tarjeta-contacto-vitrina{
+    margin-left: 0px!important;
+    margin-right: 60px!important;
+}
+
+/*Botones*/
+.btn-agregar {
+    background: #da6d28;
+    color: white;
+}
+
+.btn-compartir {
+    background: #0089ff;
+    color: white;
+}
+
+/*Fin Estilos de la Lista de contacto*/
+
+
+/*Detalle contacto*/
+.detalle-contacto{
+    height:72vh;
+}
+/* Estilos Tab Proyecto y Presupuesto*/
+.list-tab {
+    height: 40vh;
+    overflow-y: scroll;
+    scrollbar-width: thin;
+    scrollbar-color: #da6d28 #dfdfdf;
+}
+.list-tab::-webkit-scrollbar {
+    width: 7px;
+ 
+}
+
+    .list-tab::-webkit-scrollbar-track {
+        background: #dfdfdf;
+    }
+
+    .list-tab::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        background: #da6d28;
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+    }

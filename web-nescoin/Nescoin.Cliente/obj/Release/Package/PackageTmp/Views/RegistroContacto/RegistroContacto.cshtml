@@ -1,0 +1,77 @@
+﻿@{
+    ViewBag.Title = "RegistroContacto";
+    ViewBag.ListaProfesion = Session["Profesiones"];
+}
+<form action="#" method="post" id="formContacto">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">REGISTRAR NUEVO CONTACTO</h5>
+            </div>
+            <div class="form-group">
+                <label class="col-form-label"> Nombre Contacto:</label>
+                <input type="text" class="form-control" name="camponombre" id="camponombre">
+            </div>
+            <div class="form-group">
+                <label class="col-form-label"> Apellido Contacto:</label>
+                <input type="text" class="form-control" name="campoapellido" id="campoapellido">
+            </div>
+            <div class="form-group">
+                <label class="col-form-label"> Correo:</label>
+                <input type="email" class="form-control" name="campocorreo" id="campocorreo">
+            </div>
+            <div class="form-group">
+                <label class="col-form-label"> Teléfono:</label>
+                <input type="number" class="form-control" name="campotel" id="campotel">
+            </div>
+            <label class="col-form-label"> Categoria:</label>
+            <select class="form-control" name="campoid_profesion" id="campoid_profesion">
+                @foreach (Nescoin.Conexion.Models.Tbl_Profesion pro in ViewBag.ListaProfesion)
+                {
+                    <option value="@pro.id_profesion">@pro.descripcion</option>
+                }
+            </select>
+            <div class="form-group">
+                <label class="col-form-label"> Su Actividad:</label>
+                <input type="text" class="form-control" name="campoactividad" id="campoactividad">
+            </div>
+
+            <button type="submit" class="btn btn-agregar" onclick="Agregar()">Agregar Contacto</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        </div>
+    </div>
+</form>
+<div id="mensaje">
+
+</div>
+
+<script>
+
+    function Agregar() {
+        var div = document.getElementById("mensaje");
+        var formData = new FormData();
+
+        alert("nombre"+document.getElementById("camponombre").value);
+        alert("apellido"+document.getElementById("campoapellido").value);
+        alert("correo"+document.getElementById("campocorreo").value);
+        alert("profesion"+document.getElementById("campoid_profesion").value);
+        alert("actividad"+document.getElementById("campoactividad").value);
+
+        formData.append("nombre", document.getElementById("camponombre").value);
+        formData.append("apellido", document.getElementById("campoapellido").value);
+        formData.append("correo", document.getElementById("campocorreo").value);
+        formData.append("id_profesion", document.getElementById("campoid_profesion").value);
+        formData.append("actividad", document.getElementById("campoactividad").value);
+        formData.append("telefono", document.getElementById("campotel").value);
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                div.innerHTML = xhr.responseText;
+            }
+        }
+        alert("paso");
+        xhr.open("post", "/RegistroContacto/guardaDatos", true);
+        xhr.send(formData);
+    }
+</script>
+

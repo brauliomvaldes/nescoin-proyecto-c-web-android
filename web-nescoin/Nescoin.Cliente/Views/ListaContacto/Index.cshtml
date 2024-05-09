@@ -1,0 +1,148 @@
+﻿@model Nescoin.Conexion.Models.Vi_Trae_contactos_de_usuario
+<!--**********************************************************************************-->
+<!--Buscar contacto*******************************************************************-->
+<script src="~/Scripts/jquery-1.12.4.min.js"></script>
+<script src="~/Scripts/FileSaver.min.js"></script>
+<script src="~/Scripts/Blob.min.js"></script>
+<script src="~/Scripts/xls.core.min.js"></script>
+<script src="~/Scripts/tableexport.js"></script>
+<script src="~/Scripts/excellentexport.js"></script>
+
+<script>
+    function newApi(format) {
+        return ExcellentExport.convert({
+            anchor: 'anchorNewApi-' + format,
+            filename: 'data_123.' + format,
+            format: format
+        }, [{
+            name: 'Sheet Name Here 1',
+            from: {
+                table: 'datatable'
+            }
+        }]);
+    }
+
+    function newApiArray(format) {
+        return ExcellentExport.convert({
+            anchor: 'anchorNewApi-' + format + '-array',
+            filename: 'data_123.array',
+            format: format
+        }, [{
+            name: 'Sheet Name Here 1',
+            from: {
+                array: [['line 1', 1234, 'CN 你好'],
+                ['line 2', 1234.56, 'JP こんにちは']
+                ]
+            }
+        }]);
+    }
+
+    function exportSome() {
+        return ExcellentExport.convert({
+            anchor: "anchorNewApi-xlsx-some",
+            filename: "somedata",
+            format: "xlsx"
+        }, [{
+            name: 'Sheet number 1',
+            from: {
+                table: 'datatable'
+            },
+            filterRowFn: function (row) {
+                if (row[1] == 200) {
+                    return false;
+                }
+                return true;
+            },
+            removeColumns: [1],
+
+        }])
+    }
+</script>
+
+<div class="col-4  col-sm-3 font-italic bor">
+    <input id="buscarTexto" class="d-inline-block form-control-sm ml-1 mr-2 w-75" type="text" placeholder="Buscar Contacto" aria-label="Buscar"><i class="fas fa-search" aria-hidden="true"></i>
+    &nbsp;
+    <a download="MisContactos.csv"href="#" onclick="return ExcellentExport.csv(this, 'tablaContactos', ';');"><img src="~/assets/img/logoexcel.PNG" width="20" height="20" /></a>
+</div>
+
+
+<script>
+    $(document).ready(function () {
+        $("#buscarTexto").keyup(function () {
+            var searchtext = $(this).val();
+            console.log(searchtext);
+            $.ajax({
+                type: "Post",
+                url: "/ListaContacto/Search?buscarTexto=" + searchtext,
+                contentType: "html",
+                success: function (response) {
+                    $("#listaContactos").html(response);
+                }
+            })
+        })
+    })
+</script>
+
+<!--*****************************************************************************-->
+<!--Inicio Lista de Contactos***************************************************************************************-->
+<form action="DetalleContacto" id="formulario">
+    <div id="listaContactos" class="col-md-2 col-lg-3  mt-2 e d-inline-block float-left tab-pan  list-contact">
+
+        @foreach (var pro in ViewBag.ListaContactoAll)
+        {
+            <!--Inicio Tarjeta de contacto-->
+            <div class="card m-1 p-2" id="search-results" name="id_usuario">
+
+                <!--Inicio Puntuación Contacto-->
+                <div class="card-header">
+
+                    @for (var i = 1; i <= pro.promedio_calificacion; i++)
+                    {
+                        <i class="text-warning fa fa-star float-right"></i>
+                    }
+                    <div class="float-right">@pro.promedio_calificacion &nbsp;</div>
+                </div>
+
+
+                <input type="text" value=@pro.id_usuario hidden="hidden" name="id_usuario" />
+                <!--Fin Puntuación Contacto-->
+                <!--Inicio Datos del Contacto-->
+                <a href="/Home/DetalleContacto/?id_usuario=@pro.id_usuario">
+                    <div class="card-body">
+                        <div class="img-user-list-contact float-left d-inline-block">
+                            <img src="~/assets/img/@pro.foto" class="rounded-circle img-thumbnail">
+                        </div>
+                        <div class="col-8 col-sm-8 col-lg-8 mt-2 d-inline-block">
+                            <h5>@pro.nombre  @pro.apellido</h5>
+                            <h7>@pro.Profesion </h7>
+                            <h7 class="d-inline-block">Telefono: @pro.numero_telefono</h7>
+                            <h7 class="d-inline-block">Email: @pro.nick</h7>
+
+                        </div>
+                    </div>
+                </a>
+                <!--Fin Datos del Contacto-->
+            </div>
+            <!--Fin Tarjeta de contacto-->
+        }
+    </div>
+</form>
+<!--Fin Lista de Contactos********************************************************************************************************-->
+<br />
+<table hidden="hidden" id="tablaContactos">
+    <tr>
+        <td>Nombre</td>
+        <td>Profesion</td>
+        <td>Teléfono</td>   
+        <td>Email</td>
+    </tr>
+    @foreach (var pro in ViewBag.ListaContactoAll)
+    {
+        <tr>
+            <td>@pro.nombre  @pro.apellido</td>
+            <td>@pro.Profesion</td>
+            <td>@pro.numero_telefono</td>
+            <td>@pro.nick</td>
+        </tr>
+    }
+</table>

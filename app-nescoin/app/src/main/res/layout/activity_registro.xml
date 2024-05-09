@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/img_logo"
+        android:layout_marginLeft="140dp"
+        android:scaleX="2.5"
+        android:scaleY="2.5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/ic_logo_nescoin_foreground" />
+
+    <EditText
+        android:id="@+id/edt_login_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Correo Electrónico"
+        android:textColorHint="@color/colorGrey"
+        android:textColor="@color/colorGrey"
+        android:textSize="25dp"
+        android:inputType="textEmailAddress"
+        android:layout_below="@+id/img_logo"
+        android:layout_margin="15dp"
+        android:background="@drawable/edittext_input_redondo"
+        android:padding="10dp"/>
+    <EditText
+        android:id="@+id/edt_Nombre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColorHint="@color/colorGrey"
+        android:textColor="@color/colorGrey"
+        android:hint="Nombre"
+        android:textSize="25dp"
+        android:inputType="text"
+        android:layout_below="@id/edt_login_email"
+        android:layout_margin="15dp"
+        android:background="@drawable/edittext_input_redondo"
+        android:padding="10dp"/>
+    <EditText
+        android:id="@+id/edt_Apellido"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Contraseña"
+        android:textColorHint="@color/colorGrey"
+        android:textColor="@color/colorGrey"
+        android:textSize="25dp"
+        android:inputType="textPassword"
+        android:layout_below="@id/edt_Nombre"
+        android:layout_margin="15dp"
+        android:background="@drawable/edittext_input_redondo"
+        android:padding="10dp"/>
+    <EditText
+        android:id="@+id/edt_telefono"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Telefono"
+        android:textColorHint="@color/colorGrey"
+        android:textColor="@color/colorGrey"
+        android:textSize="25dp"
+        android:inputType="textPassword"
+        android:layout_below="@id/edt_Apellido"
+        android:layout_margin="15dp"
+        android:background="@drawable/edittext_input_redondo"
+        android:padding="10dp"/>
+    <EditText
+        android:id="@+id/edt_login_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Contraseña"
+        android:textColorHint="@color/colorGrey"
+        android:textColor="@color/colorGrey"
+        android:textSize="25dp"
+        android:inputType="textPassword"
+        android:layout_below="@id/edt_telefono"
+        android:layout_margin="15dp"
+        android:background="@drawable/edittext_input_redondo"
+        android:padding="10dp"/>
+    <EditText
+        android:id="@+id/edt_login_cpassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Contraseña"
+        android:textColorHint="@color/colorGrey"
+        android:textColor="@color/colorGrey"
+        android:textSize="25dp"
+        android:inputType="textPassword"
+        android:layout_below="@id/edt_login_password"
+        android:layout_margin="15dp"
+        android:background="@drawable/edittext_input_redondo"
+        android:padding="10dp"/>
+
+    <Button
+        android:id="@+id/btn_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:layout_marginLeft="130dp"
+        android:padding="10dp"
+        android:text="Guardar"
+        android:textSize="25dp"
+        android:textColor="#fff"
+        android:background="@drawable/boton_redondo"
+        android:layout_below="@id/edt_login_cpassword"/>
+
+    <TextView
+        android:id="@+id/txtDontCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btn_login"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="42dp"
+        android:text="Ya tienes Cuenta?"
+        android:textSize="18dp" />
+
+    <TextView
+        android:id="@+id/txt_btnRegistrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btn_login"
+        android:layout_alignRight="@id/txtDontCount"
+        android:layout_marginTop="35dp"
+        android:layout_marginRight="-146dp"
+        android:text="Inicia Sesión"
+        android:textColor="#da6d28"
+        android:textSize="25dp" />
+
+</RelativeLayout>

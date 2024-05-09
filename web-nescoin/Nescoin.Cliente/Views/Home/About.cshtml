@@ -1,0 +1,95 @@
+﻿@{
+    ViewBag.Title = "About";
+
+}
+<div class="container-fluid about-content">
+    <div class="text-center">
+        <h1>Sobre Nosotros</h1>
+    </div>
+
+    <hr />
+
+    <div class="col-12">
+        <div class="col-4 d-inline-block logo-about">
+            <img class="col-12 " src="~/assets/img/Logo-Nescoin.png" />
+        </div>
+
+        <div class="col-7  mt-5 d-inline-block text-justify align-items-center">
+            <span>
+                <p class="letra-inicial">
+                    Somos un equipo de estudiantes de la carrera de Ingeniería en Informática, de la<strong> universidad tecnológica de Chile INACAP</strong> de la<strong> sede de Puente Alto</strong> ,
+                    con un alto compromiso en la búsqueda de mejorar las actividades generales o especifica que pueda tener una persona u organización utilizando
+                    las tecnologías disponibles.
+                </p>
+                <p class="letra-inicial">
+                    <strong>NESCOIN </strong>es la primera aplicación desarrollada por nuestro equipo, apuntando al desarrollo de la confianza entre las personas,
+                    por medio de una agenda de contactos fácil de gestionar, con la posibilidad de evaluación o calificación de los contactos y su
+                    facilidad de poder compartir los contactos con otros.
+                </p>
+
+
+            </span>
+        </div>
+    </div>
+
+    <hr />
+    <div class="pregunta-frecuentes">
+        <h4>Preguntas Frecuentes</h4>
+
+        <div id="accordion">
+            <div class="card">
+                <div class="card-header" id="headingOne">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            ¿Que es <strong>NESCOIN</strong>?
+                        </button>
+                    </h5>
+                </div>
+
+                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                    <div class="card-body">
+                        <strong>NESCOIN</strong> es una aplicación para la gestión de contactos con diferentes oficios o profesión.
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" id="headingTwo">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            ¿Que puedo hacer con <strong>NESCOIN</strong>?
+                        </button>
+                    </h5>
+                </div>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                    <div class="card-body">
+                        Con <strong>NESCOIN</strong> puedes agregar tus contactos, de acuerdo al oficio que realiza tu contacto, puedes compartir a ese contacto
+                        con otros usuarios, y puedes calificar o recalificar a tu contacto agregado., esto permitira que otros usuarios pueda tomar una mejor decisión
+                        a la hora de contactar con alguien.
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" id="headingThree">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            ¿Quienes pueden usar <strong>NESCOIN</strong>?
+                        </button>
+                    </h5>
+                </div>
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                    <div class="card-body">
+                        Pueden usar <strong>NESCOIN</strong> personas de forma gratuita, hasta con un limite de 100 contactos en la aplicación.
+                        Y empresas que requieran tener una aplicación de gestión de contactos, que le permiten tener mas de 180 contactos por usuarios,
+                        y acceso al panel de administración.
+                        <br />
+                        <p>
+                            ¿Quieres saber sobre nuestros planes? <a href="~/home/planes">Haz click aquí</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>

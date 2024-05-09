@@ -1,0 +1,723 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BD_NESCOINModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Tbl_Calificacion">
+    <Key>
+      <PropertyRef Name="id_calificacion" />
+    </Key>
+    <Property Name="id_calificacion" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="descripcion" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="estado" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Tbl_Contacto" Relationship="Self.FK_Tbl_Contacto_Tbl_Calificacion" FromRole="Tbl_Calificacion" ToRole="Tbl_Contacto" />
+    <NavigationProperty Name="Tbl_movimiento" Relationship="Self.FK_Tbl_movimiento_Tbl_Calificacion" FromRole="Tbl_Calificacion" ToRole="Tbl_movimiento" />
+    <Property Name="nombre" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Tbl_Ciudad">
+    <Key>
+      <PropertyRef Name="id_ciudad" />
+    </Key>
+    <Property Name="id_ciudad" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="descripcion" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="id_pais" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="estado" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Tbl_Pais" Relationship="Self.FK_Tbl_Ciudad_Pais" FromRole="Tbl_Ciudad" ToRole="Tbl_Pais" />
+    <NavigationProperty Name="Tbl_Comuna" Relationship="Self.FK_Tbl_Comuna_Tbl_Ciudad" FromRole="Tbl_Ciudad" ToRole="Tbl_Comuna" />
+  </EntityType>
+  <EntityType Name="Tbl_Comuna">
+    <Key>
+      <PropertyRef Name="id_comuna" />
+    </Key>
+    <Property Name="id_comuna" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="descripcion" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="id_ciudad" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="estado" Type="Boolean" />
+    <NavigationProperty Name="Tbl_Ciudad" Relationship="Self.FK_Tbl_Comuna_Tbl_Ciudad" FromRole="Tbl_Comuna" ToRole="Tbl_Ciudad" />
+    <NavigationProperty Name="Tbl_Direccion" Relationship="Self.FK_Tbl_Direccion_Tbl_Comuna" FromRole="Tbl_Comuna" ToRole="Tbl_Direccion" />
+  </EntityType>
+  <EntityType Name="Tbl_Contacto">
+    <Key>
+      <PropertyRef Name="num_registro" />
+    </Key>
+    <Property Name="id_contacto" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="id_usuario" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="id_tipo_usuario" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="estado" Type="Boolean" />
+    <Property Name="id_calificacion" Type="Decimal" Precision="18" Scale="0" />
+    <NavigationProperty Name="Tbl_Calificacion" Relationship="Self.FK_Tbl_Contacto_Tbl_Calificacion" FromRole="Tbl_Contacto" ToRole="Tbl_Calificacion" />
+    <NavigationProperty Name="Tbl_Tipo_usuario" Relationship="Self.FK_Tbl_Contacto_Tbl_Tipo_usuario" FromRole="Tbl_Contacto" ToRole="Tbl_Tipo_usuario" />
+    <Property Name="num_registro" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="Tbl_Usuario" Relationship="BD_NESCOINModel.FK_Tbl_Contacto_Tbl_Usuario" FromRole="Tbl_Contacto" ToRole="Tbl_Usuario" />
+  </EntityType>
+  <EntityType Name="Tbl_Correo">
+    <Key>
+      <PropertyRef Name="id_correo" />
+    </Key>
+    <Property Name="id_correo" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="descripcion" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="estado" Type="Boolean" />
+    <NavigationProperty Name="Tbl_Usuario_Correo" Relationship="Self.FK_Tbl_Usuario_Correo_Tbl_Correo" FromRole="Tbl_Correo" ToRole="Tbl_Usuario_Correo" />
+  </EntityType>
+  <EntityType Name="Tbl_Direccion">
+    <Key>
+      <PropertyRef Name="id_direccion" />
+    </Key>
+    <Property Name="id_direccion" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="descripcion" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="numero" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="id_comuna" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="estado" Type="Boolean" />
+    <NavigationProperty Name="Tbl_Comuna" Relationship="Self.FK_Tbl_Direccion_Tbl_Comuna" FromRole="Tbl_Direccion" ToRole="Tbl_Comuna" />
+    <NavigationProperty Name="Tbl_Usuario" Relationship="Self.FK_Tbl_Usuario_Tbl_Direccion" FromRole="Tbl_Direccion" ToRole="Tbl_Usuario" />
+  </EntityType>
+  <EntityType Name="Tbl_Forma_Pago">
+    <Key>
+      <PropertyRef Name="id_forma_pago" />
+    </Key>
+    <Property Name="id_forma_pago" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="descripcion" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="estado" Type="Boolean" />
+    <NavigationProperty Name="Tbl_movimiento" Relationship="Self.FK_Tbl_movimiento_Tbl_Forma_Pago" FromRole="Tbl_Forma_Pago" ToRole="Tbl_movimiento" />
+  </EntityType>
+  <EntityType Name="Tbl_Log">
+    <Key>
+      <PropertyRef Name="id_log" />
+    </Key>
+    <Property Name="id_log" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="fecha" Type="DateTime" Precision="0" />
+    <Property Name="hora" Type="Time" Precision="7" />
+    <Property Name="id_usuario" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="id_tipo_log" Type="Decimal" Precision="18" Scale="0" />
+    <NavigationProperty Name="Tbl_tipo_log" Relationship="Self.FK_Tbl_Log_Tbl_tipo_log" FromRole="Tbl_Log" ToRole="Tbl_tipo_log" />
+    <NavigationProperty Name="Tbl_Usuario" Relationship="Self.FK_Tbl_Log_Tbl_Usuario" FromRole="Tbl_Log" ToRole="Tbl_Usuario" />
+    <Property Name="estado" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="Tbl_movimiento">
+    <Key>
+      <PropertyRef Name="id_movimiento" />
+    </Key>
+    <Property Name="id_movimiento" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="fecha_movimiento" Type="DateTime" Precision="0" />
+    <Property Name="descripcion" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="id_usuario" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="id_calificacion" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="comentario" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="id_forma_pago" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="estado" Type="Boolean" />
+    <NavigationProperty Name="Tbl_Calificacion" Relationship="Self.FK_Tbl_movimiento_Tbl_Calificacion" FromRole="Tbl_movimiento" ToRole="Tbl_Calificacion" />
+    <NavigationProperty Name="Tbl_Forma_Pago" Relationship="Self.FK_Tbl_movimiento_Tbl_Forma_Pago" FromRole="Tbl_movimiento" ToRole="Tbl_Forma_Pago" />
+    <NavigationProperty Name="Tbl_Usuario" Relationship="Self.FK_Tbl_movimiento_Tbl_Usuario" FromRole="Tbl_movimiento" ToRole="Tbl_Usuario" />
+    <Property Name="id_tipo_movimiento" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="num_ref_movimiento" Type="Decimal" Precision="18" Scale="0" />
+    <NavigationProperty Name="Tbl_tipo_movimiento" Relationship="BD_NESCOINModel.FK_Tbl_movimiento_Tbl_tipo_movimiento" FromRole="Tbl_movimiento" ToRole="Tbl_tipo_movimiento" />
+  </EntityType>
+  <EntityType Name="Tbl_Pais">
+    <Key>
+      <PropertyRef Name="id_pais" />
+    </Key>
+    <Property Name="id_pais" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="descripcion" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="estado" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Tbl_Ciudad" Relationship="Self.FK_Tbl_Ciudad_Pais" FromRole="Tbl_Pais" ToRole="Tbl_Ciudad" />
+  </EntityType>
+  <EntityType Name="Tbl_Profesion">
+    <Key>
+      <PropertyRef Name="id_profesion" />
+    </Key>
+    <Property Name="id_profesion" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="descripcion" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="estado" Type="Boolean" />
+    <NavigationProperty Name="Tbl_Usuario_Profesion" Relationship="Self.FK_Tbl_Usuario_Profesion_Tbl_Profesion" FromRole="Tbl_Profesion" ToRole="Tbl_Usuario_Profesion" />
+  </EntityType>
+  <EntityType Name="Tbl_Telefono">
+    <Key>
+      <PropertyRef Name="id_telefono" />
+    </Key>
+    <Property Name="id_telefono" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="numero_telefono" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="estado" Type="Boolean" />
+    <NavigationProperty Name="Tbl_Usuario_Telefono" Relationship="Self.FK_Tbl_Usuario_Telefono_Tbl_Telefono" FromRole="Tbl_Telefono" ToRole="Tbl_Usuario_Telefono" />
+  </EntityType>
+  <EntityType Name="Tbl_Tipo_Cuenta">
+    <Key>
+      <PropertyRef Name="id_tipo_cuenta" />
+    </Key>
+    <Property Name="id_tipo_cuenta" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="descripcion" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="estado" Type="Boolean" />
+    <NavigationProperty Name="Tbl_Usuario" Relationship="Self.FK_Tbl_Usuario_Tbl_Tipo_Cuenta" FromRole="Tbl_Tipo_Cuenta" ToRole="Tbl_Usuario" />
+  </EntityType>
+  <EntityType Name="Tbl_tipo_log">
+    <Key>
+      <PropertyRef Name="id_tipo_log" />
+    </Key>
+    <Property Name="id_tipo_log" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="descripcion" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Tbl_Log" Relationship="Self.FK_Tbl_Log_Tbl_tipo_log" FromRole="Tbl_tipo_log" ToRole="Tbl_Log" />
+    <Property Name="estado" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Tbl_Tipo_usuario">
+    <Key>
+      <PropertyRef Name="id_tipo_usuario" />
+    </Key>
+    <Property Name="id_tipo_usuario" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="descripcion" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="estado" Type="Boolean" />
+    <NavigationProperty Name="Tbl_Contacto" Relationship="Self.FK_Tbl_Contacto_Tbl_Tipo_usuario" FromRole="Tbl_Tipo_usuario" ToRole="Tbl_Contacto" />
+  </EntityType>
+  <EntityType Name="Tbl_Usuario">
+    <Key>
+      <PropertyRef Name="id_usuario" />
+    </Key>
+    <Property Name="id_usuario" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="nombre" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="apellido" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="fecha_creacion" Type="DateTime" Precision="0" />
+    <Property Name="fecha_actualizacion" Type="DateTime" Precision="0" />
+    <Property Name="contraseña" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="id_direccion" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="id_tipo_cuenta" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="estado" Type="Boolean" />
+    <NavigationProperty Name="Tbl_Direccion" Relationship="Self.FK_Tbl_Usuario_Tbl_Direccion" FromRole="Tbl_Usuario" ToRole="Tbl_Direccion" />
+    <NavigationProperty Name="Tbl_Log" Relationship="Self.FK_Tbl_Log_Tbl_Usuario" FromRole="Tbl_Usuario" ToRole="Tbl_Log" />
+    <NavigationProperty Name="Tbl_movimiento" Relationship="Self.FK_Tbl_movimiento_Tbl_Usuario" FromRole="Tbl_Usuario" ToRole="Tbl_movimiento" />
+    <NavigationProperty Name="Tbl_Tipo_Cuenta" Relationship="Self.FK_Tbl_Usuario_Tbl_Tipo_Cuenta" FromRole="Tbl_Usuario" ToRole="Tbl_Tipo_Cuenta" />
+    <NavigationProperty Name="Tbl_Usuario_Correo" Relationship="Self.FK_Tbl_Usuario_Correo_Tbl_Usuario" FromRole="Tbl_Usuario" ToRole="Tbl_Usuario_Correo" />
+    <NavigationProperty Name="Tbl_Usuario_Profesion" Relationship="Self.FK_Tbl_Usuario_Profesion_Tbl_Usuario" FromRole="Tbl_Usuario" ToRole="Tbl_Usuario_Profesion" />
+    <NavigationProperty Name="Tbl_Usuario_Telefono" Relationship="Self.FK_Tbl_Usuario_Telefono_Tbl_Usuario" FromRole="Tbl_Usuario" ToRole="Tbl_Usuario_Telefono" />
+    <Property Name="foto" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="nick" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Tbl_Contacto" Relationship="BD_NESCOINModel.FK_Tbl_Contacto_Tbl_Usuario" FromRole="Tbl_Usuario" ToRole="Tbl_Contacto" />
+  </EntityType>
+  <EntityType Name="Tbl_Usuario_Correo">
+    <Key>
+      <PropertyRef Name="id_usuario" />
+      <PropertyRef Name="id_correo" />
+    </Key>
+    <Property Name="id_usuario" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="id_correo" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="estado" Type="Boolean" />
+    <NavigationProperty Name="Tbl_Correo" Relationship="Self.FK_Tbl_Usuario_Correo_Tbl_Correo" FromRole="Tbl_Usuario_Correo" ToRole="Tbl_Correo" />
+    <NavigationProperty Name="Tbl_Usuario" Relationship="Self.FK_Tbl_Usuario_Correo_Tbl_Usuario" FromRole="Tbl_Usuario_Correo" ToRole="Tbl_Usuario" />
+    <Property Name="principal" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="Tbl_Usuario_Profesion">
+    <Key>
+      <PropertyRef Name="id_usuario" />
+      <PropertyRef Name="id_profesion" />
+    </Key>
+    <Property Name="id_usuario" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="id_profesion" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="promedio_calificacion" Type="Double" />
+    <Property Name="estado" Type="Boolean" />
+    <NavigationProperty Name="Tbl_Profesion" Relationship="Self.FK_Tbl_Usuario_Profesion_Tbl_Profesion" FromRole="Tbl_Usuario_Profesion" ToRole="Tbl_Profesion" />
+    <NavigationProperty Name="Tbl_Usuario" Relationship="Self.FK_Tbl_Usuario_Profesion_Tbl_Usuario" FromRole="Tbl_Usuario_Profesion" ToRole="Tbl_Usuario" />
+    <Property Name="descripcion" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Tbl_Usuario_Telefono">
+    <Key>
+      <PropertyRef Name="id_usuario" />
+      <PropertyRef Name="id_telefono" />
+    </Key>
+    <Property Name="id_usuario" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="id_telefono" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="estado" Type="Boolean" />
+    <NavigationProperty Name="Tbl_Telefono" Relationship="Self.FK_Tbl_Usuario_Telefono_Tbl_Telefono" FromRole="Tbl_Usuario_Telefono" ToRole="Tbl_Telefono" />
+    <NavigationProperty Name="Tbl_Usuario" Relationship="Self.FK_Tbl_Usuario_Telefono_Tbl_Usuario" FromRole="Tbl_Usuario_Telefono" ToRole="Tbl_Usuario" />
+  </EntityType>
+  <Association Name="FK_Tbl_Contacto_Tbl_Calificacion">
+    <End Role="Tbl_Calificacion" Type="Self.Tbl_Calificacion" Multiplicity="0..1" />
+    <End Role="Tbl_Contacto" Type="Self.Tbl_Contacto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_Calificacion">
+        <PropertyRef Name="id_calificacion" />
+      </Principal>
+      <Dependent Role="Tbl_Contacto">
+        <PropertyRef Name="id_calificacion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tbl_movimiento_Tbl_Calificacion">
+    <End Role="Tbl_Calificacion" Type="Self.Tbl_Calificacion" Multiplicity="0..1" />
+    <End Role="Tbl_movimiento" Type="Self.Tbl_movimiento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_Calificacion">
+        <PropertyRef Name="id_calificacion" />
+      </Principal>
+      <Dependent Role="Tbl_movimiento">
+        <PropertyRef Name="id_calificacion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tbl_Ciudad_Pais">
+    <End Role="Tbl_Pais" Type="Self.Tbl_Pais" Multiplicity="0..1" />
+    <End Role="Tbl_Ciudad" Type="Self.Tbl_Ciudad" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_Pais">
+        <PropertyRef Name="id_pais" />
+      </Principal>
+      <Dependent Role="Tbl_Ciudad">
+        <PropertyRef Name="id_pais" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tbl_Comuna_Tbl_Ciudad">
+    <End Role="Tbl_Ciudad" Type="Self.Tbl_Ciudad" Multiplicity="0..1" />
+    <End Role="Tbl_Comuna" Type="Self.Tbl_Comuna" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_Ciudad">
+        <PropertyRef Name="id_ciudad" />
+      </Principal>
+      <Dependent Role="Tbl_Comuna">
+        <PropertyRef Name="id_ciudad" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tbl_Direccion_Tbl_Comuna">
+    <End Role="Tbl_Comuna" Type="Self.Tbl_Comuna" Multiplicity="0..1" />
+    <End Role="Tbl_Direccion" Type="Self.Tbl_Direccion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_Comuna">
+        <PropertyRef Name="id_comuna" />
+      </Principal>
+      <Dependent Role="Tbl_Direccion">
+        <PropertyRef Name="id_comuna" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tbl_Contacto_Tbl_Tipo_usuario">
+    <End Role="Tbl_Tipo_usuario" Type="Self.Tbl_Tipo_usuario" Multiplicity="0..1" />
+    <End Role="Tbl_Contacto" Type="Self.Tbl_Contacto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_Tipo_usuario">
+        <PropertyRef Name="id_tipo_usuario" />
+      </Principal>
+      <Dependent Role="Tbl_Contacto">
+        <PropertyRef Name="id_tipo_usuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tbl_Usuario_Correo_Tbl_Correo">
+    <End Role="Tbl_Correo" Type="Self.Tbl_Correo" Multiplicity="1" />
+    <End Role="Tbl_Usuario_Correo" Type="Self.Tbl_Usuario_Correo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_Correo">
+        <PropertyRef Name="id_correo" />
+      </Principal>
+      <Dependent Role="Tbl_Usuario_Correo">
+        <PropertyRef Name="id_correo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tbl_Usuario_Tbl_Direccion">
+    <End Role="Tbl_Direccion" Type="Self.Tbl_Direccion" Multiplicity="1" />
+    <End Role="Tbl_Usuario" Type="Self.Tbl_Usuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_Direccion">
+        <PropertyRef Name="id_direccion" />
+      </Principal>
+      <Dependent Role="Tbl_Usuario">
+        <PropertyRef Name="id_direccion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tbl_movimiento_Tbl_Forma_Pago">
+    <End Role="Tbl_Forma_Pago" Type="Self.Tbl_Forma_Pago" Multiplicity="0..1" />
+    <End Role="Tbl_movimiento" Type="Self.Tbl_movimiento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_Forma_Pago">
+        <PropertyRef Name="id_forma_pago" />
+      </Principal>
+      <Dependent Role="Tbl_movimiento">
+        <PropertyRef Name="id_forma_pago" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tbl_Log_Tbl_tipo_log">
+    <End Role="Tbl_tipo_log" Type="Self.Tbl_tipo_log" Multiplicity="0..1" />
+    <End Role="Tbl_Log" Type="Self.Tbl_Log" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_tipo_log">
+        <PropertyRef Name="id_tipo_log" />
+      </Principal>
+      <Dependent Role="Tbl_Log">
+        <PropertyRef Name="id_tipo_log" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tbl_Log_Tbl_Usuario">
+    <End Role="Tbl_Usuario" Type="Self.Tbl_Usuario" Multiplicity="0..1" />
+    <End Role="Tbl_Log" Type="Self.Tbl_Log" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_Usuario">
+        <PropertyRef Name="id_usuario" />
+      </Principal>
+      <Dependent Role="Tbl_Log">
+        <PropertyRef Name="id_usuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tbl_movimiento_Tbl_Usuario">
+    <End Role="Tbl_Usuario" Type="Self.Tbl_Usuario" Multiplicity="0..1" />
+    <End Role="Tbl_movimiento" Type="Self.Tbl_movimiento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_Usuario">
+        <PropertyRef Name="id_usuario" />
+      </Principal>
+      <Dependent Role="Tbl_movimiento">
+        <PropertyRef Name="id_usuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tbl_Usuario_Profesion_Tbl_Profesion">
+    <End Role="Tbl_Profesion" Type="Self.Tbl_Profesion" Multiplicity="1" />
+    <End Role="Tbl_Usuario_Profesion" Type="Self.Tbl_Usuario_Profesion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_Profesion">
+        <PropertyRef Name="id_profesion" />
+      </Principal>
+      <Dependent Role="Tbl_Usuario_Profesion">
+        <PropertyRef Name="id_profesion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tbl_Usuario_Telefono_Tbl_Telefono">
+    <End Role="Tbl_Telefono" Type="Self.Tbl_Telefono" Multiplicity="1" />
+    <End Role="Tbl_Usuario_Telefono" Type="Self.Tbl_Usuario_Telefono" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_Telefono">
+        <PropertyRef Name="id_telefono" />
+      </Principal>
+      <Dependent Role="Tbl_Usuario_Telefono">
+        <PropertyRef Name="id_telefono" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tbl_Usuario_Tbl_Tipo_Cuenta">
+    <End Role="Tbl_Tipo_Cuenta" Type="Self.Tbl_Tipo_Cuenta" Multiplicity="0..1" />
+    <End Role="Tbl_Usuario" Type="Self.Tbl_Usuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_Tipo_Cuenta">
+        <PropertyRef Name="id_tipo_cuenta" />
+      </Principal>
+      <Dependent Role="Tbl_Usuario">
+        <PropertyRef Name="id_tipo_cuenta" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tbl_Usuario_Correo_Tbl_Usuario">
+    <End Role="Tbl_Usuario" Type="Self.Tbl_Usuario" Multiplicity="1" />
+    <End Role="Tbl_Usuario_Correo" Type="Self.Tbl_Usuario_Correo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_Usuario">
+        <PropertyRef Name="id_usuario" />
+      </Principal>
+      <Dependent Role="Tbl_Usuario_Correo">
+        <PropertyRef Name="id_usuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tbl_Usuario_Profesion_Tbl_Usuario">
+    <End Role="Tbl_Usuario" Type="Self.Tbl_Usuario" Multiplicity="1" />
+    <End Role="Tbl_Usuario_Profesion" Type="Self.Tbl_Usuario_Profesion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_Usuario">
+        <PropertyRef Name="id_usuario" />
+      </Principal>
+      <Dependent Role="Tbl_Usuario_Profesion">
+        <PropertyRef Name="id_usuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tbl_Usuario_Telefono_Tbl_Usuario">
+    <End Role="Tbl_Usuario" Type="Self.Tbl_Usuario" Multiplicity="1" />
+    <End Role="Tbl_Usuario_Telefono" Type="Self.Tbl_Usuario_Telefono" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_Usuario">
+        <PropertyRef Name="id_usuario" />
+      </Principal>
+      <Dependent Role="Tbl_Usuario_Telefono">
+        <PropertyRef Name="id_usuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="BD_NESCOINEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Tbl_Calificacion" EntityType="Self.Tbl_Calificacion" />
+    <EntitySet Name="Tbl_Ciudad" EntityType="Self.Tbl_Ciudad" />
+    <EntitySet Name="Tbl_Comuna" EntityType="Self.Tbl_Comuna" />
+    <EntitySet Name="Tbl_Contacto" EntityType="Self.Tbl_Contacto" />
+    <EntitySet Name="Tbl_Correo" EntityType="Self.Tbl_Correo" />
+    <EntitySet Name="Tbl_Direccion" EntityType="Self.Tbl_Direccion" />
+    <EntitySet Name="Tbl_Forma_Pago" EntityType="Self.Tbl_Forma_Pago" />
+    <EntitySet Name="Tbl_Log" EntityType="Self.Tbl_Log" />
+    <EntitySet Name="Tbl_movimiento" EntityType="Self.Tbl_movimiento" />
+    <EntitySet Name="Tbl_Pais" EntityType="Self.Tbl_Pais" />
+    <EntitySet Name="Tbl_Profesion" EntityType="Self.Tbl_Profesion" />
+    <EntitySet Name="Tbl_Telefono" EntityType="Self.Tbl_Telefono" />
+    <EntitySet Name="Tbl_Tipo_Cuenta" EntityType="Self.Tbl_Tipo_Cuenta" />
+    <EntitySet Name="Tbl_tipo_log" EntityType="Self.Tbl_tipo_log" />
+    <EntitySet Name="Tbl_Tipo_usuario" EntityType="Self.Tbl_Tipo_usuario" />
+    <EntitySet Name="Tbl_Usuario" EntityType="Self.Tbl_Usuario" />
+    <EntitySet Name="Tbl_Usuario_Correo" EntityType="Self.Tbl_Usuario_Correo" />
+    <EntitySet Name="Tbl_Usuario_Profesion" EntityType="Self.Tbl_Usuario_Profesion" />
+    <EntitySet Name="Tbl_Usuario_Telefono" EntityType="Self.Tbl_Usuario_Telefono" />
+    <AssociationSet Name="FK_Tbl_Contacto_Tbl_Calificacion" Association="Self.FK_Tbl_Contacto_Tbl_Calificacion">
+      <End Role="Tbl_Calificacion" EntitySet="Tbl_Calificacion" />
+      <End Role="Tbl_Contacto" EntitySet="Tbl_Contacto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tbl_movimiento_Tbl_Calificacion" Association="Self.FK_Tbl_movimiento_Tbl_Calificacion">
+      <End Role="Tbl_Calificacion" EntitySet="Tbl_Calificacion" />
+      <End Role="Tbl_movimiento" EntitySet="Tbl_movimiento" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tbl_Ciudad_Pais" Association="Self.FK_Tbl_Ciudad_Pais">
+      <End Role="Tbl_Pais" EntitySet="Tbl_Pais" />
+      <End Role="Tbl_Ciudad" EntitySet="Tbl_Ciudad" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tbl_Comuna_Tbl_Ciudad" Association="Self.FK_Tbl_Comuna_Tbl_Ciudad">
+      <End Role="Tbl_Ciudad" EntitySet="Tbl_Ciudad" />
+      <End Role="Tbl_Comuna" EntitySet="Tbl_Comuna" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tbl_Direccion_Tbl_Comuna" Association="Self.FK_Tbl_Direccion_Tbl_Comuna">
+      <End Role="Tbl_Comuna" EntitySet="Tbl_Comuna" />
+      <End Role="Tbl_Direccion" EntitySet="Tbl_Direccion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tbl_Contacto_Tbl_Tipo_usuario" Association="Self.FK_Tbl_Contacto_Tbl_Tipo_usuario">
+      <End Role="Tbl_Tipo_usuario" EntitySet="Tbl_Tipo_usuario" />
+      <End Role="Tbl_Contacto" EntitySet="Tbl_Contacto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tbl_Usuario_Correo_Tbl_Correo" Association="Self.FK_Tbl_Usuario_Correo_Tbl_Correo">
+      <End Role="Tbl_Correo" EntitySet="Tbl_Correo" />
+      <End Role="Tbl_Usuario_Correo" EntitySet="Tbl_Usuario_Correo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tbl_Usuario_Tbl_Direccion" Association="Self.FK_Tbl_Usuario_Tbl_Direccion">
+      <End Role="Tbl_Direccion" EntitySet="Tbl_Direccion" />
+      <End Role="Tbl_Usuario" EntitySet="Tbl_Usuario" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tbl_movimiento_Tbl_Forma_Pago" Association="Self.FK_Tbl_movimiento_Tbl_Forma_Pago">
+      <End Role="Tbl_Forma_Pago" EntitySet="Tbl_Forma_Pago" />
+      <End Role="Tbl_movimiento" EntitySet="Tbl_movimiento" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tbl_Log_Tbl_tipo_log" Association="Self.FK_Tbl_Log_Tbl_tipo_log">
+      <End Role="Tbl_tipo_log" EntitySet="Tbl_tipo_log" />
+      <End Role="Tbl_Log" EntitySet="Tbl_Log" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tbl_Log_Tbl_Usuario" Association="Self.FK_Tbl_Log_Tbl_Usuario">
+      <End Role="Tbl_Usuario" EntitySet="Tbl_Usuario" />
+      <End Role="Tbl_Log" EntitySet="Tbl_Log" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tbl_movimiento_Tbl_Usuario" Association="Self.FK_Tbl_movimiento_Tbl_Usuario">
+      <End Role="Tbl_Usuario" EntitySet="Tbl_Usuario" />
+      <End Role="Tbl_movimiento" EntitySet="Tbl_movimiento" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tbl_Usuario_Profesion_Tbl_Profesion" Association="Self.FK_Tbl_Usuario_Profesion_Tbl_Profesion">
+      <End Role="Tbl_Profesion" EntitySet="Tbl_Profesion" />
+      <End Role="Tbl_Usuario_Profesion" EntitySet="Tbl_Usuario_Profesion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tbl_Usuario_Telefono_Tbl_Telefono" Association="Self.FK_Tbl_Usuario_Telefono_Tbl_Telefono">
+      <End Role="Tbl_Telefono" EntitySet="Tbl_Telefono" />
+      <End Role="Tbl_Usuario_Telefono" EntitySet="Tbl_Usuario_Telefono" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tbl_Usuario_Tbl_Tipo_Cuenta" Association="Self.FK_Tbl_Usuario_Tbl_Tipo_Cuenta">
+      <End Role="Tbl_Tipo_Cuenta" EntitySet="Tbl_Tipo_Cuenta" />
+      <End Role="Tbl_Usuario" EntitySet="Tbl_Usuario" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tbl_Usuario_Correo_Tbl_Usuario" Association="Self.FK_Tbl_Usuario_Correo_Tbl_Usuario">
+      <End Role="Tbl_Usuario" EntitySet="Tbl_Usuario" />
+      <End Role="Tbl_Usuario_Correo" EntitySet="Tbl_Usuario_Correo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tbl_Usuario_Profesion_Tbl_Usuario" Association="Self.FK_Tbl_Usuario_Profesion_Tbl_Usuario">
+      <End Role="Tbl_Usuario" EntitySet="Tbl_Usuario" />
+      <End Role="Tbl_Usuario_Profesion" EntitySet="Tbl_Usuario_Profesion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tbl_Usuario_Telefono_Tbl_Usuario" Association="Self.FK_Tbl_Usuario_Telefono_Tbl_Usuario">
+      <End Role="Tbl_Usuario" EntitySet="Tbl_Usuario" />
+      <End Role="Tbl_Usuario_Telefono" EntitySet="Tbl_Usuario_Telefono" />
+    </AssociationSet>
+    <EntitySet Name="sysdiagrams" EntityType="BD_NESCOINModel.sysdiagrams" />
+    <EntitySet Name="Tbl_tipo_movimiento" EntityType="BD_NESCOINModel.Tbl_tipo_movimiento" />
+    <AssociationSet Name="FK_Tbl_movimiento_Tbl_tipo_movimiento" Association="BD_NESCOINModel.FK_Tbl_movimiento_Tbl_tipo_movimiento">
+      <End Role="Tbl_tipo_movimiento" EntitySet="Tbl_tipo_movimiento" />
+      <End Role="Tbl_movimiento" EntitySet="Tbl_movimiento" />
+    </AssociationSet>
+    <FunctionImport Name="PA_Trae_Vista_Vitrina" ReturnType="Collection(BD_NESCOINModel.PA_Trae_Vista_Vitrina_Result)" />
+    <EntitySet Name="Vi_Trae_Vitrina" EntityType="BD_NESCOINModel.Vi_Trae_Vitrina" />
+    <EntitySet Name="Vi_Trae_contactos_de_usuario" EntityType="BD_NESCOINModel.Vi_Trae_contactos_de_usuario" />
+    <EntitySet Name="Vi_Trae_Oferta_Trabajo" EntityType="BD_NESCOINModel.Vi_Trae_Oferta_Trabajo" />
+    <EntitySet Name="Vi_Trae_Presupuesto" EntityType="BD_NESCOINModel.Vi_Trae_Presupuesto" />
+    <EntitySet Name="Vi_Trae_Historial" EntityType="BD_NESCOINModel.Vi_Trae_Historial" />
+    <EntitySet Name="Vi_Verifica_Presupuesto" EntityType="BD_NESCOINModel.Vi_Verifica_Presupuesto" />
+    <EntitySet Name="Vi_Verifica_Solicitud_Presupuesto" EntityType="BD_NESCOINModel.Vi_Verifica_Solicitud_Presupuesto" />
+    <AssociationSet Name="FK_Tbl_Contacto_Tbl_Usuario" Association="BD_NESCOINModel.FK_Tbl_Contacto_Tbl_Usuario">
+      <End Role="Tbl_Usuario" EntitySet="Tbl_Usuario" />
+      <End Role="Tbl_Contacto" EntitySet="Tbl_Contacto" />
+    </AssociationSet>
+    <EntitySet Name="Vi_Tbl_Echo_Prof_Comuna" EntityType="BD_NESCOINModel.Vi_Tbl_Echo_Prof_Comuna" />
+    <EntitySet Name="Tbl_IndicadoresBS" EntityType="BD_NESCOINModel.Tbl_IndicadoresBS" />
+  </EntityContainer>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Tbl_tipo_movimiento">
+    <Key>
+      <PropertyRef Name="id_tipo_movimiento" />
+    </Key>
+    <Property Name="id_tipo_movimiento" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="nombre" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="descripcion" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="estado" Type="Boolean" />
+    <NavigationProperty Name="Tbl_movimiento" Relationship="BD_NESCOINModel.FK_Tbl_movimiento_Tbl_tipo_movimiento" FromRole="Tbl_tipo_movimiento" ToRole="Tbl_movimiento" />
+  </EntityType>
+  <Association Name="FK_Tbl_movimiento_Tbl_tipo_movimiento">
+    <End Type="BD_NESCOINModel.Tbl_tipo_movimiento" Role="Tbl_tipo_movimiento" Multiplicity="0..1" />
+    <End Type="BD_NESCOINModel.Tbl_movimiento" Role="Tbl_movimiento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_tipo_movimiento">
+        <PropertyRef Name="id_tipo_movimiento" />
+      </Principal>
+      <Dependent Role="Tbl_movimiento">
+        <PropertyRef Name="id_tipo_movimiento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <ComplexType Name="PA_Trae_Vista_Vitrina_Result">
+    <Property Type="String" Name="NombreUsuario" Nullable="true" MaxLength="511" />
+    <Property Type="String" Name="Profesion" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="descripcion" Nullable="true" MaxLength="1000" />
+  </ComplexType>
+  <EntityType Name="Vi_Trae_Vitrina">
+    <Key>
+      <PropertyRef Name="id_usuario" />
+    </Key>
+    <Property Name="id_usuario" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="nick" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="nombre" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="apellido" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Profesion" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="descripcion" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="foto" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="promedio_calificacion" Type="Double" />
+  </EntityType>
+  <EntityType Name="Vi_Trae_contactos_de_usuario">
+    <Key>
+      <PropertyRef Name="id_usuario" />
+      <PropertyRef Name="Autonumerico" />
+    </Key>
+    <Property Name="id_usuario" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="nick" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="nombre" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="apellido" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Profesion" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="descripcion" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="foto" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="promedio_calificacion" Type="Double" />
+    <Property Name="id_usuario_logueado" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="Autonumerico" Type="Int64" Nullable="false" />
+    <Property Name="numero_telefono" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Vi_Trae_Oferta_Trabajo">
+    <Key>
+      <PropertyRef Name="id_usuario" />
+      <PropertyRef Name="Autonumerico" />
+      <PropertyRef Name="id_movimiento" />
+    </Key>
+    <Property Name="id_usuario" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="Titulo" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="descripcion" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="id_calificacion" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Autonumerico" Type="Int64" Nullable="false" />
+    <Property Name="fecha_movimiento" Type="DateTime" Precision="0" />
+    <Property Name="id_movimiento" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="Vi_Trae_Presupuesto">
+    <Key>
+      <PropertyRef Name="id_usuario" />
+      <PropertyRef Name="Autonumerico" />
+    </Key>
+    <Property Name="id_usuario" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="Titulo" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="descripcion" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="id_calificacion" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Autonumerico" Type="Int64" Nullable="false" />
+    <Property Name="fecha_movimiento" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="Vi_Trae_Historial">
+    <Key>
+      <PropertyRef Name="id_usuario" />
+      <PropertyRef Name="Autonumerico" />
+      <PropertyRef Name="Tipo_Desc" />
+    </Key>
+    <Property Name="id_usuario" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="Titulo" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="descripcion" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="id_calificacion" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Autonumerico" Type="Int64" Nullable="false" />
+    <Property Name="Tipo_Desc" Type="String" Nullable="false" MaxLength="11" FixedLength="false" Unicode="false" />
+    <Property Name="fecha_movimiento" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="Vi_Verifica_Presupuesto">
+    <Key>
+      <PropertyRef Name="id_movimiento" />
+    </Key>
+    <Property Name="id_movimiento" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="id_tipo_movimiento" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="fecha_movimiento" Type="DateTime" Precision="0" />
+    <Property Name="descripcion" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="id_usuario" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="id_calificacion" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Titulo" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="num_ref_movimiento" Type="Decimal" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="Vi_Verifica_Solicitud_Presupuesto">
+    <Key>
+      <PropertyRef Name="id_movimiento" />
+    </Key>
+    <Property Name="id_movimiento" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="id_tipo_movimiento" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="fecha_movimiento" Type="DateTime" Precision="0" />
+    <Property Name="descripcion" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Titulo" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="num_ref_movimiento" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="usuario_logueado" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="id_calificacion" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="UsuarioSolicita" Type="String" MaxLength="511" FixedLength="false" Unicode="false" />
+    <Property Name="Autonumerico" Type="Int64" />
+  </EntityType>
+  <Association Name="FK_Tbl_Contacto_Tbl_Usuario">
+    <End Type="BD_NESCOINModel.Tbl_Usuario" Role="Tbl_Usuario" Multiplicity="1" />
+    <End Type="BD_NESCOINModel.Tbl_Contacto" Role="Tbl_Contacto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_Usuario">
+        <PropertyRef Name="id_usuario" />
+      </Principal>
+      <Dependent Role="Tbl_Contacto">
+        <PropertyRef Name="id_usuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Vi_Tbl_Echo_Prof_Comuna">
+    <Key>
+      <PropertyRef Name="id_comuna" />
+    </Key>
+    <Property Name="id_comuna" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="comuna" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="informatica" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Profesores" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Mecanica" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Total" Type="Decimal" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="Tbl_IndicadoresBS">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="Objetivos" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Metas" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Indicador" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Iniciativas" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+  </EntityType>
+</Schema>

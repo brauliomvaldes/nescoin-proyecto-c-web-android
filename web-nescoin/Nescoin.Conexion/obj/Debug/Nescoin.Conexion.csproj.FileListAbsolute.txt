@@ -1,0 +1,47 @@
+C:\Users\barri\source\repos\Nescoin\Nescoin.Conexion\bin\Debug\Nescoin.Conexion.dll.config
+C:\Users\barri\source\repos\Nescoin\Nescoin.Conexion\bin\Debug\Nescoin.Conexion.dll
+C:\Users\barri\source\repos\Nescoin\Nescoin.Conexion\bin\Debug\Nescoin.Conexion.pdb
+C:\Users\barri\source\repos\Nescoin\Nescoin.Conexion\bin\Debug\EntityFramework.dll
+C:\Users\barri\source\repos\Nescoin\Nescoin.Conexion\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\barri\source\repos\Nescoin\Nescoin.Conexion\bin\Debug\EntityFramework.xml
+C:\Users\barri\source\repos\Nescoin\Nescoin.Conexion\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\barri\source\repos\Nescoin\Nescoin.Conexion\obj\Debug\Nescoin.Conexion.csprojAssemblyReference.cache
+C:\Users\barri\source\repos\Nescoin\Nescoin.Conexion\obj\Debug\Nescoin.Conexion.csproj.CoreCompileInputs.cache
+C:\Users\barri\source\repos\Nescoin\Nescoin.Conexion\obj\Debug\Nescoin.Conexion.csproj.CopyComplete
+C:\Users\barri\source\repos\Nescoin\Nescoin.Conexion\obj\Debug\Nescoin.Conexion.dll
+C:\Users\barri\source\repos\Nescoin\Nescoin.Conexion\obj\Debug\Nescoin.Conexion.pdb
+D:\INACAP\octavo semestre\Seminario de Grado\nescoin\web-nescoin\Nescoin.Conexion\obj\Debug\Nescoin.Conexion.csproj.CoreCompileInputs.cache
+D:\INACAP\octavo semestre\Seminario de Grado\nescoin\web-nescoin\Nescoin.Conexion\obj\Debug\Nescoin.Conexion.dll
+D:\INACAP\octavo semestre\Seminario de Grado\nescoin\web-nescoin\Nescoin.Conexion\obj\Debug\Nescoin.Conexion.pdb
+D:\INACAP\octavo semestre\Seminario de Grado\nescoin\web-nescoin\Nescoin.Conexion\bin\Debug\Nescoin.Conexion.dll.config
+D:\INACAP\octavo semestre\Seminario de Grado\nescoin\web-nescoin\Nescoin.Conexion\bin\Debug\Nescoin.Conexion.dll
+D:\INACAP\octavo semestre\Seminario de Grado\nescoin\web-nescoin\Nescoin.Conexion\bin\Debug\Nescoin.Conexion.pdb
+D:\INACAP\octavo semestre\Seminario de Grado\nescoin\web-nescoin\Nescoin.Conexion\bin\Debug\EntityFramework.dll
+D:\INACAP\octavo semestre\Seminario de Grado\nescoin\web-nescoin\Nescoin.Conexion\bin\Debug\EntityFramework.SqlServer.dll
+D:\INACAP\octavo semestre\Seminario de Grado\nescoin\web-nescoin\Nescoin.Conexion\bin\Debug\EntityFramework.xml
+D:\INACAP\octavo semestre\Seminario de Grado\nescoin\web-nescoin\Nescoin.Conexion\bin\Debug\EntityFramework.SqlServer.xml
+D:\INACAP\octavo semestre\Seminario de Grado\nescoin\web-nescoin\Nescoin.Conexion\obj\Debug\Nescoin.Conexion.csproj.CopyComplete
+D:\INACAP\octavo semestre\Seminario de Grado\nescoin\web-nescoin\Nescoin.Conexion\obj\Debug\Nescoin.Conexion.csprojAssemblyReference.cache
+C:\Otros\INACAP\OCTAVO SEMESTRE\Seminario de grado\Proyecto_Nescoin\Versiones_APP\web-nescoin\Nescoin.Conexion\bin\Debug\Nescoin.Conexion.dll.config
+C:\Otros\INACAP\OCTAVO SEMESTRE\Seminario de grado\Proyecto_Nescoin\Versiones_APP\web-nescoin\Nescoin.Conexion\bin\Debug\Nescoin.Conexion.dll
+C:\Otros\INACAP\OCTAVO SEMESTRE\Seminario de grado\Proyecto_Nescoin\Versiones_APP\web-nescoin\Nescoin.Conexion\bin\Debug\Nescoin.Conexion.pdb
+C:\Otros\INACAP\OCTAVO SEMESTRE\Seminario de grado\Proyecto_Nescoin\Versiones_APP\web-nescoin\Nescoin.Conexion\bin\Debug\EntityFramework.dll
+C:\Otros\INACAP\OCTAVO SEMESTRE\Seminario de grado\Proyecto_Nescoin\Versiones_APP\web-nescoin\Nescoin.Conexion\bin\Debug\EntityFramework.SqlServer.dll
+C:\Otros\INACAP\OCTAVO SEMESTRE\Seminario de grado\Proyecto_Nescoin\Versiones_APP\web-nescoin\Nescoin.Conexion\bin\Debug\EntityFramework.xml
+C:\Otros\INACAP\OCTAVO SEMESTRE\Seminario de grado\Proyecto_Nescoin\Versiones_APP\web-nescoin\Nescoin.Conexion\bin\Debug\EntityFramework.SqlServer.xml
+C:\Otros\INACAP\OCTAVO SEMESTRE\Seminario de grado\Proyecto_Nescoin\Versiones_APP\web-nescoin\Nescoin.Conexion\obj\Debug\Nescoin.Conexion.csproj.CoreCompileInputs.cache
+C:\Otros\INACAP\OCTAVO SEMESTRE\Seminario de grado\Proyecto_Nescoin\Versiones_APP\web-nescoin\Nescoin.Conexion\obj\Debug\Nescoin.Conexion.csproj.CopyComplete
+C:\Otros\INACAP\OCTAVO SEMESTRE\Seminario de grado\Proyecto_Nescoin\Versiones_APP\web-nescoin\Nescoin.Conexion\obj\Debug\Nescoin.Conexion.dll
+C:\Otros\INACAP\OCTAVO SEMESTRE\Seminario de grado\Proyecto_Nescoin\Versiones_APP\web-nescoin\Nescoin.Conexion\obj\Debug\Nescoin.Conexion.pdb
+C:\NESCOIN\VERSION_OFICIAL\web-nescoin\Nescoin.Conexion\bin\Debug\Nescoin.Conexion.dll.config
+C:\NESCOIN\VERSION_OFICIAL\web-nescoin\Nescoin.Conexion\bin\Debug\Nescoin.Conexion.dll
+C:\NESCOIN\VERSION_OFICIAL\web-nescoin\Nescoin.Conexion\bin\Debug\Nescoin.Conexion.pdb
+C:\NESCOIN\VERSION_OFICIAL\web-nescoin\Nescoin.Conexion\bin\Debug\EntityFramework.dll
+C:\NESCOIN\VERSION_OFICIAL\web-nescoin\Nescoin.Conexion\bin\Debug\EntityFramework.SqlServer.dll
+C:\NESCOIN\VERSION_OFICIAL\web-nescoin\Nescoin.Conexion\bin\Debug\EntityFramework.xml
+C:\NESCOIN\VERSION_OFICIAL\web-nescoin\Nescoin.Conexion\bin\Debug\EntityFramework.SqlServer.xml
+C:\NESCOIN\VERSION_OFICIAL\web-nescoin\Nescoin.Conexion\obj\Debug\Nescoin.Conexion.csproj.CoreCompileInputs.cache
+C:\NESCOIN\VERSION_OFICIAL\web-nescoin\Nescoin.Conexion\obj\Debug\Nescoin.Conexion.csproj.CopyComplete
+C:\NESCOIN\VERSION_OFICIAL\web-nescoin\Nescoin.Conexion\obj\Debug\Nescoin.Conexion.dll
+C:\NESCOIN\VERSION_OFICIAL\web-nescoin\Nescoin.Conexion\obj\Debug\Nescoin.Conexion.pdb
+C:\NESCOIN\VERSION_OFICIAL\web-nescoin\Nescoin.Conexion\obj\Debug\Nescoin.Conexion.csprojAssemblyReference.cache

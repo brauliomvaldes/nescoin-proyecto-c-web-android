@@ -1,0 +1,36 @@
+﻿@{
+    ViewBag.Title = "Acceso a NESCOIN";
+}
+
+<link rel="stylesheet" type="text/css" href="~/Content/stylelogin.css" />
+<script src="~/Scripts/sweetalert.min.js"></script>
+
+<!------ Include the above in your HEAD tag ---------->
+<br /><br />
+<form class="form-signin justify-content-xl-center" action="~/Login/VerificaIngreso" method="post">
+    <div class="simple-login-container">
+        <h2>Credenciales</h2>
+        <div class="row">
+            <div class="col-md-12 form-group">
+                <input type="text" class="form-control" placeholder="Ingrese Email" name="nombre" required>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 form-group">
+                <input type="password" placeholder="Ingrese su Password" class="form-control" name="contraseña" required>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 form-group">
+                <input type="submit" class="btn btn-block btn-agregar">
+            </div>
+        </div>
+        <hr>
+
+        <div class="alert alert-light" role="alert">
+            <h2 class="alert-danger">@ViewBag.mensaje</h2>
+            <h2 class="alert-danger">@Session["viewBagMensaje"]</h2>
+        </div>
+
+    </div>
+</form>

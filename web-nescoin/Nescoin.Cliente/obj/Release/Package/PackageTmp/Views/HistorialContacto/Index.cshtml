@@ -1,0 +1,32 @@
+﻿@model List<Nescoin.Conexion.Models.Vi_Trae_Historial>
+
+@foreach (var pro in Model)
+{
+   
+    <div class="card m-2 p-1">
+
+        <div class="card-header">
+            <div class="card-title d-inline-block">
+                <h4>@pro.Titulo</h4>
+            </div>
+
+            @*<div class="d-inline-block float-right">
+                @for (var i = 1; i <= pro.id_calificacion; i++)
+                {
+                    <i class="text-warning fa fa-star float-right"></i>
+                }
+            </div>*@
+        </div>
+        <div class="card-body">
+            <div class="card-text">
+                @pro.descripcion
+            </div>
+        </div>
+    </div>
+}
+
+
+
+
+
+

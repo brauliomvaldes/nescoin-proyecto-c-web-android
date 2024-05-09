@@ -1,0 +1,39 @@
+﻿
+@{
+    ViewBag.Title = "Acceso a NESCOIN";
+}
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="~/Content/stylelogin.css" />
+<!------ Include the above in your HEAD tag ---------->
+
+    <form class="form-signin justify-content-xl-center" action="~/Login/VerificaIngreso" method="post">
+        <div class="simple-login-container">
+            <h2>Credenciales</h2>
+            <div class="row">
+                <div class="col-md-12 form-group">
+                    <input type="text" class="form-control" placeholder="Nombre de Usuario" name="nombre">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 form-group">
+                    <input type="password" placeholder="Ingrese su Password" class="form-control" name="contraseña">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 form-group">
+                    <input type="submit" class="btn btn-block btn-agregar">
+                </div>
+            </div>
+            <hr>
+            <a class="form-control" href="/Registro">¿Usted no tiene cuenta?</a>
+            <hr>
+            <a class="form-control" href="/Recupera">¿Olvidó su contraseña?</a>
+            <div>
+                <h2>@ViewBag.mensaje</h2>
+            </div>
+        </div>
+    </form>
+

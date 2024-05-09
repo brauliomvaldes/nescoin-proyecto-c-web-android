@@ -1,0 +1,12 @@
+C:\NESCOIN\VERSION_OFICIAL\web-nescoin\Nescoin.Conexion\bin\Release\Nescoin.Conexion.dll.config
+C:\NESCOIN\VERSION_OFICIAL\web-nescoin\Nescoin.Conexion\bin\Release\Nescoin.Conexion.dll
+C:\NESCOIN\VERSION_OFICIAL\web-nescoin\Nescoin.Conexion\bin\Release\Nescoin.Conexion.pdb
+C:\NESCOIN\VERSION_OFICIAL\web-nescoin\Nescoin.Conexion\bin\Release\EntityFramework.dll
+C:\NESCOIN\VERSION_OFICIAL\web-nescoin\Nescoin.Conexion\bin\Release\EntityFramework.SqlServer.dll
+C:\NESCOIN\VERSION_OFICIAL\web-nescoin\Nescoin.Conexion\bin\Release\EntityFramework.xml
+C:\NESCOIN\VERSION_OFICIAL\web-nescoin\Nescoin.Conexion\bin\Release\EntityFramework.SqlServer.xml
+C:\NESCOIN\VERSION_OFICIAL\web-nescoin\Nescoin.Conexion\obj\Release\Nescoin.Conexion.csprojAssemblyReference.cache
+C:\NESCOIN\VERSION_OFICIAL\web-nescoin\Nescoin.Conexion\obj\Release\Nescoin.Conexion.csproj.CoreCompileInputs.cache
+C:\NESCOIN\VERSION_OFICIAL\web-nescoin\Nescoin.Conexion\obj\Release\Nescoin.Conexion.csproj.CopyComplete
+C:\NESCOIN\VERSION_OFICIAL\web-nescoin\Nescoin.Conexion\obj\Release\Nescoin.Conexion.dll
+C:\NESCOIN\VERSION_OFICIAL\web-nescoin\Nescoin.Conexion\obj\Release\Nescoin.Conexion.pdb

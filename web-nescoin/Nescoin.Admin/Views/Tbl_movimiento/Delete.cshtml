@@ -1,0 +1,96 @@
+﻿@model Nescoin.Conexion.Models.Tbl_movimiento
+
+@{
+    ViewBag.Title = "Eliminar";
+}
+
+<h2>Eliminar</h2>
+
+<h3>Estas seguro que quieres eliminar?</h3>
+<div>
+    <h4>Movimiento</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.fecha_movimiento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fecha_movimiento)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.comentario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.comentario)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.estado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.estado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.num_ref_movimiento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.num_ref_movimiento)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tbl_Calificacion.descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tbl_Calificacion.descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tbl_Forma_Pago.descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tbl_Forma_Pago.descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tbl_Usuario.nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tbl_Usuario.nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tbl_tipo_movimiento.nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tbl_tipo_movimiento.nombre)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Eliminar" class="btn btn-default" /> |
+            @Html.ActionLink("Volver a la lista", "Index")
+        </div>
+    }
+</div>

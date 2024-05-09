@@ -1,0 +1,225 @@
+﻿@{
+    ViewBag.Title = "RegistroPerfil";
+    var usuario = ViewBag.DatoUsuario;
+}
+@model Nescoin.Conexion.Models.Cascada
+
+<script type="text/javascript">
+
+
+
+    var check = function () {
+        if (document.getElementById('password_1').value ==
+            document.getElementById('password_2').value) {
+            document.getElementById('message').style.color = 'green';
+            document.getElementById('message').innerHTML = 'Coinciden las contraseñas';
+        } else {
+            document.getElementById('message').style.color = 'red';
+            document.getElementById('message').innerHTML = 'NO Coinciden las contraseñas';
+        }
+    }
+
+
+    function Validar() {
+        //var password = document.getElementById("password_1").value;
+        //var confirmPassword = document.getElementById("password_2").value;
+        var pais = document.getElementById("id_pais").value;
+        var ciudad = document.getElementById("id_ciudad").value;
+        var comuna = document.getElementById("id_comuna").value;
+
+        if (pais == "") {
+            alert("DEBE SELECCIONAR PAIS");
+            return false;
+        }
+        if (ciudad == "") {
+            alert("DEBE SELECCIONAR CIUDAD");
+            return false;
+        }
+        if (comuna == "") {
+            alert("DEBE SELECCIONAR COMUNA");
+            return false;
+        }
+
+        return true;
+    }
+
+</script>
+
+
+<div class="modal-dialog" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title">DATOS DEL PERFIL DEl USUARIO <strong>@usuario.nombre @usuario.apellido</strong> </h5>
+
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        @{ 
+            var calificacion = ViewBag.calificacion;
+        }
+        <div class="d-inline-block float-right">
+            <h5 class="modal-title">Su calificación actual es <strong> @ViewBag.Calificacion</strong></h5>
+            <!--Pinta las estrellitas del usuario seleccionado-->
+            @for (var i = 1; i <= calificacion; i++)
+            {
+                <i class="text-warning fa fa-star flex-xl-wrap"></i>
+            }
+        </div>
+
+        <div class="modal-body" style="font-size:10px;">
+            <form action="/Perfil/ActualizarUsuario" method="post" style="border:1px solid #ccc">
+                <div class="container">
+                    <label for="correo"><b>Correo</b></label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value=@ViewBag.correo name="email" required autocomplete="off">
+                    <hr>
+                    <hr>
+
+                    <label for="categoria"><b>Categoria Servicio</b></label>
+                    <div class="form-group">
+                        <select class="form-control" id="combo_profesion" name="id_profesion">
+                            @foreach (Nescoin.Conexion.Models.Tbl_Profesion pro in ViewBag.ListaProfesion)
+                            {
+                                if (pro.id_profesion == ViewBag.IdProfesion)
+                                {
+                                    <option value="@pro.id_profesion" selected>@pro.descripcion</option>
+                                }
+                                else
+                                {
+                                    <option value="@pro.id_profesion">@pro.descripcion</option>
+                                }
+
+                            }
+                        </select>
+
+                    </div>
+
+                    <hr>
+                    <div class="form-group">
+                        <label for="nombre"><b>Nombre</b></label>
+                        <input class="form-control" type="text" placeholder="Ingrese Nombre Usuario" value="@usuario.nombre" name="nombre" required autocomplete="off">
+
+                    </div>
+                    <hr>
+                    <hr>
+                    <div class="form-group">
+                        <label for="apellido"><b>Apellido</b></label>
+                        <input type="text" class="form-control" placeholder="Ingrese Apellido" name="apellido" value="@usuario.apellido" required autocomplete="off">
+                    </div>
+                    <hr>
+                    <hr>
+                    <div class="form-group">
+                        <label for="direccion"><b>Dirección</b></label>
+                        <input type="text" class="form-control" placeholder="Ingrese Dirección" name="direccion" value="@ViewBag.direccion" required autocomplete="off">
+                    </div>
+
+                    <hr>
+                    <hr>
+                    <div class="form-group">
+                        <label for="direccion"><b>Describa su actividad</b></label>
+                        <input class="form-control" type="text" placeholder="Ingrese descripcion de su actividad" value="@ViewBag.descripcionProfesion" name="actividad" required autocomplete="off">
+                    </div>
+                    <hr>
+                    <hr>
+
+                    <div class="form-group">
+                        <label for="pais"><b>Pais</b></label>
+
+                        @if (ViewBag.ListaPaises != null)
+                        {
+                            @Html.DropDownListFor(m => m.id_pais, ViewBag.ListaPaises as SelectList, "SELECCIONE PAIS", new { @class = "form-control", @id = "id_pais" })
+                        }
+                    </div>
+                    <hr>
+                    <hr>
+                    <div class="form-group">
+                        <label for="ciudad"><b>Ciudad</b></label>
+
+                        @Html.DropDownListFor(m => m.id_ciudad, ViewBag.ListaCiudades as SelectList, "SELECCIONE CIUDAD", new { @class = "form-control", @id = "id_ciudad" })
+                    </div>
+                    <hr>
+                    <hr>
+                    <div class="form-group">
+                        <label for="comuna"><b>Comuna</b></label>
+
+                        @Html.DropDownListFor(m => m.id_comuna, ViewBag.ListaComunas as SelectList, "SELECCIONE COMUNA", new { @class = "form-control", @id = "id_comuna" })
+                    </div>
+                    <hr>
+                    <hr>
+                    <div class="form-group">
+                        <label for="categoria"><b>Tipo de cuenta</b></label>
+
+                        <select class="form-control" id="combo_tipo_Cuenta" name="id_tipo_cuenta">
+                            @foreach (Nescoin.Conexion.Models.Tbl_Tipo_Cuenta pro in ViewBag.ListaTipoCuentas)
+                            {
+                                if (pro.id_tipo_cuenta == ViewBag.IdTipoCuenta)
+                                {
+                                    <option value="@pro.id_tipo_cuenta" selected>@pro.descripcion</option>
+                                }
+                                else
+                                {
+                                    <option value="@pro.id_tipo_cuenta">@pro.descripcion</option>
+                                }
+
+                            }
+                        </select>
+
+                    </div>
+
+
+
+                    <!--
+                <p>Para crear una cuenta aceptas nuestros<a href="#" style="color:dodgerblue">Terminos & Privacidad</a>.</p>
+                -->
+
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn  btn-agregar" onclick="return Validar()">Registra Usuario</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>
+
+<script src="~/Scripts/jquery-3.5.1.min.js"></script>
+<script>
+    $(document).ready(function () {
+
+        //Codigo para pais***************************************************
+        $("#id_pais").change(traerCiudad());
+
+        //Ajax para comuna******************************************
+        $("#id_ciudad").change(function () {
+            var idCiudad = $(this).val();
+            $.ajax({
+                type: "post",
+                url: "/Perfil/ObtieneListaComuna?id_ciudad=" + ViewBag.IdCiudad,
+                contentType: "html",
+                success: function (response) {
+                    $("#id_comuna").empty();
+                    $("#id_comuna").append(response);
+                }
+            })
+        });
+
+        traerCiudad();
+
+        function traerCiudad() {
+            var idPais = $("#id_pais").val();
+            $.ajax({
+                type: "post",
+                data: { "idpais": idPais },
+                url: "/Perfil/ObtenerListaCiudad?id_pais=" + idPais+ "&id_ciudad=@ViewBag.CiudadSelecionada",//idCiudad selected
+                contentType: "html",
+                success: function (data) {
+                    //$("#id_ciudad").empty();
+                    $("#id_ciudad").append(data);
+                }
+            })
+        }
+    }
+    )
+
+</script>

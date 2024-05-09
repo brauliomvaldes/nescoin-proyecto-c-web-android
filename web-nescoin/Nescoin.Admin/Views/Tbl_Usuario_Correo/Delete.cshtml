@@ -1,0 +1,56 @@
+﻿@model Nescoin.Conexion.Models.Tbl_Usuario_Correo
+
+@{
+    ViewBag.Title = "Eliminar";
+}
+
+<h2>Eliminar</h2>
+
+<h3>Estas seguro de querer eliminar?</h3>
+<div>
+    <h4>Correo de Usuario</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.estado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.estado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.principal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.principal)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tbl_Correo.descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tbl_Correo.descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tbl_Usuario.nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tbl_Usuario.nombre)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Volvera a la lista", "Index")
+        </div>
+    }
+</div>

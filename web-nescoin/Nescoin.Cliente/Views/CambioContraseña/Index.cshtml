@@ -1,0 +1,82 @@
+﻿@{
+    ViewBag.Title = "CambioContraseña";
+    ViewBag.flagCambioContraseña = Session["flagCambioContraseña"];
+
+}
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/Scripts/sweetalert.min.js"></script>
+
+<script type="text/javascript">
+    function carga_frm12() {
+        debugger
+        alert('Prueba');
+        @*var variable = '@ViewBag.flagCambioContraseña';
+                if (variable != '')
+                {
+                    if (variable == '1')
+                    {
+                        swal("CAMBIO CONTRASEÑA", "Contraseña cambiada exitosamente!", "success");
+                    }
+                    if (variable == '2')
+                    {
+                        swal("CAMBIO CONTRASEÑA", "Contraseña ingresada no corresponde al usuario!", "error");
+                    }
+        }
+        @{
+            Session["flagCambioContraseña"] = "0";
+        }
+    }*@
+    }
+</script>
+
+
+<body onload="carga_frm12()">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">CAMBIO DE CONTRASEÑA</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="/CambioContraseña/CambiaClave" method="post">
+                    <div class="form-group">
+                        <label class="col-form-label">Clave Actual:</label>
+                        <input type="password" placeholder="Ingrese su Password actual" class="form-control" name="claveactual" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-form-label">Nueva Clave:</label>
+                        <input type="password" placeholder="Ingrese su nuevo Password" class="form-control" name="nuevaclave" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-form-label">Repita Clave Nueva:</label>
+                        <input type="password" placeholder="Repita su nuevo Password" class="form-control" name="repite" required>
+                    </div>
+                    <div class="modal-footer">
+                        <input type="submit" class="btn btn-agregar text-center" value="Cambiar">
+                    </div>
+                    <div>
+                        @if (ViewBag.CambiaContraseña != null)
+                        {
+                            if (ViewBag.CambiaContraseña == "true")
+                            {
+                                <h2 class="alert-danger">@ViewBag.mensaje</h2>
+                            }
+                            else
+                            {
+                                <h2 class="alert-success">@ViewBag.mensaje</h2>
+                            }
+                        }
+                    </div>
+                </form>
+                <div class="w3-container">
+                    <a href="~/Home" class="btn btn-primary">Volver al Escritorio</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

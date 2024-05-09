@@ -1,0 +1,11 @@
+﻿@model Nescoin.Conexion.Models.Tbl_Comuna
+
+<option value="">--Selecciona comuna--</option>
+
+@if (ViewBag.ListaComunas != null)
+{
+    foreach (var item in ViewBag.ListaComunas)
+    {
+        <option value="@item.Value">@item.Text</option>
+    }
+}

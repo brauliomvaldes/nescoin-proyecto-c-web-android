@@ -1,0 +1,46 @@
+﻿@model IEnumerable<Nescoin.Conexion.Models.Tbl_Calificacion>
+
+@{
+    ViewBag.Title = "Calificaciones";
+}
+
+<h2>Tabla Calificaciones</h2>
+
+<p>
+    @*@Html.ActionLink("Crear nuevo", "Create")*@
+    <a href="/Tbl_Calificacion/Create/" class="btn btn-success">Crear Nuevo</a>
+    <a href="/Home/Index" class="btn btn-secondary btn-sm float-right">Volver al menu principal</a>
+</p>
+<table class= "table table-bordered">
+    <tr class="table-active btn-info text-center">
+        <th>
+            ID
+        </th>
+        <th>
+            Nombre
+        </th>
+        <th>
+            Descripción
+        </th>
+        <th>Admin.</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.id_calificacion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.descripcion)
+        </td>
+        <td class="text-center">
+            <a href="/Tbl_Calificacion/Edit/?id=@item.id_calificacion" class="btn btn-warning">Editar</a>
+            @*@Html.ActionLink("Editar", "Edit", new { id=item.id_calificacion }) |*@
+        </td>
+    </tr>
+}
+
+</table>

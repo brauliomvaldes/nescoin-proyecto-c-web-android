@@ -1,0 +1,83 @@
+﻿@model IEnumerable<Nescoin.Conexion.Models.Tbl_Usuario>
+
+@{
+    ViewBag.Title = "Usuarios";
+}
+
+<h2>Tablas Usuarios</h2>
+
+<p>
+    @*@Html.ActionLink("Crear Nuevo", "Create")*@
+    <br />
+    <a href="/Tbl_Usuario/Create/" class="btn btn-success">Crear Nuevo</a>
+    <a href="/Home/Index" class="btn btn-secondary btn-sm float-right">Volver a administración</a>
+</p>
+<table class= "table table-bordered">
+    <tr class= "table-active btn-info text-center">
+        <th>
+            Nombre
+        </th>
+        <th>
+            Apellido
+        </th>
+        <th>
+            Fecha Creación
+        </th>
+        <th>
+            Fecha Actualización
+        </th>
+        <th>
+            Contraseña
+        </th>
+        <th>
+            Foto
+        </th>
+        <th>
+            Nick
+        </th>
+        <th>
+            Direccion
+        </th>
+        <th>
+            Tipo de cuenta
+        </th>
+        <th>Admin.</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.apellido)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fecha_creacion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fecha_actualizacion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.contraseña)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.foto)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nick)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tbl_Direccion.descripcion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tbl_Tipo_Cuenta.descripcion)
+        </td>
+        <td class="text-center ">
+            @*@Html.ActionLink("Editar", "Edit", new { id=item.id_usuario }) |*@
+            <a href="/Tbl_Usuario/Edit/?id=@item.id_usuario" class="btn btn-warning">Editar</a>
+        </td>
+    </tr>
+}
+
+</table>

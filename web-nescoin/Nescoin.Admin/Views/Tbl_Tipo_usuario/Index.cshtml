@@ -1,0 +1,42 @@
+﻿@model IEnumerable<Nescoin.Conexion.Models.Tbl_Tipo_usuario>
+
+@{
+    ViewBag.Title = "Tipos de Usuarios";
+}
+
+<h2>Tabla Tipos de Usuarios</h2>
+
+<p>
+    @*@Html.ActionLink("Crear Nuevo", "Create")*@
+    <br />
+    <a href="/Tbl_Tipo_usuario/Create/" class="btn btn-success">Crear Nuevo</a>
+    <a href="/Home/Index" class="btn btn-secondary btn-sm float-right">Volver al menu principal</a>
+</p>
+<table class="table table-bordered">
+    <tr class="table-active btn-info text-center">
+        <th>
+            ID
+        </th>
+        <th>
+            Descripcion
+        </th>
+        <th>Admin.</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.id_tipo_usuario)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.descripcion)
+            </td>
+            <td class="text-center ">
+                @*@Html.ActionLink("Editar", "Edit", new { id = item.id_tipo_usuario })*@
+                <a href="/Tbl_Tipo_usuario/Edit/?id=@item.id_tipo_usuario" class="btn btn-warning">Editar</a>
+            </td>
+        </tr>
+    }
+
+</table>

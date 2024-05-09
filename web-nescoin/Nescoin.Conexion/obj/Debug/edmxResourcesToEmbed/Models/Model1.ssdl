@@ -1,0 +1,781 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BD_NESCOINModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Tbl_Calificacion">
+    <Key>
+      <PropertyRef Name="id_calificacion" />
+    </Key>
+    <Property Name="id_calificacion" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="200" />
+    <Property Name="descripcion" Type="varchar" MaxLength="255" />
+    <Property Name="estado" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Tbl_Ciudad">
+    <Key>
+      <PropertyRef Name="id_ciudad" />
+    </Key>
+    <Property Name="id_ciudad" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="descripcion" Type="varchar" MaxLength="255" />
+    <Property Name="id_pais" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="estado" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Tbl_Comuna">
+    <Key>
+      <PropertyRef Name="id_comuna" />
+    </Key>
+    <Property Name="id_comuna" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="descripcion" Type="varchar" MaxLength="255" />
+    <Property Name="id_ciudad" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="estado" Type="bit" />
+  </EntityType>
+  <EntityType Name="Tbl_Contacto">
+    <Key>
+      <PropertyRef Name="num_registro" />
+    </Key>
+    <Property Name="id_contacto" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="id_usuario" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="id_tipo_usuario" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="estado" Type="bit" />
+    <Property Name="id_calificacion" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="num_registro" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Tbl_Correo">
+    <Key>
+      <PropertyRef Name="id_correo" />
+    </Key>
+    <Property Name="id_correo" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="descripcion" Type="varchar" MaxLength="255" />
+    <Property Name="estado" Type="bit" />
+  </EntityType>
+  <EntityType Name="Tbl_Direccion">
+    <Key>
+      <PropertyRef Name="id_direccion" />
+    </Key>
+    <Property Name="id_direccion" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="descripcion" Type="varchar" MaxLength="2000" />
+    <Property Name="numero" Type="varchar" MaxLength="255" />
+    <Property Name="id_comuna" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="estado" Type="bit" />
+  </EntityType>
+  <EntityType Name="Tbl_Forma_Pago">
+    <Key>
+      <PropertyRef Name="id_forma_pago" />
+    </Key>
+    <Property Name="id_forma_pago" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="descripcion" Type="varchar" MaxLength="255" />
+    <Property Name="estado" Type="bit" />
+  </EntityType>
+  <EntityType Name="Tbl_IndicadoresBS">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="Objetivos" Type="varchar" MaxLength="255" />
+    <Property Name="Metas" Type="varchar" MaxLength="255" />
+    <Property Name="Indicador" Type="varchar" MaxLength="255" />
+    <Property Name="Iniciativas" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="Tbl_Log">
+    <Key>
+      <PropertyRef Name="id_log" />
+    </Key>
+    <Property Name="id_log" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="fecha" Type="date" />
+    <Property Name="hora" Type="time" Precision="7" />
+    <Property Name="id_usuario" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="id_tipo_log" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="estado" Type="bit" />
+  </EntityType>
+  <EntityType Name="Tbl_movimiento">
+    <Key>
+      <PropertyRef Name="id_movimiento" />
+    </Key>
+    <Property Name="id_movimiento" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="id_tipo_movimiento" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="fecha_movimiento" Type="date" />
+    <Property Name="descripcion" Type="varchar" MaxLength="255" />
+    <Property Name="id_usuario" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="id_calificacion" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="comentario" Type="varchar" MaxLength="255" />
+    <Property Name="id_forma_pago" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="num_ref_movimiento" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="estado" Type="bit" />
+  </EntityType>
+  <EntityType Name="Tbl_Pais">
+    <Key>
+      <PropertyRef Name="id_pais" />
+    </Key>
+    <Property Name="id_pais" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="descripcion" Type="varchar" MaxLength="255" />
+    <Property Name="estado" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Tbl_Profesion">
+    <Key>
+      <PropertyRef Name="id_profesion" />
+    </Key>
+    <Property Name="id_profesion" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="descripcion" Type="varchar" MaxLength="255" />
+    <Property Name="estado" Type="bit" />
+  </EntityType>
+  <EntityType Name="Tbl_Telefono">
+    <Key>
+      <PropertyRef Name="id_telefono" />
+    </Key>
+    <Property Name="id_telefono" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="numero_telefono" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="estado" Type="bit" />
+  </EntityType>
+  <EntityType Name="Tbl_Tipo_Cuenta">
+    <Key>
+      <PropertyRef Name="id_tipo_cuenta" />
+    </Key>
+    <Property Name="id_tipo_cuenta" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="descripcion" Type="varchar" MaxLength="255" />
+    <Property Name="estado" Type="bit" />
+  </EntityType>
+  <EntityType Name="Tbl_tipo_log">
+    <Key>
+      <PropertyRef Name="id_tipo_log" />
+    </Key>
+    <Property Name="id_tipo_log" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="descripcion" Type="varchar" MaxLength="255" />
+    <Property Name="estado" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Tbl_tipo_movimiento">
+    <Key>
+      <PropertyRef Name="id_tipo_movimiento" />
+    </Key>
+    <Property Name="id_tipo_movimiento" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="255" />
+    <Property Name="descripcion" Type="varchar" MaxLength="1000" />
+    <Property Name="estado" Type="bit" />
+  </EntityType>
+  <EntityType Name="Tbl_Tipo_usuario">
+    <Key>
+      <PropertyRef Name="id_tipo_usuario" />
+    </Key>
+    <Property Name="id_tipo_usuario" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="descripcion" Type="varchar" MaxLength="255" />
+    <Property Name="estado" Type="bit" />
+  </EntityType>
+  <EntityType Name="Tbl_Usuario">
+    <Key>
+      <PropertyRef Name="id_usuario" />
+    </Key>
+    <Property Name="id_usuario" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="nick" Type="varchar" MaxLength="100" />
+    <Property Name="nombre" Type="varchar" MaxLength="255" />
+    <Property Name="apellido" Type="varchar" MaxLength="255" />
+    <Property Name="fecha_creacion" Type="date" />
+    <Property Name="fecha_actualizacion" Type="date" />
+    <Property Name="contraseña" Type="varchar" MaxLength="255" />
+    <Property Name="id_direccion" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="id_tipo_cuenta" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="foto" Type="varchar" MaxLength="2000" />
+    <Property Name="estado" Type="bit" />
+  </EntityType>
+  <EntityType Name="Tbl_Usuario_Correo">
+    <Key>
+      <PropertyRef Name="id_usuario" />
+      <PropertyRef Name="id_correo" />
+    </Key>
+    <Property Name="id_usuario" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="id_correo" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="principal" Type="bit" />
+    <Property Name="estado" Type="bit" />
+  </EntityType>
+  <EntityType Name="Tbl_Usuario_Profesion">
+    <Key>
+      <PropertyRef Name="id_usuario" />
+      <PropertyRef Name="id_profesion" />
+    </Key>
+    <Property Name="id_usuario" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="id_profesion" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="descripcion" Type="varchar" MaxLength="1000" />
+    <Property Name="promedio_calificacion" Type="float" />
+    <Property Name="estado" Type="bit" />
+  </EntityType>
+  <EntityType Name="Tbl_Usuario_Telefono">
+    <Key>
+      <PropertyRef Name="id_usuario" />
+      <PropertyRef Name="id_telefono" />
+    </Key>
+    <Property Name="id_usuario" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="id_telefono" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="estado" Type="bit" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'BD_NESCOIN.dbo.Vi_Tbl_Echo_Prof_Comuna' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="Vi_Tbl_Echo_Prof_Comuna">
+    <Key>
+      <PropertyRef Name="id_comuna" />
+    </Key>
+    <Property Name="id_comuna" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="comuna" Type="varchar" MaxLength="255" />
+    <Property Name="informatica" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="Profesores" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="Mecanica" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="Total" Type="numeric" Precision="18" Scale="0" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'BD_NESCOIN.dbo.Vi_Trae_contactos_de_usuario' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="Vi_Trae_contactos_de_usuario">
+    <Key>
+      <PropertyRef Name="id_usuario" />
+      <PropertyRef Name="Autonumerico" />
+    </Key>
+    <Property Name="id_usuario" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="nick" Type="varchar" MaxLength="100" />
+    <Property Name="nombre" Type="varchar" MaxLength="255" />
+    <Property Name="apellido" Type="varchar" MaxLength="255" />
+    <Property Name="Profesion" Type="varchar" MaxLength="255" />
+    <Property Name="descripcion" Type="varchar" MaxLength="1000" />
+    <Property Name="foto" Type="varchar" MaxLength="2000" />
+    <Property Name="promedio_calificacion" Type="float" />
+    <Property Name="id_usuario_logueado" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="Autonumerico" Type="bigint" Nullable="false" />
+    <Property Name="numero_telefono" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'BD_NESCOIN.dbo.Vi_Trae_Historial' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="Vi_Trae_Historial">
+    <Key>
+      <PropertyRef Name="Tipo_Desc" />
+      <PropertyRef Name="id_usuario" />
+      <PropertyRef Name="Autonumerico" />
+    </Key>
+    <Property Name="id_usuario" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="Titulo" Type="varchar" MaxLength="255" />
+    <Property Name="Tipo_Desc" Type="varchar" MaxLength="11" Nullable="false" />
+    <Property Name="descripcion" Type="varchar" MaxLength="255" />
+    <Property Name="id_calificacion" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="fecha_movimiento" Type="date" />
+    <Property Name="Autonumerico" Type="bigint" Nullable="false" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'BD_NESCOIN.dbo.Vi_Trae_Oferta_Trabajo' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="Vi_Trae_Oferta_Trabajo">
+    <Key>
+      <PropertyRef Name="id_usuario" />
+      <PropertyRef Name="id_movimiento" />
+      <PropertyRef Name="Autonumerico" />
+    </Key>
+    <Property Name="id_usuario" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="Titulo" Type="varchar" MaxLength="255" />
+    <Property Name="descripcion" Type="varchar" MaxLength="255" />
+    <Property Name="id_calificacion" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="fecha_movimiento" Type="date" />
+    <Property Name="Autonumerico" Type="bigint" Nullable="false" />
+    <Property Name="id_movimiento" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'BD_NESCOIN.dbo.Vi_Trae_Presupuesto' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="Vi_Trae_Presupuesto">
+    <Key>
+      <PropertyRef Name="id_usuario" />
+      <PropertyRef Name="Autonumerico" />
+    </Key>
+    <Property Name="id_usuario" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="Titulo" Type="varchar" MaxLength="255" />
+    <Property Name="descripcion" Type="varchar" MaxLength="255" />
+    <Property Name="id_calificacion" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="fecha_movimiento" Type="date" />
+    <Property Name="Autonumerico" Type="bigint" Nullable="false" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'BD_NESCOIN.dbo.Vi_Trae_Vitrina' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="Vi_Trae_Vitrina">
+    <Key>
+      <PropertyRef Name="id_usuario" />
+    </Key>
+    <Property Name="id_usuario" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="nick" Type="varchar" MaxLength="100" />
+    <Property Name="nombre" Type="varchar" MaxLength="255" />
+    <Property Name="apellido" Type="varchar" MaxLength="255" />
+    <Property Name="Profesion" Type="varchar" MaxLength="255" />
+    <Property Name="descripcion" Type="varchar" MaxLength="1000" />
+    <Property Name="foto" Type="varchar" MaxLength="2000" />
+    <Property Name="promedio_calificacion" Type="float" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'BD_NESCOIN.dbo.Vi_Verifica_Presupuesto' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="Vi_Verifica_Presupuesto">
+    <Key>
+      <PropertyRef Name="id_movimiento" />
+    </Key>
+    <Property Name="id_movimiento" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="id_tipo_movimiento" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="fecha_movimiento" Type="date" />
+    <Property Name="descripcion" Type="varchar" MaxLength="255" />
+    <Property Name="id_usuario" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="id_calificacion" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="Titulo" Type="varchar" MaxLength="255" />
+    <Property Name="num_ref_movimiento" Type="numeric" Precision="18" Scale="0" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'BD_NESCOIN.dbo.Vi_Verifica_Solicitud_Presupuesto' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="Vi_Verifica_Solicitud_Presupuesto">
+    <Key>
+      <PropertyRef Name="id_movimiento" />
+    </Key>
+    <Property Name="id_movimiento" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="id_tipo_movimiento" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="fecha_movimiento" Type="date" />
+    <Property Name="descripcion" Type="varchar" MaxLength="255" />
+    <Property Name="Titulo" Type="varchar" MaxLength="255" />
+    <Property Name="num_ref_movimiento" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="usuario_logueado" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="id_calificacion" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="UsuarioSolicita" Type="varchar" MaxLength="511" />
+    <Property Name="Autonumerico" Type="bigint" />
+  </EntityType>
+  <Association Name="FK_Tbl_Ciudad_Pais">
+    <End Role="Tbl_Pais" Type="Self.Tbl_Pais" Multiplicity="0..1" />
+    <End Role="Tbl_Ciudad" Type="Self.Tbl_Ciudad" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_Pais">
+        <PropertyRef Name="id_pais" />
+      </Principal>
+      <Dependent Role="Tbl_Ciudad">
+        <PropertyRef Name="id_pais" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tbl_Comuna_Tbl_Ciudad">
+    <End Role="Tbl_Ciudad" Type="Self.Tbl_Ciudad" Multiplicity="0..1" />
+    <End Role="Tbl_Comuna" Type="Self.Tbl_Comuna" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_Ciudad">
+        <PropertyRef Name="id_ciudad" />
+      </Principal>
+      <Dependent Role="Tbl_Comuna">
+        <PropertyRef Name="id_ciudad" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tbl_Contacto_Tbl_Calificacion">
+    <End Role="Tbl_Calificacion" Type="Self.Tbl_Calificacion" Multiplicity="0..1" />
+    <End Role="Tbl_Contacto" Type="Self.Tbl_Contacto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_Calificacion">
+        <PropertyRef Name="id_calificacion" />
+      </Principal>
+      <Dependent Role="Tbl_Contacto">
+        <PropertyRef Name="id_calificacion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tbl_Contacto_Tbl_Tipo_usuario">
+    <End Role="Tbl_Tipo_usuario" Type="Self.Tbl_Tipo_usuario" Multiplicity="0..1" />
+    <End Role="Tbl_Contacto" Type="Self.Tbl_Contacto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_Tipo_usuario">
+        <PropertyRef Name="id_tipo_usuario" />
+      </Principal>
+      <Dependent Role="Tbl_Contacto">
+        <PropertyRef Name="id_tipo_usuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tbl_Contacto_Tbl_Usuario">
+    <End Role="Tbl_Usuario" Type="Self.Tbl_Usuario" Multiplicity="1" />
+    <End Role="Tbl_Contacto" Type="Self.Tbl_Contacto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_Usuario">
+        <PropertyRef Name="id_usuario" />
+      </Principal>
+      <Dependent Role="Tbl_Contacto">
+        <PropertyRef Name="id_usuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tbl_Direccion_Tbl_Comuna">
+    <End Role="Tbl_Comuna" Type="Self.Tbl_Comuna" Multiplicity="0..1" />
+    <End Role="Tbl_Direccion" Type="Self.Tbl_Direccion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_Comuna">
+        <PropertyRef Name="id_comuna" />
+      </Principal>
+      <Dependent Role="Tbl_Direccion">
+        <PropertyRef Name="id_comuna" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tbl_Log_Tbl_tipo_log">
+    <End Role="Tbl_tipo_log" Type="Self.Tbl_tipo_log" Multiplicity="0..1" />
+    <End Role="Tbl_Log" Type="Self.Tbl_Log" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_tipo_log">
+        <PropertyRef Name="id_tipo_log" />
+      </Principal>
+      <Dependent Role="Tbl_Log">
+        <PropertyRef Name="id_tipo_log" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tbl_Log_Tbl_Usuario">
+    <End Role="Tbl_Usuario" Type="Self.Tbl_Usuario" Multiplicity="0..1" />
+    <End Role="Tbl_Log" Type="Self.Tbl_Log" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_Usuario">
+        <PropertyRef Name="id_usuario" />
+      </Principal>
+      <Dependent Role="Tbl_Log">
+        <PropertyRef Name="id_usuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tbl_movimiento_Tbl_Calificacion">
+    <End Role="Tbl_Calificacion" Type="Self.Tbl_Calificacion" Multiplicity="0..1" />
+    <End Role="Tbl_movimiento" Type="Self.Tbl_movimiento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_Calificacion">
+        <PropertyRef Name="id_calificacion" />
+      </Principal>
+      <Dependent Role="Tbl_movimiento">
+        <PropertyRef Name="id_calificacion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tbl_movimiento_Tbl_Forma_Pago">
+    <End Role="Tbl_Forma_Pago" Type="Self.Tbl_Forma_Pago" Multiplicity="0..1" />
+    <End Role="Tbl_movimiento" Type="Self.Tbl_movimiento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_Forma_Pago">
+        <PropertyRef Name="id_forma_pago" />
+      </Principal>
+      <Dependent Role="Tbl_movimiento">
+        <PropertyRef Name="id_forma_pago" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tbl_movimiento_Tbl_tipo_movimiento">
+    <End Role="Tbl_tipo_movimiento" Type="Self.Tbl_tipo_movimiento" Multiplicity="0..1" />
+    <End Role="Tbl_movimiento" Type="Self.Tbl_movimiento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_tipo_movimiento">
+        <PropertyRef Name="id_tipo_movimiento" />
+      </Principal>
+      <Dependent Role="Tbl_movimiento">
+        <PropertyRef Name="id_tipo_movimiento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tbl_movimiento_Tbl_Usuario">
+    <End Role="Tbl_Usuario" Type="Self.Tbl_Usuario" Multiplicity="0..1" />
+    <End Role="Tbl_movimiento" Type="Self.Tbl_movimiento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_Usuario">
+        <PropertyRef Name="id_usuario" />
+      </Principal>
+      <Dependent Role="Tbl_movimiento">
+        <PropertyRef Name="id_usuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tbl_Usuario_Correo_Tbl_Correo">
+    <End Role="Tbl_Correo" Type="Self.Tbl_Correo" Multiplicity="1" />
+    <End Role="Tbl_Usuario_Correo" Type="Self.Tbl_Usuario_Correo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_Correo">
+        <PropertyRef Name="id_correo" />
+      </Principal>
+      <Dependent Role="Tbl_Usuario_Correo">
+        <PropertyRef Name="id_correo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tbl_Usuario_Correo_Tbl_Usuario">
+    <End Role="Tbl_Usuario" Type="Self.Tbl_Usuario" Multiplicity="1" />
+    <End Role="Tbl_Usuario_Correo" Type="Self.Tbl_Usuario_Correo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_Usuario">
+        <PropertyRef Name="id_usuario" />
+      </Principal>
+      <Dependent Role="Tbl_Usuario_Correo">
+        <PropertyRef Name="id_usuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tbl_Usuario_Profesion_Tbl_Profesion">
+    <End Role="Tbl_Profesion" Type="Self.Tbl_Profesion" Multiplicity="1" />
+    <End Role="Tbl_Usuario_Profesion" Type="Self.Tbl_Usuario_Profesion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_Profesion">
+        <PropertyRef Name="id_profesion" />
+      </Principal>
+      <Dependent Role="Tbl_Usuario_Profesion">
+        <PropertyRef Name="id_profesion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tbl_Usuario_Profesion_Tbl_Usuario">
+    <End Role="Tbl_Usuario" Type="Self.Tbl_Usuario" Multiplicity="1" />
+    <End Role="Tbl_Usuario_Profesion" Type="Self.Tbl_Usuario_Profesion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_Usuario">
+        <PropertyRef Name="id_usuario" />
+      </Principal>
+      <Dependent Role="Tbl_Usuario_Profesion">
+        <PropertyRef Name="id_usuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tbl_Usuario_Tbl_Direccion">
+    <End Role="Tbl_Direccion" Type="Self.Tbl_Direccion" Multiplicity="1" />
+    <End Role="Tbl_Usuario" Type="Self.Tbl_Usuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_Direccion">
+        <PropertyRef Name="id_direccion" />
+      </Principal>
+      <Dependent Role="Tbl_Usuario">
+        <PropertyRef Name="id_direccion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tbl_Usuario_Tbl_Tipo_Cuenta">
+    <End Role="Tbl_Tipo_Cuenta" Type="Self.Tbl_Tipo_Cuenta" Multiplicity="0..1" />
+    <End Role="Tbl_Usuario" Type="Self.Tbl_Usuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_Tipo_Cuenta">
+        <PropertyRef Name="id_tipo_cuenta" />
+      </Principal>
+      <Dependent Role="Tbl_Usuario">
+        <PropertyRef Name="id_tipo_cuenta" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tbl_Usuario_Telefono_Tbl_Telefono">
+    <End Role="Tbl_Telefono" Type="Self.Tbl_Telefono" Multiplicity="1" />
+    <End Role="Tbl_Usuario_Telefono" Type="Self.Tbl_Usuario_Telefono" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_Telefono">
+        <PropertyRef Name="id_telefono" />
+      </Principal>
+      <Dependent Role="Tbl_Usuario_Telefono">
+        <PropertyRef Name="id_telefono" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tbl_Usuario_Telefono_Tbl_Usuario">
+    <End Role="Tbl_Usuario" Type="Self.Tbl_Usuario" Multiplicity="1" />
+    <End Role="Tbl_Usuario_Telefono" Type="Self.Tbl_Usuario_Telefono" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_Usuario">
+        <PropertyRef Name="id_usuario" />
+      </Principal>
+      <Dependent Role="Tbl_Usuario_Telefono">
+        <PropertyRef Name="id_usuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="PA_Trae_Vista_Vitrina" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <EntityContainer Name="BD_NESCOINModelStoreContainer">
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tbl_Calificacion" EntityType="Self.Tbl_Calificacion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tbl_Ciudad" EntityType="Self.Tbl_Ciudad" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tbl_Comuna" EntityType="Self.Tbl_Comuna" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tbl_Contacto" EntityType="Self.Tbl_Contacto" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tbl_Correo" EntityType="Self.Tbl_Correo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tbl_Direccion" EntityType="Self.Tbl_Direccion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tbl_Forma_Pago" EntityType="Self.Tbl_Forma_Pago" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tbl_IndicadoresBS" EntityType="Self.Tbl_IndicadoresBS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tbl_Log" EntityType="Self.Tbl_Log" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tbl_movimiento" EntityType="Self.Tbl_movimiento" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tbl_Pais" EntityType="Self.Tbl_Pais" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tbl_Profesion" EntityType="Self.Tbl_Profesion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tbl_Telefono" EntityType="Self.Tbl_Telefono" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tbl_Tipo_Cuenta" EntityType="Self.Tbl_Tipo_Cuenta" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tbl_tipo_log" EntityType="Self.Tbl_tipo_log" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tbl_tipo_movimiento" EntityType="Self.Tbl_tipo_movimiento" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tbl_Tipo_usuario" EntityType="Self.Tbl_Tipo_usuario" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tbl_Usuario" EntityType="Self.Tbl_Usuario" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tbl_Usuario_Correo" EntityType="Self.Tbl_Usuario_Correo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tbl_Usuario_Profesion" EntityType="Self.Tbl_Usuario_Profesion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tbl_Usuario_Telefono" EntityType="Self.Tbl_Usuario_Telefono" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Vi_Tbl_Echo_Prof_Comuna" EntityType="Self.Vi_Tbl_Echo_Prof_Comuna" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Vi_Tbl_Echo_Prof_Comuna].[id_comuna] AS [id_comuna], 
+    [Vi_Tbl_Echo_Prof_Comuna].[comuna] AS [comuna], 
+    [Vi_Tbl_Echo_Prof_Comuna].[informatica] AS [informatica], 
+    [Vi_Tbl_Echo_Prof_Comuna].[Profesores] AS [Profesores], 
+    [Vi_Tbl_Echo_Prof_Comuna].[Mecanica] AS [Mecanica], 
+    [Vi_Tbl_Echo_Prof_Comuna].[Total] AS [Total]
+    FROM [dbo].[Vi_Tbl_Echo_Prof_Comuna] AS [Vi_Tbl_Echo_Prof_Comuna]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Vi_Trae_contactos_de_usuario" EntityType="Self.Vi_Trae_contactos_de_usuario" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Vi_Trae_contactos_de_usuario].[id_usuario] AS [id_usuario], 
+    [Vi_Trae_contactos_de_usuario].[nick] AS [nick], 
+    [Vi_Trae_contactos_de_usuario].[nombre] AS [nombre], 
+    [Vi_Trae_contactos_de_usuario].[apellido] AS [apellido], 
+    [Vi_Trae_contactos_de_usuario].[Profesion] AS [Profesion], 
+    [Vi_Trae_contactos_de_usuario].[descripcion] AS [descripcion], 
+    [Vi_Trae_contactos_de_usuario].[foto] AS [foto], 
+    [Vi_Trae_contactos_de_usuario].[promedio_calificacion] AS [promedio_calificacion], 
+    [Vi_Trae_contactos_de_usuario].[id_usuario_logueado] AS [id_usuario_logueado], 
+    [Vi_Trae_contactos_de_usuario].[Autonumerico] AS [Autonumerico], 
+    [Vi_Trae_contactos_de_usuario].[numero_telefono] AS [numero_telefono]
+    FROM [dbo].[Vi_Trae_contactos_de_usuario] AS [Vi_Trae_contactos_de_usuario]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Vi_Trae_Historial" EntityType="Self.Vi_Trae_Historial" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Vi_Trae_Historial].[id_usuario] AS [id_usuario], 
+    [Vi_Trae_Historial].[Titulo] AS [Titulo], 
+    [Vi_Trae_Historial].[Tipo_Desc] AS [Tipo_Desc], 
+    [Vi_Trae_Historial].[descripcion] AS [descripcion], 
+    [Vi_Trae_Historial].[id_calificacion] AS [id_calificacion], 
+    [Vi_Trae_Historial].[fecha_movimiento] AS [fecha_movimiento], 
+    [Vi_Trae_Historial].[Autonumerico] AS [Autonumerico]
+    FROM [dbo].[Vi_Trae_Historial] AS [Vi_Trae_Historial]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Vi_Trae_Oferta_Trabajo" EntityType="Self.Vi_Trae_Oferta_Trabajo" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Vi_Trae_Oferta_Trabajo].[id_usuario] AS [id_usuario], 
+    [Vi_Trae_Oferta_Trabajo].[Titulo] AS [Titulo], 
+    [Vi_Trae_Oferta_Trabajo].[descripcion] AS [descripcion], 
+    [Vi_Trae_Oferta_Trabajo].[id_calificacion] AS [id_calificacion], 
+    [Vi_Trae_Oferta_Trabajo].[fecha_movimiento] AS [fecha_movimiento], 
+    [Vi_Trae_Oferta_Trabajo].[Autonumerico] AS [Autonumerico], 
+    [Vi_Trae_Oferta_Trabajo].[id_movimiento] AS [id_movimiento]
+    FROM [dbo].[Vi_Trae_Oferta_Trabajo] AS [Vi_Trae_Oferta_Trabajo]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Vi_Trae_Presupuesto" EntityType="Self.Vi_Trae_Presupuesto" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Vi_Trae_Presupuesto].[id_usuario] AS [id_usuario], 
+    [Vi_Trae_Presupuesto].[Titulo] AS [Titulo], 
+    [Vi_Trae_Presupuesto].[descripcion] AS [descripcion], 
+    [Vi_Trae_Presupuesto].[id_calificacion] AS [id_calificacion], 
+    [Vi_Trae_Presupuesto].[fecha_movimiento] AS [fecha_movimiento], 
+    [Vi_Trae_Presupuesto].[Autonumerico] AS [Autonumerico]
+    FROM [dbo].[Vi_Trae_Presupuesto] AS [Vi_Trae_Presupuesto]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Vi_Trae_Vitrina" EntityType="Self.Vi_Trae_Vitrina" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Vi_Trae_Vitrina].[id_usuario] AS [id_usuario], 
+    [Vi_Trae_Vitrina].[nick] AS [nick], 
+    [Vi_Trae_Vitrina].[nombre] AS [nombre], 
+    [Vi_Trae_Vitrina].[apellido] AS [apellido], 
+    [Vi_Trae_Vitrina].[Profesion] AS [Profesion], 
+    [Vi_Trae_Vitrina].[descripcion] AS [descripcion], 
+    [Vi_Trae_Vitrina].[foto] AS [foto], 
+    [Vi_Trae_Vitrina].[promedio_calificacion] AS [promedio_calificacion]
+    FROM [dbo].[Vi_Trae_Vitrina] AS [Vi_Trae_Vitrina]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Vi_Verifica_Presupuesto" EntityType="Self.Vi_Verifica_Presupuesto" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Vi_Verifica_Presupuesto].[id_movimiento] AS [id_movimiento], 
+    [Vi_Verifica_Presupuesto].[id_tipo_movimiento] AS [id_tipo_movimiento], 
+    [Vi_Verifica_Presupuesto].[fecha_movimiento] AS [fecha_movimiento], 
+    [Vi_Verifica_Presupuesto].[descripcion] AS [descripcion], 
+    [Vi_Verifica_Presupuesto].[id_usuario] AS [id_usuario], 
+    [Vi_Verifica_Presupuesto].[id_calificacion] AS [id_calificacion], 
+    [Vi_Verifica_Presupuesto].[Titulo] AS [Titulo], 
+    [Vi_Verifica_Presupuesto].[num_ref_movimiento] AS [num_ref_movimiento]
+    FROM [dbo].[Vi_Verifica_Presupuesto] AS [Vi_Verifica_Presupuesto]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Vi_Verifica_Solicitud_Presupuesto" EntityType="Self.Vi_Verifica_Solicitud_Presupuesto" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Vi_Verifica_Solicitud_Presupuesto].[id_movimiento] AS [id_movimiento], 
+    [Vi_Verifica_Solicitud_Presupuesto].[id_tipo_movimiento] AS [id_tipo_movimiento], 
+    [Vi_Verifica_Solicitud_Presupuesto].[fecha_movimiento] AS [fecha_movimiento], 
+    [Vi_Verifica_Solicitud_Presupuesto].[descripcion] AS [descripcion], 
+    [Vi_Verifica_Solicitud_Presupuesto].[Titulo] AS [Titulo], 
+    [Vi_Verifica_Solicitud_Presupuesto].[num_ref_movimiento] AS [num_ref_movimiento], 
+    [Vi_Verifica_Solicitud_Presupuesto].[usuario_logueado] AS [usuario_logueado], 
+    [Vi_Verifica_Solicitud_Presupuesto].[id_calificacion] AS [id_calificacion], 
+    [Vi_Verifica_Solicitud_Presupuesto].[UsuarioSolicita] AS [UsuarioSolicita], 
+    [Vi_Verifica_Solicitud_Presupuesto].[Autonumerico] AS [Autonumerico]
+    FROM [dbo].[Vi_Verifica_Solicitud_Presupuesto] AS [Vi_Verifica_Solicitud_Presupuesto]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_Tbl_Ciudad_Pais" Association="Self.FK_Tbl_Ciudad_Pais">
+      <End Role="Tbl_Pais" EntitySet="Tbl_Pais" />
+      <End Role="Tbl_Ciudad" EntitySet="Tbl_Ciudad" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tbl_Comuna_Tbl_Ciudad" Association="Self.FK_Tbl_Comuna_Tbl_Ciudad">
+      <End Role="Tbl_Ciudad" EntitySet="Tbl_Ciudad" />
+      <End Role="Tbl_Comuna" EntitySet="Tbl_Comuna" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tbl_Contacto_Tbl_Calificacion" Association="Self.FK_Tbl_Contacto_Tbl_Calificacion">
+      <End Role="Tbl_Calificacion" EntitySet="Tbl_Calificacion" />
+      <End Role="Tbl_Contacto" EntitySet="Tbl_Contacto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tbl_Contacto_Tbl_Tipo_usuario" Association="Self.FK_Tbl_Contacto_Tbl_Tipo_usuario">
+      <End Role="Tbl_Tipo_usuario" EntitySet="Tbl_Tipo_usuario" />
+      <End Role="Tbl_Contacto" EntitySet="Tbl_Contacto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tbl_Contacto_Tbl_Usuario" Association="Self.FK_Tbl_Contacto_Tbl_Usuario">
+      <End Role="Tbl_Usuario" EntitySet="Tbl_Usuario" />
+      <End Role="Tbl_Contacto" EntitySet="Tbl_Contacto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tbl_Direccion_Tbl_Comuna" Association="Self.FK_Tbl_Direccion_Tbl_Comuna">
+      <End Role="Tbl_Comuna" EntitySet="Tbl_Comuna" />
+      <End Role="Tbl_Direccion" EntitySet="Tbl_Direccion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tbl_Log_Tbl_tipo_log" Association="Self.FK_Tbl_Log_Tbl_tipo_log">
+      <End Role="Tbl_tipo_log" EntitySet="Tbl_tipo_log" />
+      <End Role="Tbl_Log" EntitySet="Tbl_Log" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tbl_Log_Tbl_Usuario" Association="Self.FK_Tbl_Log_Tbl_Usuario">
+      <End Role="Tbl_Usuario" EntitySet="Tbl_Usuario" />
+      <End Role="Tbl_Log" EntitySet="Tbl_Log" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tbl_movimiento_Tbl_Calificacion" Association="Self.FK_Tbl_movimiento_Tbl_Calificacion">
+      <End Role="Tbl_Calificacion" EntitySet="Tbl_Calificacion" />
+      <End Role="Tbl_movimiento" EntitySet="Tbl_movimiento" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tbl_movimiento_Tbl_Forma_Pago" Association="Self.FK_Tbl_movimiento_Tbl_Forma_Pago">
+      <End Role="Tbl_Forma_Pago" EntitySet="Tbl_Forma_Pago" />
+      <End Role="Tbl_movimiento" EntitySet="Tbl_movimiento" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tbl_movimiento_Tbl_tipo_movimiento" Association="Self.FK_Tbl_movimiento_Tbl_tipo_movimiento">
+      <End Role="Tbl_tipo_movimiento" EntitySet="Tbl_tipo_movimiento" />
+      <End Role="Tbl_movimiento" EntitySet="Tbl_movimiento" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tbl_movimiento_Tbl_Usuario" Association="Self.FK_Tbl_movimiento_Tbl_Usuario">
+      <End Role="Tbl_Usuario" EntitySet="Tbl_Usuario" />
+      <End Role="Tbl_movimiento" EntitySet="Tbl_movimiento" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tbl_Usuario_Correo_Tbl_Correo" Association="Self.FK_Tbl_Usuario_Correo_Tbl_Correo">
+      <End Role="Tbl_Correo" EntitySet="Tbl_Correo" />
+      <End Role="Tbl_Usuario_Correo" EntitySet="Tbl_Usuario_Correo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tbl_Usuario_Correo_Tbl_Usuario" Association="Self.FK_Tbl_Usuario_Correo_Tbl_Usuario">
+      <End Role="Tbl_Usuario" EntitySet="Tbl_Usuario" />
+      <End Role="Tbl_Usuario_Correo" EntitySet="Tbl_Usuario_Correo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tbl_Usuario_Profesion_Tbl_Profesion" Association="Self.FK_Tbl_Usuario_Profesion_Tbl_Profesion">
+      <End Role="Tbl_Profesion" EntitySet="Tbl_Profesion" />
+      <End Role="Tbl_Usuario_Profesion" EntitySet="Tbl_Usuario_Profesion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tbl_Usuario_Profesion_Tbl_Usuario" Association="Self.FK_Tbl_Usuario_Profesion_Tbl_Usuario">
+      <End Role="Tbl_Usuario" EntitySet="Tbl_Usuario" />
+      <End Role="Tbl_Usuario_Profesion" EntitySet="Tbl_Usuario_Profesion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tbl_Usuario_Tbl_Direccion" Association="Self.FK_Tbl_Usuario_Tbl_Direccion">
+      <End Role="Tbl_Direccion" EntitySet="Tbl_Direccion" />
+      <End Role="Tbl_Usuario" EntitySet="Tbl_Usuario" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tbl_Usuario_Tbl_Tipo_Cuenta" Association="Self.FK_Tbl_Usuario_Tbl_Tipo_Cuenta">
+      <End Role="Tbl_Tipo_Cuenta" EntitySet="Tbl_Tipo_Cuenta" />
+      <End Role="Tbl_Usuario" EntitySet="Tbl_Usuario" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tbl_Usuario_Telefono_Tbl_Telefono" Association="Self.FK_Tbl_Usuario_Telefono_Tbl_Telefono">
+      <End Role="Tbl_Telefono" EntitySet="Tbl_Telefono" />
+      <End Role="Tbl_Usuario_Telefono" EntitySet="Tbl_Usuario_Telefono" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tbl_Usuario_Telefono_Tbl_Usuario" Association="Self.FK_Tbl_Usuario_Telefono_Tbl_Usuario">
+      <End Role="Tbl_Usuario" EntitySet="Tbl_Usuario" />
+      <End Role="Tbl_Usuario_Telefono" EntitySet="Tbl_Usuario_Telefono" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

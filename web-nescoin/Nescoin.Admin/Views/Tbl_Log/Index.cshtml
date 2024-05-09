@@ -1,0 +1,59 @@
+﻿@model IEnumerable<Nescoin.Conexion.Models.Tbl_Log>
+
+@{
+    ViewBag.Title = "Registro Logs";
+}
+
+<h2>Registro Logs</h2>
+
+<p>
+    @Html.ActionLink("Crear Nuevo", "Create")
+    <br />
+    <a href="/Home/Index">Volver a administración</a>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.fecha)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.hora)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.estado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tbl_tipo_log.descripcion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tbl_Usuario.nombre)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.fecha)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.hora)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.estado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tbl_tipo_log.descripcion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tbl_Usuario.nombre)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.id_log }) |
+            @Html.ActionLink("Detalle", "Details", new { id=item.id_log }) |
+            @Html.ActionLink("Eliminar", "Delete", new { id=item.id_log })
+        </td>
+    </tr>
+}
+
+</table>

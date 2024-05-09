@@ -1,0 +1,41 @@
+﻿@model IEnumerable<Nescoin.Conexion.Models.Tbl_Telefono>
+
+@{
+    ViewBag.Title = "Teléfonos de Usuarios";
+}
+
+<h2>Teléfonos de Usuarios</h2>
+
+<p>
+    @Html.ActionLink("Crear Nuevo", "Create")
+    <br />
+    <a href="/Home/Index">Volver a administración</a>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.numero_telefono)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.estado)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.numero_telefono)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.estado)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.id_telefono }) |
+            @Html.ActionLink("Detalle", "Details", new { id=item.id_telefono }) |
+            @Html.ActionLink("Eliminar", "Delete", new { id=item.id_telefono })
+        </td>
+    </tr>
+}
+
+</table>

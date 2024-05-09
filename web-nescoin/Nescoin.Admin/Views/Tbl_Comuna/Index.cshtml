@@ -1,0 +1,47 @@
+﻿@model IEnumerable<Nescoin.Conexion.Models.Tbl_Comuna>
+
+@{
+    ViewBag.Title = "Comunas";
+}
+
+<h2>Comunas</h2>
+
+<p>
+    @Html.ActionLink("Crear nuevo", "Create")
+    <br />
+    <a href="/Home/Index">Volver a administración</a>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.descripcion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.estado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tbl_Ciudad.descripcion)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.descripcion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.estado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tbl_Ciudad.descripcion)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.id_comuna }) |
+            @Html.ActionLink("Detalle", "Details", new { id=item.id_comuna }) |
+            @Html.ActionLink("Eliminar", "Delete", new { id=item.id_comuna })
+        </td>
+    </tr>
+}
+
+</table>

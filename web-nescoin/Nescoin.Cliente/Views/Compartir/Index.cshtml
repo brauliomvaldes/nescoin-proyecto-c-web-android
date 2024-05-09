@@ -1,0 +1,71 @@
+﻿@model List<Nescoin.Conexion.Models.Vi_Trae_contactos_de_usuario>
+
+
+@{
+    ViewBag.Title = "Compartir";
+}
+
+
+<div class="modal-dialog" role="document">
+    <div class="modal-content">
+        <div class="tab-pane float-left list-contact">
+            <hr />
+            <div class="card-header text-center">
+                <h4 class="text-monospace text-center">Al usuario: <b>@Session["NombreContactoAgregar"]</b> les puedes compartir uno de tus contactos disponibles en la lista</h4>
+            </div>
+            <hr />
+            <!--*****************************************************************************-->
+            <!--Inicio Lista de Contactos***************************************************************************************-->
+            @*<form action="DetalleContacto" id="formulario">*@
+            <div class="col-8 col-sm-8 col-lg-8 mt-2 d-inline-block">
+
+                @foreach (var pro in Model)
+                {
+                    var seleccionado = Session["contactoSeleccionado"];
+                    decimal id_contacto_seleccionado = decimal.Parse(seleccionado.ToString());
+
+                    if (@pro.id_usuario == id_contacto_seleccionado)
+                    {
+                        continue;
+                    };
+
+                    <!--Inicio Tarjeta de contacto-->
+                    <div class="card m-1 p-2" name="id_usuario">
+                        <!--Inicio Puntuación Contacto-->
+                        <div class="card-header">
+                            @for (var i = 1; i <= pro.promedio_calificacion; i++)
+                            {
+                                <i class="text-warning fa fa-star float-right"></i>
+                            }
+                        </div>
+                        <input type="text" value=@pro.id_usuario hidden="hidden" name="id_usuario" />
+                        <!--Fin Puntuación Contacto-->
+                        <!--Inicio Datos del Contacto-->
+                        <a href="/Compartir/seleccionaContacto/?id_usuario=@pro.id_usuario">
+                            <div class="card-body">
+                                <div class="img-user-list-contact float-left d-inline-block">
+                                    <img src="~/assets/img/@pro.foto" class="rounded-circle img-thumbnail">
+                                </div>
+                                <div class="col-8 col-sm-8 col-lg-8 mt-2 d-inline-block">
+                                    <h5>@pro.nombre  @pro.apellido</h5>
+                                    <h6>@pro.Profesion </h6>
+                                </div>
+                            </div>
+                            <!--Inicio Acciones para el Contacto-->
+                            <!--Fin Acciones para el Contacto-->
+                        </a>
+                        <div class="card-footer">
+                            <div class="float-right">
+                                <a href="/Compartir/seleccionaContacto/?id_usuario=@pro.id_usuario" class="btn btn-sm btn-compartir">Compartir</a>
+                            </div>
+                        </div>
+                        <!--Fin Datos del Contacto-->
+                    </div>
+                    <!--Fin Tarjeta de contacto-->
+                }
+            </div>
+            @*</form>*@
+            <!--Fin Lista de Contactos********************************************************************************************************-->
+        </div>
+    </div>
+</div>

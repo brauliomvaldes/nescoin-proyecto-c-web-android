@@ -1,0 +1,47 @@
+﻿@model IEnumerable<Nescoin.Conexion.Models.Tbl_Profesion>
+
+@{
+    ViewBag.Title = "Profesiones";
+}
+
+<h2>Tablas Profesiones</h2>
+<br />
+<p>
+    @*<a class="bnt btn-success">@Html.ActionLink("Crear Nuevo", "Create")</a>*@
+    <a href="/Tbl_Profesion/Create/" class="btn btn-success">Crear Nuevo</a>
+    <a href="/Home/Index" class="btn btn-secondary btn-sm float-right">Volver al menu principal</a>
+</p>
+    <table class= "table table-bordered">
+        <tr class="table-active btn-info text-center">
+            <th>
+                ID
+            </th>
+            <th>
+                Descripción
+            </th>
+            <th>
+                Admin.
+            </th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.id_profesion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.descripcion)
+            </td>
+            <td class="text-center">
+                <a href="/Tbl_Profesion/Edit/?id=@item.id_profesion" class="btn btn-warning">Editar</a>
+                @*<a href="/Tbl_Profesion/Delete/?id=@item.id_profesion" class="btn btn-danger">Eliminar</a>*@
+                @*@Html.ActionLink("Crear", "Details", new { id = item.id_profesion }) |
+             @Html.ActionLink("Editar", "Edit", new { id = item.id_profesion }) |
+            @Html.ActionLink("Eliminar", "Delete", new { id = item.id_profesion })*@
+            </td>
+        </tr>
+        }
+
+    </table>
+

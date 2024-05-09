@@ -1,0 +1,71 @@
+﻿@model List<Nescoin.Conexion.Models.Vi_Verifica_Solicitud_Presupuesto>
+
+@{
+    ViewBag.Title = "ResponderPresupuestos";
+}
+
+
+@foreach (var pro in Model)
+{
+    <div class="card m-2 p-1">
+        <div class="card-header">
+            <div class="card-title d-inline-block">
+                <h4>@pro.Titulo </h4> Solicitado por: <b>@pro.UsuarioSolicita</b>
+            </div>
+
+            <div class="d-inline-block float-right">
+                @for (var i = 1; i <= pro.id_calificacion; i++)
+                {
+                    <i class="text-warning fa fa-star float-right"></i>
+                }
+
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="card-text">
+                @pro.descripcion
+            </div>
+        </div>
+        <input type="text" id="frm7_idUsuario" value=@pro.usuario_logueado hidden="hidden" />
+        <div class="card-footer">
+            <div class="col-6 d-inline-block"> Fecha Solicitud:@pro.fecha_movimiento</div>
+
+            <div class="col-2 d-inline-block float-right">
+                @if (ViewBag.FlagButton == "1")
+                {
+                    <a class="btn btn-sm btn-compartir" data-target="#responder" id=@pro.id_movimiento onClick="llamaControladorFrm7(this.id)">responder</a>
+                }
+            </div>
+
+            <div class="modal fade" id="responder" tabindex="-1">
+            </div>
+        </div>
+    </div>
+}
+
+<script>
+
+    function llamaControladorFrm7(id) {
+
+        var div = document.getElementById("responder");
+        var xhr = new XMLHttpRequest();
+        var boton = document.getElementById(id).textContent;
+        var idusuario = document.getElementById("frm7_idUsuario").value;
+        var parametros = 'id_movimiento=' + id + '&estadoBoton=' + boton + '&idUsuario=' + idusuario;
+
+
+        xhr.onreadystatechange = function () {
+            if (xhr.status == 200 && xhr.readyState == 4) {
+                div.innerHTML = xhr.responseText;
+                $('#responder').modal("show");
+            }
+        }
+
+        xhr.open("POST", "/Presupuesto/Index", true);
+        xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+        xhr.send(parametros);
+
+    }
+
+</script>
+
